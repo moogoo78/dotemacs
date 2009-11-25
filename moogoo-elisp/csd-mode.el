@@ -13,6 +13,21 @@
 (load-file (concat my-path "moogoo-elisp/csound-opcode-typology.el"))
 
 
+(defgroup mycsound nil
+  "Major mode for editing Graphviz Dot files"
+  :group 'tools)
+
+(defun graphviz-dot-customize ()
+  "Run \\[customize-group] for the `graphviz' group."
+  (interactive)
+  (customize-group 'mycsound))
+
+(defcustom csound-program "csound"
+  "csound program"
+  :type 'string
+  :group 'mycsound)
+
+
 (defvar csd-syntax-opcodes-regexp (regexp-opt csdoc-opcodes 'words))
 (defvar csd-syntax-0-opcodes-regexp (regexp-opt csdoc-0-opcodes 'words))
 (defvar csd-syntax-functions-regexp (regexp-opt csdoc-functions 'words))
@@ -45,7 +60,12 @@ For detail, see `comment-dwim'."
   (define-key csd-mode-map [remap comment-dwim] 'csd-comment-dwim)
   (modify-syntax-entry ?; "< b" csd-mode-syntax-table)
   (modify-syntax-entry ?\n "> b" csd-mode-syntax-table)
+
+  (if (buffer-file-name)
+      (set (make-local-variable 'compile-command) 
+       (concat "LD_LIBRARY_PATH=~/bin csound " buffer-file-name)))
 )
+
 ;; Define function for browsing manual
 ;(defun php-browse-manual ()
 ;  "Bring up manual for PHP."
@@ -56,6 +76,13 @@ For detail, see `comment-dwim'."
 ;(define-key php-mode-map
 ;  "\C-c\C-m"
 ;  'php-browse-manual)
+
+
+(defun insert-instr ()
+  "Insert instrument section"
+  (interactive)
+  (insert "instr \nendin")
+  (backward-char 4))
 
 
 ; (add-to-list 'auto-mode-alist '("\\.csd\\'" . csd-mode)) TODO can't work here?!
