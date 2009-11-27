@@ -1,12 +1,13 @@
 ﻿; ====== MooGoo's .emacs ======
-
 ;;;; general setting
 ;; set default path
 (setq my-path "~/.emacs.d/"
       my-path-elisp (concat my-path "moogoo-elisp/")
+      my-path-plugin (concat my-path "goodies/")
       default-directory "~/")
 
 (add-to-list 'load-path my-path)
+(add-to-list 'load-path my-path-plugin)
 (add-to-list 'load-path my-path-elisp)
 
 ;; frame title
@@ -31,10 +32,10 @@
 (tool-bar-mode         t) ;
 (global-linum-mode     t) ; line number
 (column-number-mode    t) ; show column-number
-(cua-mode              t) ; 
+;(cua-mode              t) ; 
 (windmove-default-keybindings)      ; shift + 4way key jump window
 (setq default-major-mode 'text-mode)     ; default text-mode
-
+;(server-start)            ; start emacs server daemon
 ;; highlight
 (setq search-highlight           t  ; highlight search
       query-replace-highlight    t  ; highlight query object
@@ -58,22 +59,15 @@
 ;;;; key-binding
 (global-set-key "\C-l" 'goto-line)            ; go to line num
 (global-set-key [f5] 'compile)                ; make
-(global-set-key [f9] 'kill-buffer)
+(global-set-key [f10] 'kill-buffer)
 (global-set-key [f11] 'org-agenda-list)
 (global-set-key [f12] 'calendar)
 
-(global-set-key [f1] 'dired-single-magic-buffer)
+;(global-set-key [f1] 'dired-single-magic-buffer)
 (global-set-key [f2] 'yy)
 (global-set-key [f3] 'yyc)
 (global-set-key [f4] 'cc)
-(global-set-key '[(control c) (d)] 'delblank)
-
-;; tabbar
-(global-set-key [(control shift up)] 'tabbar-backward-group)
-(global-set-key [(control shift down)] 'tabbar-forward-group)
-(global-set-key [(control shift left)] 'tabbar-backward)
-(global-set-key [(control shift right)] 'tabbar-forward)
-
+;(global-set-key '[(control c) (d)] 'delblank)
 
 ;; macro
 (fset 'yy
@@ -85,23 +79,21 @@
 (fset 'delblank
    "\260\C-k")
 
-
 ;;;; style
 ;; fonts
 (set-default-font " -unknown-Droid Sans Mono-normal-normal-normal-*-13-*-*-*-*-0-iso10646-1")
-(load-theme 'moogoo)
-
+(load-theme 'mg)
 
 ;;;; default file
-(setq diary-file            (concat my-path-elisp ".diary")
-      bookmark-default-file (concat my-path-elisp ".bookmarks")
+(setq diary-file            (concat my-path ".diary")
+      bookmark-default-file (concat my-path ".bookmarks")
       bookmark-save-flag    1)
-
 
 ;;;; org-mode
 (setq org-todo-keywords '("苦" "集" "滅" "道"))            
-(setq org-agenda-include-diary t)
 (setq org-agenda-include-all-todo t)
+(setq org-agenda-include-diary t)
+;(require 'org-babel-init)  
 
 ;; org-remember
 (org-remember-insinuate)
@@ -112,8 +104,20 @@
         ("Journal" ?j "* %U %?\n\n  %i\n  %a" "~/org/JOURNAL.org")
         ("Idea" ?i "* %^{Title}\n  %i\n  %a" "~/org/JOURNAL.org" "New Ideas")))
 
-;; ENHANCEMENT!
-;; When no selecting, C-w is like Vim's dd, M-w is copy the current line
+;;;; plugin
+(load-file (concat my-path "mg-calendar.el"))
+(load-file (concat my-path "mg-plugin.el"))
+(mg-plugin-php)
+(mg-plugin-dot)
+(mg-plugin-w3m)
+;(mg-plugin-single)
+;(mg-plugin-tabbar)
+;(mg-plugin-ecb)
+;(mg-plugin-csound)
+;(mg-plugin-emms)
+
+;;;; ENHANCEMENT!
+;; like vim's yy, p
 (defadvice kill-ring-save (before slick-copy activate compile)
   "When called interactively with no active region, copy a single line instead."
   (interactive
@@ -130,63 +134,15 @@
 ;; via: http://www.emacswiki.org/emacs/SlickCopy
 
 
+;;;; custom
+(setq custom-file (concat my-path "custom.el"))
+(load custom-file)
 
-;; dired-single
-(require 'dired-single)
-;(setq load-path (cons (expand-file-name "/home/moogoo/Desktop") load-path))
-
-;; csound-x
-;(add-to-list 'load-path (concat my-path "stef-elisp"))
-;(require 'stef-elisp)
+;;;; sandbox
 ;; csd-mode TODO!!!
 ;(require 'csd-mode)
 (autoload 'csd-mode "csd-mode" "Major mode for editing php code." t)
 (add-to-list 'auto-mode-alist '("\\.csd\\'" . csd-mode))
-
-
-;; php
-(autoload 'php-mode "php-mode" "Major mode for editing php code." t)
-(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
-
-; ecb & cedit
-;(load-file (concat my-path "myecb.el")) ; will very slow at startup
-
-; graphviz dot
-(autoload 'graphviz-dot-mode "graphviz-dot-mode" "Major mode for editing graphviz dot." t)
-(add-to-list 'auto-mode-alist '("\\.dot\\'" . graphviz-dot-mode))
-
-; w3m
-(require 'w3m-load)
-
-;; tabbar
-(load-file (concat my-path "tabbar.el"))
-(require 'tabbar)
-(tabbar-mode)
-
-; set tabbar no group (only one group)
-(setq tabbar-buffer-groups-function
-      (lambda ()
-        (list "All"))) ;; code by Peter Barabas
-;; TODO set group for myself
-;; http://blog.waterlin.org/articles/define-emacs-tabbar-group-rule.html
-
-;;
-(load-file (concat my-path-elisp "mycalendar.el"))
-;; org
-(setq org-agenda-include-diary t)
-;(require 'org-babel-init)  
-
-; emms
-;(add-to-list 'load-path "c:/.emacs.d/emms")
-;(require 'emms-setup)
-;(emms-standard)
-;(emms-default-players)
-
-;(load-file (concat my-path-elisp "emacs_my_pic.el")) 
-
-; custom
-(setq custom-file (concat my-path "custom.el"))
-(load custom-file)
 
 ;;;;  Future
 ;; show time on title, but I want to show chinese cal!!
@@ -205,10 +161,28 @@
 ;;	"    Load" load "    " (if mail " Mail" "")))
 ;;       )
 
-;;;; away
+;;;; terminated
 ;; parentheses
 ;(setq show-paren-mode t) ;; match highlight, and don't jump
 ;(setq show-paren-style 'parenthesis) ; 
 
+;(set-register ?r '(file ."c:/appserv/www/izuja/include/recipe.php"))
+;(set-register ?u '(file ."c:/appserv/www/izuja/include/user.php"))
+;(set-register ?i '(file ."c:/appserv/www/izuja/index.php"))
+;(set-register ?c '(file ."c:/appserv/www/izuja/include/config.php"))
+
 ;http://www.emacswiki.org/emacs/ShowParenMode
 ;(require 'paren)
+
+;;;; back
+;; << insert my command
+;(defun insert-moogoo ()
+;  "Insert the current date according to the variable \"insert-date-format\"."
+;  (interactive "*")
+;    (insert (format-time-string "moogoo, %Y-%m-%d" (current-time))))
+
+;(global-set-key [f11] 'insert-moogoo)
+;; >>
+;; gdb-many-window, seams cool!
+;; http://blog.csdn.net/ariesjzj/archive/2007/09/15/1786451.aspx
+
