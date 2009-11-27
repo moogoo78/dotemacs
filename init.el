@@ -81,7 +81,9 @@
 
 ;;;; style
 ;; fonts
-(set-default-font " -unknown-Droid Sans Mono-normal-normal-normal-*-13-*-*-*-*-0-iso10646-1")
+;(set-default-font " -unknown-Droid Sans Mono-normal-normal-normal-*-13-*-*-*-*-0-iso10646-1")
+(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-14-*-*-*    -m-0-iso10646-1")
+
 (load-theme 'mg)
 
 ;;;; default file
