@@ -39,9 +39,9 @@
 ;; highlight
 (setq search-highlight           t  ; highlight search
       query-replace-highlight    t  ; highlight query object
-      mouse-sel-retain-highlight t  ; Keep mouse high-lightening ??
-      global-hl-line-mode 1)        ; highlight current line
-
+      mouse-sel-retain-highlight t)  ; Keep mouse high-lightening ??
+(global-hl-line-mode 1)         ; highlight current line
+(setq default-cursor-type 'hbar)    ; make cursor underline bar
 ;; unicode
 (prefer-coding-system       'utf-8)
 (set-default-coding-systems 'utf-8)
