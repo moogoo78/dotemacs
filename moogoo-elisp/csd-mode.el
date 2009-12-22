@@ -12,6 +12,8 @@
 ;(require 'csd-csound-opcodes)
 (load-file (concat my-path "moogoo-elisp/csound-opcode-typology.el"))
 
+(set (make-local-variable 'compile-command) "csound")
+
 
 (defgroup mycsound nil
   "Major mode for editing Graphviz Dot files"
