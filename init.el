@@ -32,16 +32,16 @@
 (tool-bar-mode         t) ;
 (global-linum-mode     t) ; line number
 (column-number-mode    t) ; show column-number
-;(cua-mode              t) ; 
+(cua-mode              t) ; 
 (windmove-default-keybindings)      ; shift + 4way key jump window
 (setq default-major-mode 'text-mode)     ; default text-mode
 ;(server-start)            ; start emacs server daemon
 ;; highlight
 (setq search-highlight           t  ; highlight search
       query-replace-highlight    t  ; highlight query object
-      mouse-sel-retain-highlight t  ; Keep mouse high-lightening ??
-      global-hl-line-mode 1)        ; highlight current line
-
+      mouse-sel-retain-highlight t)  ; Keep mouse high-lightening ??
+(global-hl-line-mode 1)         ; highlight current line
+(setq default-cursor-type 'hbar)    ; make cursor underline bar
 ;; unicode
 (prefer-coding-system       'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -64,9 +64,11 @@
 (global-set-key [f12] 'calendar)
 
 ;(global-set-key [f1] 'dired-single-magic-buffer)
-(global-set-key [f2] 'yy)
-(global-set-key [f3] 'yyc)
-(global-set-key [f4] 'cc)
+(global-set-key [f1] 'delete-other-windows)
+(global-set-key [f2] 'split-window)
+(global-set-key [f3] 'split-window-horizontally)
+(global-set-key [f4] 'kill-buffer)
+(global-set-key [f6] 'switch-to-buffer)
 ;(global-set-key '[(control c) (d)] 'delblank)
 
 ;; macro
@@ -82,7 +84,7 @@
 ;;;; style
 ;; fonts
 ;(set-default-font " -unknown-Droid Sans Mono-normal-normal-normal-*-13-*-*-*-*-0-iso10646-1")
-(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-14-*-*-*    -m-0-iso10646-1")
+(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*    -m-0-iso10646-1")
 
 (load-theme 'mg)
 
@@ -109,9 +111,10 @@
 ;;;; plugin
 (load-file (concat my-path "mg-calendar.el"))
 (load-file (concat my-path "mg-plugin.el"))
+;; 用autoload就可以了吧~
 (mg-plugin-php)
 (mg-plugin-dot)
-(mg-plugin-w3m)
+;(mg-plugin-w3m)
 ;(mg-plugin-single)
 ;(mg-plugin-tabbar)
 ;(mg-plugin-ecb)

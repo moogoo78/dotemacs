@@ -5,7 +5,7 @@
   ;; If there is more than one, they won't work right.
  '(delete-selection-mode nil)
  '(mark-even-if-inactive t)
- '(org-agenda-files (quote ("~/orgs/todo.org" "~/orgs/life.org" "~/orgs/project.org")))
+ '(org-agenda-files (quote ("~/prog/project.org" "~/prog/life.org" "~/prog/todo.org")))
  '(org-startup-folded (quote content))
  '(scroll-bar-mode (quote right))
  '(transient-mark-mode 1))
