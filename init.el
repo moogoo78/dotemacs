@@ -74,6 +74,7 @@
 (global-set-key [f3] 'split-window-horizontally)
 (global-set-key [f4] 'kill-buffer)
 (global-set-key [f6] 'switch-to-buffer)
+(global-set-key [f8] 'org-export-as-html)
 ;(global-set-key '[(control c) (d)] 'delblank)
 
 ;; macro
