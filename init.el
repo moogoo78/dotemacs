@@ -26,7 +26,10 @@
       ; scroll bar
       ;scroll-bar-mode        'right ;
       scroll-margin 3 
-      scroll-conservatively 10000)  ; margin 3 line when up or down
+      scroll-conservatively 10000  ; margin 3 line when up or down
+      x-select-enable-clipboard t
+      interprogram-paste-function 'x-cut-buffer-or-selection-value)
+
 
 (blink-cursor-mode nil)   ; disable cursor blink
 (tool-bar-mode         t) ;
@@ -42,6 +45,7 @@
       mouse-sel-retain-highlight t)  ; Keep mouse high-lightening ??
 (global-hl-line-mode 1)         ; highlight current line
 (setq default-cursor-type 'hbar)    ; make cursor underline bar
+
 ;; unicode
 (prefer-coding-system       'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -188,6 +192,6 @@
 
 ;(global-set-key [f11] 'insert-moogoo)
 ;; >>
-;; gdb-many-window, seams cool!
-;; http://blog.csdn.net/ariesjzj/archive/2007/09/15/1786451.aspx
-
+; gdb gui
+(setq gdb-many-windows t)
+(setq gdb-show-main t)
