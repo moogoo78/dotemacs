@@ -29,10 +29,11 @@
       scroll-conservatively 10000)  ; margin 3 line when up or down
 
 (blink-cursor-mode nil)   ; disable cursor blink
-(tool-bar-mode         t) ;
+(tool-bar-mode         nil) ;
 (global-linum-mode     t) ; line number
 (column-number-mode    t) ; show column-number
-(cua-mode              t) ; 
+(ido-mode              t) ; enable ido-mode
+;(cua-mode              t) ; 
 (windmove-default-keybindings)      ; shift + 4way key jump window
 (setq default-major-mode 'text-mode)     ; default text-mode
 ;(server-start)            ; start emacs server daemon

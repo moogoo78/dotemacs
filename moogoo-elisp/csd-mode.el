@@ -11,6 +11,9 @@
 (add-to-list 'load-path (concat my-path "moogoo-elisp"))
 ;(require 'csd-csound-opcodes)
 (load-file (concat my-path "moogoo-elisp/csound-opcode-typology.el"))
+(setq csound-declaration-opcodes '("endin" "instr"))
+(setq csdoc-xml '("<CsoundSynthesizer>" "</CsoundSynthesizer>" "<CsOptions>" "</CsOptions>" "CsInstruments" "</CsInstruments>" "<CsScore>" "</CsScore>"))
+
 
 (set (make-local-variable 'compile-command) "csound")
 
@@ -33,7 +36,8 @@
 (defvar csd-syntax-opcodes-regexp (regexp-opt csdoc-opcodes 'words))
 (defvar csd-syntax-0-opcodes-regexp (regexp-opt csdoc-0-opcodes 'words))
 (defvar csd-syntax-functions-regexp (regexp-opt csdoc-functions 'words))
-
+(defvar csd-syntax-declar (regexp-opt csound-declaration-opcodes 'words))
+(defvar csd-syntax-xml-regexp (regexp-opt csdoc-xml 'words))
 ;; the command to comment/uncomment text
 (defun csd-comment-dwim (arg)
 "Comment or uncomment current line or region in a smart way.
@@ -48,7 +52,9 @@ For detail, see `comment-dwim'."
   (,csd-syntax-0-opcodes-regexp . font-lock-builtin-face)
   (,csd-syntax-opcodes-regexp . font-lock-keyword-face)
   (,csd-syntax-functions-regexp . font-lock-variable-name-face)
-    ;(,mylsl-type-regexp . font-lock-type-face)
+  (,csd-syntax-declar . font-lock-type-face)
+  (,csd-syntax-xml-regexp . font-lock-keyword-face)
+  ;(,csd-syntax-xml-regexp . font-lock-type-face)
     ;(,mylsl-constant-regexp . font-lock-constant-face)
     ;(,mylsl-event-regexp . font-lock-builtin-face)
     ;(,mylsl-functions-regexp . font-lock-function-name-face)
