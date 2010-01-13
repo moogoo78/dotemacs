@@ -39,18 +39,18 @@
 (setq calendar-longitude +121.31)
 (setq calendar-location-name "台北")
 
-; 眾人生日
-(setq local-holidays '((holiday-fixed 10 2 "我生日")
+; 自已設節日!
+;(setq local-holidays '((holiday-fixed 10 2 "我生日")
                        ; 同事
-                       (holiday-fixed 7 1 "junefu生日")
-                       (holiday-fixed 3 22 "陳昆峰生日")
-                       (holiday-fixed 11 15 "蔡嘉宏KK生日")
+ ;                      (holiday-fixed 7 1 "junefu生日")
+;                       (holiday-fixed 3 22 "陳昆峰生日")
+;                       (holiday-fixed 11 15 "蔡嘉宏KK生日")
                        ; 朋友
-                       (holiday-fixed 3 31 "香菇生日")
-                       (holiday-fixed 4 29 "juju生日")
+;                       (holiday-fixed 3 31 "香菇生日")
+;                       (holiday-fixed 4 29 "juju生日")
                        ; 家人
-                       (holiday-fixed 4 14 "嘟爸生日")
-                       (holiday-fixed 5 18 "emily生日")
-                       (holiday-fixed 5 11 "媽媽生日")
-                       (holiday-fixed 6 19 "爸爸生日")
-                       ))
+ ;                      (holiday-fixed 4 14 "嘟爸生日")
+  ;                     (holiday-fixed 5 18 "emily生日")
+  ;                     (holiday-fixed 5 11 "媽媽生日")
+    ;                   (holiday-fixed 6 19 "爸爸生日")
+   ;                    ))
