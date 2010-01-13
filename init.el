@@ -120,7 +120,7 @@
 ;; 用autoload就可以了吧~
 (mg-plugin-php)
 (mg-plugin-dot)
-;(mg-plugin-w3m)
+(mg-plugin-w3m)
 ;(mg-plugin-single)
 ;(mg-plugin-tabbar)
 ;(mg-plugin-ecb)
@@ -196,4 +196,4 @@
 ;; >>
 ; gdb gui
 (setq gdb-many-windows t)
-(setq gdb-show-main t)
+;(setq gdb-show-main t)

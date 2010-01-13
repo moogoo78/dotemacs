@@ -14,7 +14,11 @@
 
 ;;;; w3m
 (defun mg-plugin-w3m ()
-(require 'w3m-load)
+  ; add this for emacs 23
+  ; http://www.emacswiki.org/emacs/emacs-w3m#toc13
+  (require 'w3m-e21)
+  (provide 'w3m-e23)
+  (require 'w3m-load)
 )
 
 ;;;; dired-single
