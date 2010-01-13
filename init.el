@@ -35,8 +35,8 @@
 (tool-bar-mode         nil) ;
 (global-linum-mode     t) ; line number
 (column-number-mode    t) ; show column-number
-(ido-mode              t) ; enable ido-mode
-;(cua-mode              t) ; 
+;(ido-mode              t) ; enable ido-mode
+(cua-mode              t) ; 
 (windmove-default-keybindings)      ; shift + 4way key jump window
 (setq default-major-mode 'text-mode)     ; default text-mode
 ;(server-start)            ; start emacs server daemon
@@ -65,7 +65,7 @@
 (global-set-key "\C-l" 'goto-line)            ; go to line num
 (global-set-key [f5] 'compile)                ; make
 (global-set-key [f10] 'kill-buffer)
-(global-set-key [f11] 'org-agenda-list)
+(global-set-key [f11] 'org-agenda)
 (global-set-key [f12] 'calendar)
 
 ;(global-set-key [f1] 'dired-single-magic-buffer)
@@ -94,25 +94,34 @@
 
 (load-theme 'mg)
 
-;;;; default file
-(setq diary-file            (concat my-path ".diary")
-      bookmark-default-file (concat my-path ".bookmarks")
-      bookmark-save-flag    1)
+;;;; bookmark
+(setq bookmark-default-file (concat my-path ".bookmarks"))
+(setq bookmark-save-flag 1)
+
+(setq diary-file (concat my-path ".diary"))
 
 ;;;; org-mode
-(setq org-todo-keywords '("苦" "集" "滅" "道"))            
+;(setq org-todo-keywords '("苦" "集" "滅" "道"))            
+(setq org-todo-keywords '("TODO" "STARTED" "WAITING" "DONE"))
 (setq org-agenda-include-all-todo t)
 (setq org-agenda-include-diary t)
 ;(require 'org-babel-init)  
+(setq org-directory "~/orgs/my")
+(setq org-agenda-files '("~/orgs/my"))
 
 ;; org-remember
 (org-remember-insinuate)
 ;(setq org-default-notes-file /notes.org"))
 (define-key global-map "\C-cr" 'org-remember)
-     (setq org-remember-templates
-           '(("k" ?t "* 苦  %? %U %i\n\n  %a" "~/note.org" "無明")
-        ("Journal" ?j "* %U %?\n\n  %i\n  %a" "~/org/JOURNAL.org")
-        ("Idea" ?i "* %^{Title}\n  %i\n  %a" "~/org/JOURNAL.org" "New Ideas")))
+(setq org-remember-templates
+      '(("Todo" ?t "* TODO %?\n  %i\n  %a" "~/orgs/my/todo.org" "Tasks")
+        ("Read" ?r "* %?\n  %i\n  %a" "~/orgs/my/read.org" "Read")
+        ("Idea" ?i "* %^{Title}\n  %i\n  %a" "~/orgs/JOURNAL.org" "New Ideas")))
+
+ ;    (setq org-remember-templates
+  ;         '(("k" ?t "* 苦  %? %U %i\n\n  %a" "~/note.org" "無明")
+   ;     ("Journal" ?j "* %U %?\n\n  %i\n  %a" "~/org/JOURNAL.org")
+    ;    ("Idea" ?i "* %^{Title}\n  %i\n  %a" "~/org/JOURNAL.org" "New Ideas")))
 
 ;;;; plugin
 (load-file (concat my-path "mg-calendar.el"))
