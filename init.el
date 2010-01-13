@@ -35,8 +35,8 @@
 (tool-bar-mode         nil) ;
 (global-linum-mode     t) ; line number
 (column-number-mode    t) ; show column-number
-(ido-mode              t) ; enable ido-mode
-;(cua-mode              t) ; 
+;(ido-mode              t) ; enable ido-mode
+(cua-mode              t) ; 
 (windmove-default-keybindings)      ; shift + 4way key jump window
 (setq default-major-mode 'text-mode)     ; default text-mode
 ;(server-start)            ; start emacs server daemon
