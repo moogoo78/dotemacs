@@ -98,7 +98,7 @@
 (setq bookmark-default-file (concat my-path ".bookmarks"))
 (setq bookmark-save-flag 1)
 
-(setq diary-file (concat my-path ".diary"))
+(setq diary-file (concat my-path "~/orgs/my/diary"))
 
 ;;;; org-mode
 ;(setq org-todo-keywords '("苦" "集" "滅" "道"))            
@@ -115,8 +115,8 @@
 (define-key global-map "\C-cr" 'org-remember)
 (setq org-remember-templates
       '(("Todo" ?t "* TODO %?\n  %i\n  %a" "~/orgs/my/todo.org" "Tasks")
-        ("Read" ?r "* %?\n  %i\n  %a" "~/orgs/my/read.org" "Read")
-        ("Idea" ?i "* %^{Title}\n  %i\n  %a" "~/orgs/JOURNAL.org" "New Ideas")))
+        ("Read" ?r "* %?" "~/orgs/my/read.org" "Read")
+        ("Marathon" ?m "* %u %^{公里}km, %^{時間}m\n  %i%?\n" "~/orgs/my/marathon.org" "Marathon")))
 
  ;    (setq org-remember-templates
   ;         '(("k" ?t "* 苦  %? %U %i\n\n  %a" "~/note.org" "無明")
@@ -129,7 +129,7 @@
 ;; 用autoload就可以了吧~
 (mg-plugin-php)
 (mg-plugin-dot)
-(mg-plugin-w3m)
+;(mg-plugin-w3m)
 ;(mg-plugin-single)
 ;(mg-plugin-tabbar)
 ;(mg-plugin-ecb)
