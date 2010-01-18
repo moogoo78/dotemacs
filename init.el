@@ -116,7 +116,7 @@
 (setq org-remember-templates
       '(("Todo" ?t "* TODO %?\n  %i\n  %a" "~/orgs/my/todo.org" "Tasks")
         ("Read" ?r "* %?" "~/orgs/my/read.org" "Read")
-        ("Marathon" ?m "* %u %^{公里}km, %^{時間}m\n  %i%?\n" "~/orgs/my/marathon.org" "Marathon")))
+        ("Marathon" ?m "* %t %^{公里}km, %^{時間}m\n  %i%?\n" "~/orgs/my/marathon.org" "Marathon")))
 
  ;    (setq org-remember-templates
   ;         '(("k" ?t "* 苦  %? %U %i\n\n  %a" "~/note.org" "無明")
