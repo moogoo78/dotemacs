@@ -94,19 +94,19 @@
 
 (load-theme 'mg)
 
+(setq diary-file (concat my-path ".diary"))
+
 ;;;; bookmark
 (setq bookmark-default-file (concat my-path ".bookmarks"))
 (setq bookmark-save-flag 1)
 
-(setq diary-file (concat my-path "~/orgs/my/diary"))
 
 ;;;; org-mode
-;(setq org-todo-keywords '("苦" "集" "滅" "道"))            
 (setq org-todo-keywords '("TODO" "STARTED" "WAITING" "DONE"))
 (setq org-agenda-include-all-todo t)
 (setq org-agenda-include-diary t)
 ;(require 'org-babel-init)  
-(setq org-directory "~/orgs/my")
+(setq org-directory "~/orgs")
 (setq org-agenda-files '("~/orgs/my"))
 
 ;; org-remember
@@ -122,6 +122,26 @@
   ;         '(("k" ?t "* 苦  %? %U %i\n\n  %a" "~/note.org" "無明")
    ;     ("Journal" ?j "* %U %?\n\n  %i\n  %a" "~/org/JOURNAL.org")
     ;    ("Idea" ?i "* %^{Title}\n  %i\n  %a" "~/org/JOURNAL.org" "New Ideas")))
+
+;; org-publish
+(require 'org-publish)
+(setq org-publish-project-alist
+      '(
+        ("org-pub"
+         :base-directory "~/orgs/"
+         :base-extension "org"
+         :publishing-directory "~/public_html/org-pub"
+         :recursive t
+         :publishing-function org-publish-org-to-html
+         :headline-levels 4             ; Just the default for this project.
+         :auto-preamble t
+         :htmlized-source t
+         :exclude "~/orgs/my"
+         :Auto-index t                  ; Generate index.org automagically...
+         :index-filename "sitemap.org"  ; ... call it sitemap.org ...
+         :index-title "Sitemap"         ; ... with title 'Sitemap'.
+         )
+        ))
 
 ;;;; plugin
 (load-file (concat my-path "mg-calendar.el"))
