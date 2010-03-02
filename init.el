@@ -130,14 +130,14 @@
         ("org-pub"
          :base-directory "~/orgs/"
          :base-extension "org"
-         :publishing-directory "~/public_html/org-pub"
+         :publishing-directory "~/public_html/pub"
          :recursive t
          :publishing-function org-publish-org-to-html
          :headline-levels 4             ; Just the default for this project.
          :auto-preamble t
          :htmlized-source t
          :exclude "~/orgs/my"
-         :Auto-index t                  ; Generate index.org automagically...
+         :auto-index t                  ; Generate index.org automagically...
          :index-filename "sitemap.org"  ; ... call it sitemap.org ...
          :index-title "Sitemap"         ; ... with title 'Sitemap'.
          )
