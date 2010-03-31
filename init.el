@@ -11,7 +11,7 @@
 (add-to-list 'load-path my-path-elisp)
 
 ;; frame title
-(setq frame-title-format "%b - %f"   ; frame title, http://www.emacswiki.org/emacs/FrameTitle
+(setq frame-title-format "%b - %f"   ; frame title, http://www.emacswiki.orgemacs/FrameTitle
       icon-title-format "Emacs - %b")
 
 ;; environment
@@ -90,7 +90,7 @@
 ;;;; style
 ;; fonts
 ;(set-default-font " -unknown-Droid Sans Mono-normal-normal-normal-*-13-*-*-*-*-0-iso10646-1")
-(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*    -m-0-iso10646-1")
+;(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*    -m-0-iso10646-1")
 
 (load-theme 'mg)
 
@@ -114,9 +114,22 @@
 ;(setq org-default-notes-file /notes.org"))
 (define-key global-map "\C-cr" 'org-remember)
 (setq org-remember-templates
-      '(("Todo" ?t "* TODO %?\n  %i\n  %a" "~/orgs/my/todo.org" "Tasks")
+      '(("Journal" ?j "* %^t %^{title} %i%^G\n  %i1. %^{social}\n  2. %^{work}\n  3. %^{life}\n  4. %^{love}" "~/orgs/my/jj.org" "Journal")
+        ("Todo" ?t "* TODO %?\n  %i\n  %a" "~/orgs/my/todo.org" "Tasks")
         ("Read" ?r "* %?" "~/orgs/my/read.org" "Read")
         ("Marathon" ?m "* %t %^{公里}km, %^{時間}m\n  %i%?\n" "~/orgs/my/marathon.org" "Marathon")))
+;              social
+;           2.   ^ 1.
+;           work | social/family
+;                |
+; rational ----------> emotional
+;        3. life | 4. love
+;   (money/sport)|
+;             personal
+;
+; TODO, 可對照去年同一天?
+
+;
 
  ;    (setq org-remember-templates
   ;         '(("k" ?t "* 苦  %? %U %i\n\n  %a" "~/note.org" "無明")

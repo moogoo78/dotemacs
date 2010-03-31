@@ -36,9 +36,9 @@
 (set-face-background 'isearch "blue")
 
 ;; parren
-(set-face-background 'show-paren-match-face (face-background 'default))
-(set-face-foreground 'show-paren-match-face "#def")
-(set-face-attribute 'show-paren-match-face nil :weight 'extra-bold)
+;(set-face-background 'show-paren-match-face (face-background 'default))
+;(set-face-foreground 'show-paren-match-face "#def")
+;(set-face-attribute 'show-paren-match-face nil :weight 'extra-bold)
 
 ;;; 余分のスペースやタブのハイライト
 (set-face-background 'trailing-whitespace "plum")
