@@ -114,7 +114,7 @@
 ;(setq org-default-notes-file /notes.org"))
 (define-key global-map "\C-cr" 'org-remember)
 (setq org-remember-templates
-      '(("Journal" ?j "* %^t %^{title} %i%^G\n  %i1. %^{social}\n  2. %^{work}\n  3. %^{life}\n  4. %^{love}" "~/orgs/my/jj.org" "Journal")
+      '(("Journal" ?j "* %^t %^{title} %i%^G\n  %i1. %^{social}\n  2. %^{work}\n  3. %^{life}\n  4. %^{love}" "~/orgs/my/journal.org" "Journal")
         ("Todo" ?t "* TODO %?\n  %i\n  %a" "~/orgs/my/todo.org" "Tasks")
         ("Read" ?r "* %?" "~/orgs/my/read.org" "Read")
         ("Marathon" ?m "* %t %^{公里}km, %^{時間}m\n  %i%?\n" "~/orgs/my/marathon.org" "Marathon")))
