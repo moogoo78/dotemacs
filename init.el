@@ -89,6 +89,9 @@
 
 ;;;; style
 ;; fonts
+;; I keep all my emacs-related stuff under ~/emacs
+(if (eq system-type 'gnu/linux)
+    (set-default-font "-unknown-Droid Sans Mono-normal-normal-normal-*-13-*-*-*-*-0-iso10646-1"))
 ;(set-default-font " -unknown-Droid Sans Mono-normal-normal-normal-*-13-*-*-*-*-0-iso10646-1")
 ;(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*    -m-0-iso10646-1")
 
@@ -116,6 +119,7 @@
 (setq org-remember-templates
       '(("Journal" ?j "* %^t %^{title} %i%^G\n  %i1. %^{social}\n  2. %^{work}\n  3. %^{life}\n  4. %^{love}" "~/orgs/my/journal.org" "Journal")
         ("Todo" ?t "* TODO %?\n  %i\n  %a" "~/orgs/my/todo.org" "Tasks")
+        ("Quote" ?q "* %?" "~/orgs/my/quote.org" "Quote")
         ("Read" ?r "* %?" "~/orgs/my/read.org" "Read")
         ("Marathon" ?m "* %t %^{公里}km, %^{時間}m\n  %i%?\n" "~/orgs/my/marathon.org" "Marathon")))
 ;              social
@@ -144,19 +148,20 @@
          :base-directory "~/orgs/"
          :base-extension "org"
          :publishing-directory "~/public_html/pub"
+         :exclude "~/orgs/my/"
          :recursive t
          :publishing-function org-publish-org-to-html
-         :headline-levels 4             ; Just the default for this project.
-         :auto-preamble t
          :htmlized-source t
-         :exclude "~/orgs/my"
-         :auto-index t                  ; Generate index.org automagically...
-         :index-filename "sitemap.org"  ; ... call it sitemap.org ...
-         :index-title "Sitemap"         ; ... with title 'Sitemap'.
+         :auto-preamble t
+         :headline-levels 4             ; Just the default for this project.
+         ;:org-publish-use-timestamps-flag nil
+         ;:auto-index t                  ; Generate index.org automagically...
+         ;:makeindex t
+         ;:index-filename "sitemap.org"  ; ... call it sitemap.org ...
+         ;:index-title "Sitemap"         ; ... with title 'Sitemap'.
          )
         ))
 
-;;;; plugin
 (load-file (concat my-path "mg-calendar.el"))
 (load-file (concat my-path "mg-plugin.el"))
 ;; 用autoload就可以了吧~
@@ -165,7 +170,7 @@
 ;(mg-plugin-w3m)
 ;(mg-plugin-single)
 ;(mg-plugin-tabbar)
-;(mg-plugin-ecb)
+;(mg-plugin-ecb)\
 ;(mg-plugin-csound)
 ;(mg-plugin-emms)
 
@@ -239,3 +244,6 @@
 ; gdb gui
 (setq gdb-many-windows t)
 ;(setq gdb-show-main t)
+
+;; ref
+; http://sites.google.com/site/steveyegge2/my-dot-emacs-file
