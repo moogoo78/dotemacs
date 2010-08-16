@@ -76,6 +76,7 @@
 (global-set-key [f6] 'switch-to-buffer)
 (global-set-key [f8] 'org-export-as-html)
 ;(global-set-key '[(control c) (d)] 'delblank)
+(global-set-key (kbd "C-2") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
 
 ;; macro
 (fset 'yy
@@ -173,6 +174,13 @@
 ;(mg-plugin-ecb)\
 ;(mg-plugin-csound)
 ;(mg-plugin-emms)
+
+;; TODO
+;(when (require 'actionscript-mode nil t)
+;  (setq auto-mode-alist
+;        (cons '("\.as\'" . actionscript-mode) auto-mode-alist))
+(autoload 'actionscript-mode "actionscript-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.as\\'" . actionscript-mode))
 
 ;;;; ENHANCEMENT!
 ;; like vim's yy, p
