@@ -5,6 +5,10 @@
       my-path-elisp (concat my-path "moogoo-elisp/")
       my-path-plugin (concat my-path "goodies/")
       default-directory "~/")
+(if (eq system-type 'gnu/linux)
+    (defvar mg-org-file "~/Dropbox/org"))
+(if (eq system-type 'windows-nt)
+    (defvar mg-org-file "C:/Documents and Settings/moogoo/My Documents/My Dropbox/org"))
 
 (add-to-list 'load-path my-path)
 (add-to-list 'load-path my-path-plugin)
@@ -110,8 +114,8 @@
 (setq org-agenda-include-all-todo t)
 (setq org-agenda-include-diary t)
 ;(require 'org-babel-init)  
-(setq org-directory "~/orgs")
-(setq org-agenda-files '("~/orgs/my"))
+(setq org-directory mg-org-file)
+;(setq org-agenda-files (concat mg-org-file ("//my")))
 
 ;; org-remember
 (org-remember-insinuate)
