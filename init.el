@@ -115,7 +115,7 @@
 (setq org-agenda-include-diary t)
 ;(require 'org-babel-init)  
 (setq org-directory mg-org-file)
-;(setq org-agenda-files (concat mg-org-file ("//my")))
+(setq org-agenda-files (quote (concat mg-org-file ("//my"))))
 
 ;; org-remember
 (org-remember-insinuate)
