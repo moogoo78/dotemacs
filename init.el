@@ -80,7 +80,7 @@
 (global-set-key [f6] 'switch-to-buffer)
 (global-set-key [f8] 'org-export-as-html)
 ;(global-set-key '[(control c) (d)] 'delblank)
-(global-set-key (kbd "C-2") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
+(global-set-key (kbd "C-3") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
 
 ;; macro
 (fset 'yy
@@ -115,7 +115,27 @@
 (setq org-agenda-include-diary t)
 ;(require 'org-babel-init)  
 (setq org-directory mg-org-file)
-(setq org-agenda-files (quote (concat mg-org-file ("//my"))))
+;(set org-agenda files (file-expand-wildcards "~/org/*.org"))
+;(setq org-agenda-files '(concat mg-org-file "/my/project.org")) why ....
+(if (eq system-type 'gnu/linux)
+    (setq org-agenda-files '(
+"~/Dropbox/org/my/project.org" 
+"~/Dropbox/org/my/schedule.org"
+)))
+(if (eq system-type 'windows-nt)
+    (setq org-agenda-files '(
+"C:/Documents and Settings/moogoo/My Documents/My Dropbox/org/my/project.org" 
+"C:/Documents and Settings/moogoo/My Documents/My Dropbox/org/my/schedule.org"
+)))
+
+
+(setq org-agenda-custom-commands 
+      '(("c" "Desk Work" tags-todo "computer" ;; (1) (2) (3) (4)
+         ((org-agenda-files '("c:/schedule.org")) ;; (5)
+          (org-agenda-sorting-strategy '(priority-up effort-down))) ;; (5) cont.
+         ("~/computer.html")) ;; (6)
+        ;; ...other commands here
+        ))
 
 ;; org-remember
 (org-remember-insinuate)
@@ -146,7 +166,7 @@
     ;    ("Idea" ?i "* %^{Title}\n  %i\n  %a" "~/org/JOURNAL.org" "New Ideas")))
 
 ;; org-publish
-(require 'org-publish)
+(require 'org-publish) ; TODO!!
 (setq org-publish-project-alist
       '(
         ("org-pub"
