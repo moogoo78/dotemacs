@@ -68,7 +68,7 @@
 ;;;; key-binding
 (global-set-key "\C-l" 'goto-line)            ; go to line num
 (global-set-key [f5] 'compile)                ; make
-(global-set-key [f10] 'kill-buffer)
+;(global-set-key [f10] 'kill-buffer)
 (global-set-key [f11] 'org-agenda)
 (global-set-key [f12] 'calendar)
 
@@ -76,10 +76,11 @@
 (global-set-key [f1] 'delete-other-windows)
 (global-set-key [f2] 'split-window)
 (global-set-key [f3] 'split-window-horizontally)
-(global-set-key [f4] 'kill-buffer)
+;(global-set-key [f4] 'kill-buffer)
 (global-set-key [f6] 'switch-to-buffer)
 (global-set-key [f8] 'org-export-as-html)
 ;(global-set-key '[(control c) (d)] 'delblank)
+(global-set-key (kbd "C-0") 'kill-buffer) 
 (global-set-key (kbd "C-3") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
 (global-set-key (kbd "C-2") 'yy) ; copy one line and paste
 
@@ -167,26 +168,41 @@
     ;    ("Idea" ?i "* %^{Title}\n  %i\n  %a" "~/org/JOURNAL.org" "New Ideas")))
 
 ;; org-publish
-(require 'org-publish) ; TODO!!
+(require 'org-publish) 
 (setq org-publish-project-alist
       '(
-        ("org-pub"
-         :base-directory "~/orgs/"
+        ("org-notes"
+         :base-directory "~/Dropbox/org"
          :base-extension "org"
-         :publishing-directory "~/public_html/pub"
-         :exclude "~/orgs/my/"
+         :publishing-directory "~/org-pub"
+         :exclude "priv-*"
          :recursive t
          :publishing-function org-publish-org-to-html
-         :htmlized-source t
-         :auto-preamble t
          :headline-levels 4             ; Just the default for this project.
+         :language "zh"
+         ;:htmlized-source t
+;         :auto-preamble t
+         :style "<link rel='stylesheet' type='text/css' href='css/style.css' />"
+         :style-include-default nil
+         :author "MooGoo"
+         :email nil
          ;:org-publish-use-timestamps-flag nil
          ;:auto-index t                  ; Generate index.org automagically...
          ;:makeindex t
          ;:index-filename "sitemap.org"  ; ... call it sitemap.org ...
          ;:index-title "Sitemap"         ; ... with title 'Sitemap'.
          )
-        ))
+	      ;; These are static files (images, pdf, etc)
+	      ("org-static"
+	        :base-directory "~/Dropbox/org/" ;; Change this to your local dir
+          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|txt\\|asc"
+          :publishing-directory "~/org-pub"
+	        :recursive t
+          :publishing-function org-publish-attachment
+        )
+	      ("orgpub" :components ("org-notes" "org-static"))
+        )
+)
 
 (load-file (concat my-path "mg-calendar.el"))
 (load-file (concat my-path "mg-plugin.el"))

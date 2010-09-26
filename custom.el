@@ -5,6 +5,7 @@
   ;; If there is more than one, they won't work right.
  '(delete-selection-mode nil)
  '(mark-even-if-inactive t)
+ '(org-agenda-files (quote ("~/Dropbox/org/priv-schedule.org" "~/Dropbox/org/priv-project.org")))
  '(org-startup-folded (quote content))
  '(scroll-bar-mode (quote right))
  '(transient-mark-mode 1))
