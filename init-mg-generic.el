@@ -54,10 +54,10 @@
 ;(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*    -m-0-iso10646-1")
 
 ; === set default file ===
-(setq diary-file (concat my-path ".diary"))
-(setq bookmark-default-file (concat my-path ".bookmarks"))
+(setq diary-file (concat my-path "diary"))
+(setq bookmark-default-file (concat my-path "bookmarks"))
 (setq bookmark-save-flag 1)
-;(setq custom-file (concat my-path "custom.el"))
+(setq custom-file (concat my-path "custom.el"))
 
 ; gdb gui
 (setq gdb-many-windows t)

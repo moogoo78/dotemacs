@@ -1,15 +1,16 @@
-;;;; org-mode
+; org-mode
 (setq org-todo-keywords '("TODO" "STARTED" "WAITING" "CANCELLED" "DONE"))
 (setq org-agenda-include-all-todo t)
 (setq org-agenda-include-diary t)
 ;(require 'org-babel-init)  
-(setq org-directory mg-org-file)
+
+;(setq org-directory mg-org-file)
 ;(set org-agenda files (file-expand-wildcards "~/org/*.org"))
-;(setq org-agenda-files '(concat mg-org-file "/my/project.org")) why ....
+; TODO, need a better way
 (if (eq system-type 'gnu/linux)
     (setq org-agenda-files '(
-"~/Dropbox/org/my/project.org" 
-"~/Dropbox/org/my/schedule.org"
+"~/Dropbox/org/priv-project.org" 
+"~/Dropbox/org/priv-schedule.org"
 )))
 (if (eq system-type 'windows-nt)
     (setq org-agenda-files '(
@@ -17,14 +18,13 @@
 "C:/Documents and Settings/moogoo/My Documents/My Dropbox/org/my/schedule.org"
 )))
 
-
+; http://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.php
 (setq org-agenda-custom-commands 
-      '(("c" "Desk Work" tags-todo "computer" ;; (1) (2) (3) (4)
-         ((org-agenda-files '("c:/schedule.org")) ;; (5)
-          (org-agenda-sorting-strategy '(priority-up effort-down))) ;; (5) cont.
-         ("~/computer.html")) ;; (6)
-        ;; ...other commands here
-        ))
+      '(("c" "Desk Work" tags-todo "computer" 
+         ((org-agenda-files '("~/Dropbox/org/priv-schedule.org")) 
+          (org-agenda-sorting-strategy '(priority-up effort-down))) 
+         ))
+) ; TODO
 
 ;; org-remember
 (org-remember-insinuate)
@@ -38,10 +38,11 @@
         ("Marathon" ?m "* %t %^{公里}km, %^{時間}m\n  %i%?\n" "~/orgs/my/marathon.org" "Marathon")))
 ;
 
- ;    (setq org-remember-templates
-  ;         '(("k" ?t "* 苦  %? %U %i\n\n  %a" "~/note.org" "無明")
-   ;     ("Journal" ?j "* %U %?\n\n  %i\n  %a" "~/org/JOURNAL.org")
-    ;    ("Idea" ?i "* %^{Title}\n  %i\n  %a" "~/org/JOURNAL.org" "New Ideas")))
+;; old remember templates
+;    (setq org-remember-templates
+ ;         '(("k" ?t "* 苦  %? %U %i\n\n  %a" "~/note.org" "無明")
+  ;     ("Journal" ?j "* %U %?\n\n  %i\n  %a" "~/org/JOURNAL.org")
+   ;    ("Idea" ?i "* %^{Title}\n  %i\n  %a" "~/org/JOURNAL.org" "New Ideas")))
 
 ;; org-publish
 (require 'org-publish) 

@@ -1,5 +1,7 @@
 ; key-binding
 (global-set-key "\C-l" 'goto-line)            ; go to line num
+(global-set-key "\C-f" 'scroll-up) 
+(global-set-key "\C-b" 'scroll-down)  
 (global-set-key [f5] 'compile)                ; make
 ;(global-set-key [f10] 'kill-buffer)
 (global-set-key [f11] 'org-agenda)
@@ -26,7 +28,6 @@
    "\C-a//")
 (fset 'delblank
    "\260\C-k")
-
 
 ;; like vim's yy, p
 (defadvice kill-ring-save (before slick-copy activate compile)
