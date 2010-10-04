@@ -2,6 +2,7 @@
 (global-set-key "\C-l" 'goto-line)            ; go to line num
 (global-set-key "\C-f" 'scroll-up) 
 (global-set-key "\C-b" 'scroll-down)  
+(global-set-key "\C-w" 'kill-buffer)
 (global-set-key [f5] 'compile)                ; make
 ;(global-set-key [f10] 'kill-buffer)
 (global-set-key [f11] 'org-agenda)

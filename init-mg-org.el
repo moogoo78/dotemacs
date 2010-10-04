@@ -1,6 +1,6 @@
 ; org-mode
 (setq org-todo-keywords '("TODO" "STARTED" "WAITING" "CANCELLED" "DONE"))
-(setq org-agenda-include-all-todo t)
+;(setq org-agenda-include-all-todo t)
 (setq org-agenda-include-diary t)
 ;(require 'org-babel-init)  
 
@@ -80,3 +80,6 @@
 	      ("orgpub" :components ("org-notes" "org-static"))
         )
 )
+
+; 任务计时
+; http://space.uibe.edu.cn/u1/ryang/org.html

@@ -32,3 +32,10 @@
 
 ; TODO when have time
 ;http://www.emacswiki.org/emacs/BrowseKillRing
+
+
+;; ref
+; http://sites.google.com/site/steveyegge2/my-dot-emacs-file
+; http://xahlee.org/emacs/xah_emacs_init.el
+; http://hi.baidu.com/yangyingchao/blog/item/070d047a7a3d8fe62e73b3cf.html
+; http://sachachua.com/notebook/emacs/
