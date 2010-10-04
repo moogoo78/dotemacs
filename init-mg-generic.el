@@ -3,7 +3,7 @@
 (setq inhibit-startup-message   t)   ; no startup message
 (setq make-backup-files         nil) ; no backup files
 (setq auto-save-list-file-name  nil) ; no .saves files
-(setq auto-save-default         nil) ; no auto savingan
+(setq auto-save-default         nil) ; http://www.emacswiki.org/emacs/AutoSave
 (setq case-fold-search          t)  ; search ignore case
 (setq iswitchb-mode             1)   ; better than switch-to-buffer (C-x b)
 (setq kill-ring-max             200) ;
@@ -57,8 +57,11 @@
 (setq diary-file (concat my-path "diary"))
 (setq bookmark-default-file (concat my-path "bookmarks"))
 (setq bookmark-save-flag 1)
-(setq custom-file (concat my-path "custom.el"))
+(setq custom-file (concat my-path "custom.el")) ; better not to use custom
 
-; gdb gui
+; === Extended ===
+(put 'dired-find-alternate-file 'disabled nil) ; enable dired buffer replace, when press a 'a' comment
+; == gdb gui==
 (setq gdb-many-windows t)
 ;(setq gdb-show-main t)
+

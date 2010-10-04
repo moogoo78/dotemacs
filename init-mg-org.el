@@ -1,6 +1,6 @@
 ; org-mode
 (setq org-todo-keywords '("TODO" "STARTED" "WAITING" "CANCELLED" "DONE"))
-;(setq org-agenda-include-all-todo t)
+(setq org-agenda-include-all-todo t)
 (setq org-agenda-include-diary t)
 ;(require 'org-babel-init)  
 
