@@ -10,8 +10,9 @@
 
 ;(global-set-key [f1] 'dired-single-magic-buffer)
 (global-set-key [f1] 'delete-other-windows)
-(global-set-key [f2] 'split-window)
-(global-set-key [f3] 'split-window-horizontally)
+(global-set-key [f2] 'bookmark-bmenu-list)
+;(global-set-key [f2] 'split-window)
+;(global-set-key [f3] 'split-window-horizontally)
 ;(global-set-key [f4] 'kill-buffer)
 (global-set-key [f6] 'switch-to-buffer)
 (global-set-key [f8] 'org-export-as-html)
