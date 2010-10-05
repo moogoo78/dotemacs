@@ -34,7 +34,7 @@
 (setq scroll-margin 3) 
 (setq scroll-conservatively 10000)  ; margin 3 line when up or down
 ; == cursor ==
-(blink-cursor-mode               nil)   ; disable cursor blink
+(blink-cursor-mode               -1)   ; disable cursor blink
 (setq default-cursor-type 'hbar) ; make cursor underline bar
 ; == highlight ==
 (setq search-highlight           t)  ; highlight search
