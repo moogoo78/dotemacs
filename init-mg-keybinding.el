@@ -18,7 +18,7 @@
 (global-set-key [f8] 'org-export-as-html)
 ;(global-set-key '[(control c) (d)] 'delblank)
 (global-set-key (kbd "C-0") 'kill-buffer) 
-(global-set-key (kbd "C-3") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
+(global-set-key (kbd "M-3") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
 (global-set-key (kbd "C-2") 'yy) ; copy one line and paste
 
 ;; macro
