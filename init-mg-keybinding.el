@@ -1,16 +1,4 @@
 ; key-binding
-<<<<<<< HEAD
-=======
-(global-set-key "\C-l" 'goto-line)            ; go to line num
-(global-set-key "\C-f" 'scroll-up) 
-(global-set-key "\C-b" 'scroll-down)  
-(global-set-key "\C-w" 'kill-buffer-and-delete-window)
-(global-set-key [f5] 'compile)                ; make
-;(global-set-key [f10] 'kill-buffer)
-(global-set-key [f11] 'org-agenda)
-(global-set-key [f12] 'calendar)
->>>>>>> 158df86be5bb7e96411e239ecc823f1deb89789f
-
 ;(global-set-key [f1] 'dired-single-magic-buffer)
 (global-set-key [f1] 'delete-other-windows)
 (global-set-key [f2] 'bookmark-bmenu-list)
@@ -32,6 +20,7 @@
 (global-set-key (kbd "C-S-t") 'end-of-buffer) ; bottom of the file
 ;(global-set-key (kbd "C-f") 'isearch-forward) ; change C-f to search
 (global-set-key (kbd "M-3") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
+(global-set-key "\C-w" 'kill-buffer-and-delete-window)
 (global-set-key (kbd "C-2") 'yy) ; copy one line and paste
 
 ;; macro
