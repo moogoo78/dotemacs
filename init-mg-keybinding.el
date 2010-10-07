@@ -1,4 +1,15 @@
 ; key-binding
+<<<<<<< HEAD
+=======
+(global-set-key "\C-l" 'goto-line)            ; go to line num
+(global-set-key "\C-f" 'scroll-up) 
+(global-set-key "\C-b" 'scroll-down)  
+(global-set-key "\C-w" 'kill-buffer-and-delete-window)
+(global-set-key [f5] 'compile)                ; make
+;(global-set-key [f10] 'kill-buffer)
+(global-set-key [f11] 'org-agenda)
+(global-set-key [f12] 'calendar)
+>>>>>>> 158df86be5bb7e96411e239ecc823f1deb89789f
 
 ;(global-set-key [f1] 'dired-single-magic-buffer)
 (global-set-key [f1] 'delete-other-windows)
@@ -32,6 +43,11 @@
    "\C-a//")
 (fset 'delblank
    "\260\C-k")
+
+(defun kill-buffer-and-delete-window nil
+  (interactive)
+  (kill-buffer)
+  (delete-window))
 
 ;; like vim's yy, p
 (defadvice kill-ring-save (before slick-copy activate compile)
