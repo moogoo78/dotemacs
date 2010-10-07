@@ -1,23 +1,25 @@
 ; key-binding
-(global-set-key "\C-l" 'goto-line)            ; go to line num
-(global-set-key "\C-f" 'scroll-up) 
-(global-set-key "\C-b" 'scroll-down)  
-(global-set-key "\C-w" 'kill-buffer)
-(global-set-key [f5] 'compile)                ; make
-;(global-set-key [f10] 'kill-buffer)
-(global-set-key [f11] 'org-agenda)
-(global-set-key [f12] 'calendar)
 
 ;(global-set-key [f1] 'dired-single-magic-buffer)
 (global-set-key [f1] 'delete-other-windows)
 (global-set-key [f2] 'bookmark-bmenu-list)
 ;(global-set-key [f2] 'split-window)
 ;(global-set-key [f3] 'split-window-horizontally)
-;(global-set-key [f4] 'kill-buffer)
-(global-set-key [f6] 'switch-to-buffer)
-(global-set-key [f8] 'org-export-as-html)
+(global-set-key [f4] 'org-pub-ics)
+(global-set-key [f5] 'compile)                ; make
+;(global-set-key [f6] 'switch-to-buffer)
+;(global-set-key [f8] 'org-export-as-html)
+(global-set-key [f11] 'org-agenda)
+(global-set-key [f12] 'calendar)
+
 ;(global-set-key '[(control c) (d)] 'delblank)
-(global-set-key (kbd "C-0") 'kill-buffer) 
+(global-set-key (kbd "C-l") 'goto-line)            ; go to line num
+(global-set-key (kbd "C-f") 'scroll-up) 
+(global-set-key (kbd "C-b") 'scroll-down)  
+(global-set-key (kbd "C-w") 'kill-buffer)
+(global-set-key (kbd "C-t") 'beginning-of-buffer) ; top of the file
+(global-set-key (kbd "C-S-t") 'end-of-buffer) ; bottom of the file
+;(global-set-key (kbd "C-f") 'isearch-forward) ; change C-f to search
 (global-set-key (kbd "M-3") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
 (global-set-key (kbd "C-2") 'yy) ; copy one line and paste
 
@@ -46,3 +48,8 @@
      (list (line-beginning-position)
            (line-beginning-position 2)))))
 ;; via: http://www.emacswiki.org/emacs/SlickCopy
+
+(defun org-pub-ics ()
+  (interactive)
+  (org-export-icalendar-this-file)
+  (call-process "~/mgshell/gcal.sh" nil nil nil))

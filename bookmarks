@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("proj"
+(("key"
+ (filename . "~/.emacs.d/init-mg-keybinding.el")
+ (front-context-string . "; key-binding\n(g")
+ (rear-context-string)
+ (position . 1))
+("proj"
  (filename . "~/Dropbox/org/priv-project.org")
  (front-context-string . "* 接案note\n** 報價參考")
  (rear-context-string)

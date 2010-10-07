@@ -1,7 +1,7 @@
 ;;------------------------ CEDET & ECB -------------------------
 ;; Load CEDET.
 ;; See cedet/common/cedet.info for configuration details.
-(load-file (concat my-path-plugin "cedet-1.0pre6/common/cedet.el"))
+(load-file "~/.emacs.d/tmp/cedet-1.0pre6/common/cedet.el")
 
 
 ;; Enable EDE (Project Management) features
@@ -33,8 +33,8 @@
 ;; (global-srecode-minor-mode 1)
 
 
-(add-to-list 'load-path (concat my-path-plugin "ecb-2.32"))
+(add-to-list 'load-path "~/.emacs.d/tmp/ecb-2.32")
 ;(require 'ecb-autoloads)
 (require 'ecb)
-)
+
 ;;--------------------- end of CEDET & ECB -------------------------
