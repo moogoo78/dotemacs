@@ -6,17 +6,11 @@
 
 ;(setq org-directory mg-org-file)
 ;(set org-agenda files (file-expand-wildcards "~/org/*.org"))
-; TODO, need a better way
-(if (eq system-type 'gnu/linux)
-    (setq org-agenda-files '(
-"~/Dropbox/org/priv-project.org" 
-"~/Dropbox/org/priv-schedule.org"
-)))
-(if (eq system-type 'windows-nt)
-    (setq org-agenda-files '(
-"C:/Documents and Settings/moogoo/My Documents/My Dropbox/org/priv-project.org" 
-"C:/Documents and Settings/moogoo/My Documents/My Dropbox/org/priv-schedule.org"
-)))
+; windows and linux's Dropbox folder must be same
+(setq org-agenda-files '(
+    "~/Dropbox/org/priv-project.org" 
+    "~/Dropbox/org/priv-schedule.org"
+    ))
 
 ; http://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.php
 (setq org-agenda-custom-commands 
