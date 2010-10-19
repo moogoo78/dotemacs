@@ -14,8 +14,8 @@
 )))
 (if (eq system-type 'windows-nt)
     (setq org-agenda-files '(
-"C:/Documents and Settings/moogoo/My Documents/My Dropbox/org/my/project.org" 
-"C:/Documents and Settings/moogoo/My Documents/My Dropbox/org/my/schedule.org"
+"C:/Documents and Settings/moogoo/My Documents/My Dropbox/org/priv-project.org" 
+"C:/Documents and Settings/moogoo/My Documents/My Dropbox/org/priv-schedule.org"
 )))
 
 ; http://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.php
