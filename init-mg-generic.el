@@ -45,7 +45,6 @@
 (setq standard-indent   2  ; set indent size
       default-tab-width 2) ;
 (setq-default indent-tabs-mode nil) ;; indent to space
-;(setq-default indent-tabs-mode nil)
 ;(setq tab-stop-list ())
 ; == fonts ==
 (if (eq system-type 'gnu/linux)
@@ -64,4 +63,3 @@
 ; == gdb gui==
 (setq gdb-many-windows t)
 ;(setq gdb-show-main t)
-

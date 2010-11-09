@@ -14,3 +14,9 @@
 ; start org-agenda-list while startup
 (add-hook 'after-init-hook 'org-agenda-list)
 
+
+(defun my-as-hook ()
+  (setq tab-width 4)
+  (setq-default indent-tabs-mode 1)
+)
+(add-hook 'actionscript-mode-hook 'my-as-hook)
