@@ -13,13 +13,13 @@
 
 ;(global-set-key '[(control c) (d)] 'delblank)
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
-(global-set-key (kbd "C-s") 'scroll-up) 
-(global-set-key (kbd "C-r") 'scroll-down)  
+;(global-set-key (kbd "C-s") 'scroll-up) 
+;(global-set-key (kbd "C-r") 'scroll-down)  
 (global-set-key (kbd "C-w") 'kill-buffer)
 ;(global-set-key (kbd "C-t") 'beginning-of-buffer) ; top of the file
 ;(global-set-key (kbd "C-S-t") 'end-of-buffer) ; bottom of the file
-(global-set-key (kbd "C-f") 'isearch-forward) ; change C-f to search
-(global-set-key (kbd "C-b") 'isearch-backward) ; change C-f to search
+;(global-set-key (kbd "C-f") 'isearch-forward) ; change C-f to search
+;(global-set-key (kbd "C-b") 'isearch-backward) ; change C-f to search
 (global-set-key (kbd "M-3") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
 (global-set-key "\C-w" 'kill-buffer-and-delete-window)
 (global-set-key (kbd "C-2") 'yy) ; copy one line and paste
