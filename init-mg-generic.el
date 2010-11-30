@@ -42,8 +42,8 @@
 (setq mouse-sel-retain-highlight t)  ; Keep mouse high-lightening ??
 (global-hl-line-mode             1)  ; highlight current line
 ; == indent ==
-(setq standard-indent   2  ; set indent size
-      default-tab-width 2) ;
+(setq standard-indent   4)  ; set indent size
+(setq default-tab-width 4) ;
 (setq-default indent-tabs-mode nil) ;; indent to space
 ;(setq-default indent-tabs-mode nil)
 ;(setq tab-stop-list ())
