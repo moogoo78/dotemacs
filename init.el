@@ -14,3 +14,5 @@
 ; start org-agenda-list while startup
 ;(add-hook 'after-init-hook 'org-agenda-list)
 (setq tramp-default-method "ssh")
+
+safdsfs
