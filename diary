@@ -11,6 +11,7 @@
 ;; 同事
 %%(diary-anniversary 1979 07 07) junefu%d生日?
 %%(diary-anniversary 1981 07 30) 陶子(陶世軒)%d生日?
+%%(diary-anniversary 1976 11 15) 蔡嘉宏%d生日
 ;; 山友
 %%(diary-anniversary 2010 09 21) 友聖?%d生日
 %%(diary-anniversary 1961 09 22) 阿來(林進來)%d生日
