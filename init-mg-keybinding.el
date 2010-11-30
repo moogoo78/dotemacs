@@ -13,8 +13,8 @@
 
 ;(global-set-key '[(control c) (d)] 'delblank)
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
-(global-set-key (kbd "C-s") 'scroll-up) 
-(global-set-key (kbd "C-d") 'scroll-down)  
+;(global-set-key (kbd "C-s") 'scroll-up) 
+;(global-set-key (kbd "C-d") 'scroll-down)  
 (global-set-key (kbd "C-w") 'kill-buffer)
 (global-set-key (kbd "C-t") 'beginning-of-buffer) ; top of the file
 (global-set-key (kbd "C-S-t") 'end-of-buffer) ; bottom of the file
