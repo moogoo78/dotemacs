@@ -4,6 +4,7 @@
 (global-set-key [f2] 'bookmark-bmenu-list)
 ;(global-set-key [f2] 'split-window)
 ;(global-set-key [f3] 'split-window-horizontally)
+(global-set-key [f3] 'isearch-forward)
 (global-set-key [f4] 'org-pub-ics)
 (global-set-key [f5] 'compile)                ; make
 ;(global-set-key [f6] 'switch-to-buffer)
@@ -19,7 +20,7 @@
 (global-set-key (kbd "C-w") 'kill-buffer)
 ;(global-set-key (kbd "C-t") 'beginning-of-buffer) ; top of the file
 ;(global-set-key (kbd "C-S-t") 'end-of-buffer) ; bottom of the file
-;(global-set-key (kbd "C-f") 'isearch-forward) ; change C-f to search
+(global-set-key (kbd "C-f") 'isearch-forward) ; change C-f to search
 ;(global-set-key (kbd "C-b") 'isearch-backward) ; change C-f to search
 (global-set-key (kbd "M-3") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
 (global-set-key "\C-w" 'kill-buffer-and-delete-window)
