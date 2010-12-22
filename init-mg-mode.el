@@ -3,6 +3,13 @@
 (autoload 'php-mode "php-mode" "Major mode for editing php code." t)
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 
+; indent tab -> offset 4
+; http://stackoverflow.com/questions/168621/php-mode-for-emacs
+(add-hook 'php-mode-hook 
+		  (function (lambda ()
+					  (setq c-default-style "bsd" 
+							c-basic-offset 4))))
+
 ;; graphviz
 (autoload 'graphviz-dot-mode "graphviz-dot-mode" "Major mode for editing graphviz dot." t)
 (add-to-list 'auto-mode-alist '("\\.dot\\'" . graphviz-dot-mode))
