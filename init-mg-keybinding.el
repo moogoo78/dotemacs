@@ -9,7 +9,7 @@
 (global-set-key [f4] 'org-pub-ics)
 (global-set-key [f5] 'compile)                ; make
 ;(global-set-key [f6] 'switch-to-buffer)
-;(global-set-key [f8] 'org-export-as-html)
+(global-set-key [f8] 'mg-org-pub)
 (global-set-key [f11] 'org-agenda)
 (global-set-key [f12] 'calendar)
 
@@ -19,12 +19,12 @@
 (global-set-key (kbd "C-t") 'scroll-down)  
 (global-set-key (kbd "C-r") 'scroll-up) ; r ls closer to Ctrl, than t
 (global-set-key (kbd "C-w") 'kill-buffer)
+;(global-set-key "\C-w" 'kill-buffer-and-delete-window)
 ;(global-set-key (kbd "C-t") 'beginning-of-buffer) ; top of the file
 ;(global-set-key (kbd "C-S-t") 'end-of-buffer) ; bottom of the file
 (global-set-key (kbd "C-f") 'isearch-forward) ; change C-f to search
 ;(global-set-key (kbd "C-b") 'isearch-backward) ; change C-f to search
 (global-set-key (kbd "M-3") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
-(global-set-key "\C-w" 'kill-buffer-and-delete-window)
 (global-set-key (kbd "C-2") 'yy) ; copy one line and paste
 
 ;; macro
@@ -62,3 +62,8 @@
   (interactive)
   (org-export-icalendar-this-file)
   (call-process "~/mgshell/gcal.sh" nil nil nil))
+
+(defun mg-org-pub nil
+	"publish "
+	(interactive)
+	(org-publish-all))

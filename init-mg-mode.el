@@ -17,7 +17,10 @@
 ;; action script
 (autoload 'actionscript-mode "actionscript-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.as\\'" . actionscript-mode))
-
+(add-hook 'actionscript-mode-hook 
+		  (function (lambda ()
+					  (setq c-default-style "bsd" 
+							c-basic-offset 4))))
 ;; w3m
 ;; add this for emacs 23, http://www.emacswiki.org/emacs/emacs-w3m#toc13
 ;(require 'w3m-e21)
