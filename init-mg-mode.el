@@ -10,6 +10,41 @@
 					  (setq c-default-style "bsd" 
 							c-basic-offset 4))))
 
+;; smarty-mode
+(autoload 'smarty-mode "smarty-mode" "Smarty Mode" t)
+(setq auto-mode-alist
+      (append
+       '(("\\.tpl$" . smarty-mode))
+	 auto-mode-alist))
+
+
+;; BEGIN >>> for drupal
+; via: http://drupal.org/node/59868
+(defun drupal-mode ()
+  "Drupal php-mode."
+  (interactive)
+  (php-mode)
+  (message "Drupal mode activated.")
+  (set 'tab-width 2)
+  (set 'c-basic-offset 2)
+  (set 'indent-tabs-mode nil)
+  (c-set-offset 'case-label '+)
+  (c-set-offset 'arglist-intro '+) ; for FAPI arrays and DBTNG
+  (c-set-offset 'arglist-cont-nonempty 'c-lineup-math) ; for DBTNG fields and values
+  ; More Drupal-specific customizations here
+)
+
+(defun setup-php-drupal ()
+  ; Drupal
+  (add-to-list 'auto-mode-alist '("\\.\\(module\\|test\\|install\\|theme\\)$" . drupal-mode))
+  (add-to-list 'auto-mode-alist '("/drupal.*\\.\\(php\\|inc\\)$" . drupal-mode))
+  (add-to-list 'auto-mode-alist '("\\.info" . conf-windows-mode))
+
+)
+
+(setup-php-drupal)
+;; END <<<
+
 ;; graphviz
 (autoload 'graphviz-dot-mode "graphviz-dot-mode" "Major mode for editing graphviz dot." t)
 (add-to-list 'auto-mode-alist '("\\.dot\\'" . graphviz-dot-mode))

@@ -40,3 +40,17 @@
 ; http://hi.baidu.com/yangyingchao/blog/item/070d047a7a3d8fe62e73b3cf.html
 ; http://sachachua.com/notebook/emacs/
 ; http://juanreyero.com/article/emacs/emacs.html
+
+;; useful!!
+(defun php-lookup ()
+  "Look up current word in PHP ref site in a browser.\n
+  If a region is active (a phrase), lookup that phrase."
+  (interactive)
+  (let (myword myurl)
+    (setq myword
+          (if (and transient-mark-mode mark-active)
+              (buffer-substring-no-properties (region-beginning) (region-end))
+            (thing-at-point 'symbol)))
+    (setq myurl
+          (concat "http://us.php.net/" myword))
+    (browse-url myurl)))

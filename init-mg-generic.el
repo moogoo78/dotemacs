@@ -44,7 +44,7 @@
 ; == indent ==
 (setq standard-indent   4)  ; set indent size
 (setq default-tab-width 4) ;
-(setq-default indent-tabs-mode t) ;; indent to space
+;(setq-default indent-tabs-mode t) ;; indent to space
 ;(setq tab-stop-list ())
 ; == fonts ==
 (if (eq system-type 'gnu/linux)

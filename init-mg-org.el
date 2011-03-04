@@ -8,7 +8,7 @@
 ;(set org-agenda files (file-expand-wildcards "~/org/*.org"))
 ; windows and linux's Dropbox folder must be same
 (setq org-agenda-files '(
-    "~/Dropbox/org/priv-project.org" 
+    "~/Dropbox/org/project.org" 
     "~/Dropbox/org/priv-schedule.org"
     ))
 
