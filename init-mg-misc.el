@@ -30,6 +30,11 @@
 ;(setq show-paren-style 'parenthesis) ; 
 
 
+(defun gtd ()
+   (interactive)
+   (find-file "c:/homes/charles/gtd/gtd/mygtd.org")
+)
+
 ; TODO when have time
 ;http://www.emacswiki.org/emacs/BrowseKillRing
 
