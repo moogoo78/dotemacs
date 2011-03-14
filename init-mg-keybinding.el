@@ -6,7 +6,8 @@
 ;(global-set-key [f3] 'split-window-horizontally)
 (global-set-key [f3] 'isearch-repeat-forward)
 (global-set-key [(shift f3)] 'isearch-repeat-backward)
-(global-set-key [f4] 'org-pub-ics)
+;(global-set-key [f4] 'org-pub-ics)
+(global-set-key [f4] 'html-mode)
 (global-set-key [f5] 'compile)                ; make
 ;(global-set-key [f6] 'switch-to-buffer)
 (global-set-key [f8] 'mg-org-pub)
@@ -17,16 +18,19 @@
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
 (global-set-key (kbd "C-s") 'save-buffer) 
 (global-set-key (kbd "C-t") 'scroll-down)  
-(global-set-key (kbd "C-r") 'scroll-up) ; r ls closer to Ctrl, than t
+(global-set-key (kbd "C-r") 'scroll-up) 
 (global-set-key (kbd "C-w") 'kill-buffer)
+(global-set-key (kbd "C-f") 'isearch-forward)
 ;(global-set-key "\C-w" 'kill-buffer-and-delete-window)
 ;(global-set-key (kbd "C-t") 'beginning-of-buffer) ; top of the file
 ;(global-set-key (kbd "C-S-t") 'end-of-buffer) ; bottom of the file
-(global-set-key (kbd "C-f") 'isearch-forward) ; change C-f to search
+;(global-set-key (kbd "C-f") 'isearch-forward) ; change C-f to search
 ;(global-set-key (kbd "C-b") 'isearch-backward) ; change C-f to search
-(global-set-key (kbd "M-3") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
-(global-set-key (kbd "C-2") 'yy) ; copy one line and paste
 
+(global-set-key (kbd "M-1") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
+(global-set-key (kbd "C-2") 'yy) ; copy one line and paste
+(global-set-key (kbd "M-3") 'my-isearch-word-at-point); like vim's *
+(global-set-key (kbd "M-4") 'select-inside-quotes) ;
 ;; macro
 (fset 'yy
    [?\C-a ?\C-@ ?\C-e ?\M-w return ?\C-y ?\C-a])
@@ -50,13 +54,55 @@
      (message "Copied line")
          (list (line-beginning-position)
                (line-beginning-position 2)))))
+
+;; via: http://www.emacswiki.org/emacs/SlickCopy
 (defadvice kill-region (before slick-cut activate compile)
   "When called interactively with no active region, kill a single line instead."
   (interactive
    (if mark-active (list (region-beginning) (region-end))
      (list (line-beginning-position)
            (line-beginning-position 2)))))
-;; via: http://www.emacswiki.org/emacs/SlickCopy
+
+
+; via http://www.emacswiki.org/emacs/SearchAtPoint
+(defun my-isearch-word-at-point () 
+  (interactive) 
+  (call-interactively 'isearch-forward-regexp)) 
+(defun my-isearch-yank-word-hook () 
+  (when (equal this-command 'my-isearch-word-at-point) 
+    (let ((string (concat "\\<" 
+                          (buffer-substring-no-properties 
+                           (progn (skip-syntax-backward "w_") (point)) 
+                           (progn (skip-syntax-forward "w_") (point))) 
+                          "\\>"))) 
+      (if (and isearch-case-fold-search 
+               (eq 'not-yanks search-upper-case)) 
+          (setq string (downcase string))) 
+      (setq isearch-string string 
+            isearch-message 
+            (concat isearch-message 
+                    (mapconcat 'isearch-text-char-description 
+                               string "")) 
+            isearch-yank-flag t) 
+      (isearch-search-and-update)))) 
+(add-hook 'isearch-mode-hook 'my-isearch-yank-word-hook) 
+
+; via http://xahlee.org/emacs/elisp_idioms.html
+(defun select-inside-quotes ()
+  "Select text between double straight quotes
+on each side of cursor."
+  (interactive)
+  (let (p1 p2)
+    (skip-chars-backward "^\"")
+    (setq p1 (point))
+    (skip-chars-forward "^\"")
+    (setq p2 (point))
+
+    (goto-char p1)
+    (push-mark p2)
+    (setq mark-active t)
+  )
+)
 
 (defun org-pub-ics ()
   (interactive)
