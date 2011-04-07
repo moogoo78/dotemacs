@@ -113,3 +113,12 @@ on each side of cursor."
 	"publish "
 	(interactive)
 	(org-publish-all))
+
+(defun set-default-directory()
+  "select my default directory"
+;  (read-minibuffer prompt initial))
+  (interactive)
+  (read-minibuffer
+   "My default directory: " (format "%s" "~/")))
+
+;  (setq default-directory mydir))

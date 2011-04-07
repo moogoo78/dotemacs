@@ -13,17 +13,3 @@
 ; start org-agenda-list while startup
 ;(add-hook 'after-init-hook 'org-agenda-list)
 (setq tramp-default-method "ssh")
-
-;; test
-(defun set-default-directory()
-  "select default directory by "
-  (interactive)
-  (let ((opt (read-from-minibuffer "dir:1)~ 2)org 3)ohh "))
-		(dir "~/"))
-	(if (equal opt "2")
-		(setq dir "~/Dropbox/org/"))
-	(if (equal opt "3")
-		(setq dir "~/public_html/dev/skin/ohhmystyle/customer/"))
-	(setq default-directory dir)))
-
-(set-default-directory)
