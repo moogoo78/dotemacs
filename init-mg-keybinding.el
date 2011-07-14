@@ -17,8 +17,8 @@
 ;(global-set-key '[(control c) (d)] 'delblank)
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
 (global-set-key (kbd "C-s") 'save-buffer) 
-(global-set-key (kbd "C-t") 'scroll-down)  
-(global-set-key (kbd "C-r") 'scroll-up) 
+;(global-set-key (kbd "C-[") 'scroll-down)  
+;(global-set-key (kbd "C-]") 'scroll-up) 
 (global-set-key (kbd "C-w") 'kill-buffer)
 (global-set-key (kbd "C-f") 'isearch-forward)
 ;(global-set-key "\C-w" 'kill-buffer-and-delete-window)

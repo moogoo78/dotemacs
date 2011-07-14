@@ -2,7 +2,17 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("note"
+(("org-remember-last-stored"
+ (filename . "~/orgs/my/quote.org")
+ (front-context-string . "** Tue May 31 16")
+ (rear-context-string)
+ (position . 9))
+("a"
+ (filename . "~/public_html/dev/include/search.php")
+ (front-context-string . "$orderbys = arra")
+ (rear-context-string . "$orderbys here\n	")
+ (position . 36153))
+("note"
  (filename . "~/Dropbox/org/priv-note.org")
  (front-context-string . "* tmp\n  podcast?")
  (rear-context-string)
