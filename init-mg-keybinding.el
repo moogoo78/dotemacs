@@ -26,6 +26,8 @@
 ;(global-set-key (kbd "C-S-t") 'end-of-buffer) ; bottom of the file
 ;(global-set-key (kbd "C-f") 'isearch-forward) ; change C-f to search
 ;(global-set-key (kbd "C-b") 'isearch-backward) ; change C-f to search
+(global-set-key (kbd "<C-next>") 'next-buffer)
+(global-set-key (kbd "<C-prior>") 'previous-buffer)
 
 (global-set-key (kbd "M-1") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
 (global-set-key (kbd "C-2") 'yy) ; copy one line and paste
