@@ -63,3 +63,7 @@
 ; == gdb gui==
 (setq gdb-many-windows t)
 ;(setq gdb-show-main t)
+
+; default browser
+(setq browse-url-browser-function (quote browse-url-generic))
+(setq browse-url-generic-program "opera")
