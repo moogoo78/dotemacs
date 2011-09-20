@@ -29,6 +29,23 @@
 (global-set-key (kbd "<C-next>") 'next-buffer)
 (global-set-key (kbd "<C-prior>") 'previous-buffer)
 
+
+(define-key key-translation-map [?\C-\[] [(control left_bracket)])
+(define-key key-translation-map [escape] [?\e])
+(define-key function-key-map [escape] nil)
+(define-key function-key-map [?\e] nil)
+(when (boundp 'local-function-key-map)
+  ;;(define-key local-function-key-map [escape] nil)
+  (defun remove-escape-from-local-function-key-map ()
+    (define-key local-function-key-map [?\e] nil)
+    (define-key local-function-key-map [escape] nil))
+  (add-hook 'term-setup-hook 'remove-escape-from-local-function-key-map))
+
+;(global-set-key (kbd "C-[") 'previous-line) ; error ;http://superuser.com/questions/173851/linux-remap-ctrl-key
+(global-set-key (kbd "C-'") 'forward-char)
+(global-set-key (kbd "C-/") 'next-line)
+(global-set-key (kbd "C-;") 'backward-char)
+
 (global-set-key (kbd "M-1") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
 (global-set-key (kbd "C-2") 'yy) ; copy one line and paste
 (global-set-key (kbd "M-3") 'my-isearch-word-at-point); like vim's *
