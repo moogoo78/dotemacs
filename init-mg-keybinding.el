@@ -1,7 +1,8 @@
 ; key-binding
 ;(global-set-key [f1] 'dired-single-magic-buffer)
 (global-set-key [f1] 'delete-other-windows)
-(global-set-key [f2] 'bookmark-bmenu-list)
+;(global-set-key [f2] 'bookmark-bmenu-list)
+(global-set-key [f2] 'isearch-forward)
 ;(global-set-key [f2] 'split-window)
 ;(global-set-key [f3] 'split-window-horizontally)
 (global-set-key [f3] 'isearch-repeat-forward)
@@ -16,7 +17,7 @@
 
 ;(global-set-key '[(control c) (d)] 'delblank)
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
-;(global-set-key (kbd "C-s") 'save-buffer) 
+(global-set-key (kbd "C-s") 'save-buffer) 
 ;(global-set-key (kbd "C-[") 'scroll-down)  
 ;(global-set-key (kbd "C-]") 'scroll-up) 
 (global-set-key (kbd "C-w") 'kill-buffer)
