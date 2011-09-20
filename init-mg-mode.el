@@ -1,4 +1,10 @@
 
+;; deft
+(require 'deft)
+(setq deft-extension "rst")
+(setq deft-directory "~/Dropbox/pub")
+(setq deft-text-mode 'rst-mode)
+
 ;; php
 (autoload 'php-mode "php-mode" "Major mode for editing php code." t)
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
@@ -11,11 +17,11 @@
 							c-basic-offset 4))))
 
 ;; smarty-mode
-(autoload 'smarty-mode "smarty-mode" "Smarty Mode" t)
-(setq auto-mode-alist
-      (append
-       '(("\\.tpl$" . smarty-mode))
-	 auto-mode-alist))
+;(autoload 'smarty-mode "smarty-mode" "Smarty Mode" t)
+;(setq auto-mode-alist
+;      (append
+;       '(("\\.tpl$" . smarty-mode))
+;	 auto-mode-alist))
 
 
 ;; BEGIN >>> for drupal
