@@ -5,8 +5,8 @@
 (global-set-key [f2] 'isearch-forward)
 ;(global-set-key [f2] 'split-window)
 ;(global-set-key [f3] 'split-window-horizontally)
-(global-set-key [f3] 'isearch-repeat-forward)
-(global-set-key [(shift f3)] 'isearch-repeat-backward)
+;(global-set-key [f3] 'isearch-repeat-forward)
+;(global-set-key [(shift f3)] 'isearch-repeat-backward)
 ;(global-set-key [f4] 'org-pub-ics)
 (global-set-key [f4] 'html-mode)
 (global-set-key [f5] 'compile)                ; make
@@ -17,9 +17,9 @@
 
 ;(global-set-key '[(control c) (d)] 'delblank)
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
-(global-set-key (kbd "C-s") 'save-buffer) 
-;(global-set-key (kbd "C-[") 'scroll-down)  
-;(global-set-key (kbd "C-]") 'scroll-up) 
+;(global-set-key (kbd "C-s") 'save-buffer) 
+;(global-set-key (kbd "C-=") 'scroll-down)  
+;(global-set-key (kbd "C--") 'scroll-up) 
 (global-set-key (kbd "C-w") 'kill-buffer)
 ;(global-set-key (kbd "C-f") 'isearch-forward)
 ;(global-set-key "\C-w" 'kill-buffer-and-delete-window)

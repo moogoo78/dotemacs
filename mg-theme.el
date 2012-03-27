@@ -28,6 +28,7 @@
 (set-face-background 'highlight "red4")
 ;; select region
 (set-face-background 'region "MediumPurple4")
+
 ;; modeline
 (set-face-foreground 'modeline "light gray")
 (set-face-background 'modeline "darkorange")
