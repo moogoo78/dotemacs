@@ -12,7 +12,7 @@
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 (setq default-major-mode 'text-mode)     ; default text-mode
 ;(ido-mode              t) ; enable ido-mode
-(cua-mode              t) ; 
+;(cua-mode              t) ; 
 (windmove-default-keybindings)      ; shift + 4way key jump window
 ;(server-start)            ; start emacs server daemon
 ; == coding ==
@@ -66,4 +66,7 @@
 
 ; default browser
 (setq browse-url-browser-function (quote browse-url-generic))
-(setq browse-url-generic-program "opera")
+(setq browse-url-generic-program "chrome")
+
+; ssh tramp
+(setq tramp-default-method "ssh")

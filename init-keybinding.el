@@ -2,13 +2,13 @@
 ;(global-set-key [f1] 'dired-single-magic-buffer)
 (global-set-key [f1] 'delete-other-windows)
 ;(global-set-key [f2] 'bookmark-bmenu-list)
-(global-set-key [f2] 'isearch-forward)
+;(global-set-key [f2] 'isearch-forward)
 ;(global-set-key [f2] 'split-window)
 ;(global-set-key [f3] 'split-window-horizontally)
 ;(global-set-key [f3] 'isearch-repeat-forward)
 ;(global-set-key [(shift f3)] 'isearch-repeat-backward)
 ;(global-set-key [f4] 'org-pub-ics)
-(global-set-key [f4] 'html-mode)
+;(global-set-key [f4] 'html-mode)
 (global-set-key [f5] 'compile)                ; make
 ;(global-set-key [f6] 'switch-to-buffer)
 (global-set-key [f8] 'deft)
@@ -20,7 +20,7 @@
 ;(global-set-key (kbd "C-s") 'save-buffer) 
 ;(global-set-key (kbd "C-=") 'scroll-down)  
 ;(global-set-key (kbd "C--") 'scroll-up) 
-(global-set-key (kbd "C-w") 'kill-buffer)
+;(global-set-key (kbd "C-w") 'kill-buffer)
 ;(global-set-key (kbd "C-f") 'isearch-forward)
 ;(global-set-key "\C-w" 'kill-buffer-and-delete-window)
 ;(global-set-key (kbd "C-t") 'beginning-of-buffer) ; top of the file
@@ -67,13 +67,13 @@
   (delete-window))
 
 ;; like vim's yy, p
-(defadvice kill-ring-save (before slick-copy activate compile)
-  "When called interactively with no active region, copy a single line instead."
-  (interactive
-   (if mark-active (list (region-beginning) (region-end))
-     (message "Copied line")
-         (list (line-beginning-position)
-               (line-beginning-position 2)))))
+;(defadvice kill-ring-save (before slick-copy activate compile)
+;  "When called interactively with no active region, copy a single line instead."
+;  (interactive
+;   (if mark-active (list (region-beginning) (region-end))
+;     (message "Copied line")
+;         (list (line-beginning-position)
+;               (line-beginning-position 2)))))
 
 ;; via: http://www.emacswiki.org/emacs/SlickCopy
 (defadvice kill-region (before slick-cut activate compile)
@@ -124,10 +124,10 @@ on each side of cursor."
   )
 )
 
-(defun org-pub-ics ()
-  (interactive)
-  (org-export-icalendar-this-file)
-  (call-process "~/mgshell/gcal.sh" nil nil nil))
+;(defun org-pub-ics ()
+;  (interactive)
+;  (org-export-icalendar-this-file)
+;  (call-process "~/mgshell/gcal.sh" nil nil nil))
 
 (defun mg-org-pub nil
 	"publish "
