@@ -4,6 +4,21 @@
 ;(autoload 'js2-mode "js2" nil t)
 ;(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
+
+; via: https://github.com/kennethgunn/emacs-corona
+(defun corona ()
+  (interactive)
+  (shell-command "/Applications/CoronaSDK/Corona\\ Terminal &" "*corona*")
+  (set-buffer "*corona*")
+  (setq compilation-error-regexp-alist
+        (list '("^.*?error: \\(.*?\\):\\([0-9]+\\)" 1 2)))
+  (compilation-shell-minor-mode)
+  (setq comint-move-point-for-output t))
+
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+
 ;; deft
 (require 'deft)
 (setq deft-extension "rst")
