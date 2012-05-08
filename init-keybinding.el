@@ -1,4 +1,6 @@
 ; key-binding
+; key-binding
+; key-binding
 ;(global-set-key [f1] 'dired-single-magic-buffer)
 (global-set-key [f1] 'delete-other-windows)
 ;(global-set-key [f2] 'bookmark-bmenu-list)
@@ -17,15 +19,35 @@
 
 ;(global-set-key '[(control c) (d)] 'delblank)
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
-;(global-set-key (kbd "C-s") 'save-buffer) 
+(global-set-key (kbd "C-s") 'save-buffer) 
 ;(global-set-key (kbd "C-=") 'scroll-down)  
 ;(global-set-key (kbd "C--") 'scroll-up) 
-;(global-set-key (kbd "C-w") 'kill-buffer)
-;(global-set-key (kbd "C-f") 'isearch-forward)
+
+; inspired by ErgoEmacs
+; http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
+(global-set-key (kbd "C-w") 'kill-buffer)
+(global-set-key (kbd "C-f") 'isearch-forward)
+(global-set-key (kbd "C-F") 'isearch-forward)
+(global-set-key (kbd "C-o") 'find-file)
+;(global-set-key (kbd "C-a") 'mark-whole-buffer)
+;dvorak zxcv
+(global-set-key (kbd "C-;") 'undo) 
+(global-set-key (kbd "C-:") 'redo)
+(global-set-key (kbd "C-q") 'kill-region)
+(global-set-key (kbd "C-j") 'kill-ring-save) ;copy
+(global-set-key (kbd "C-k") 'yank)
+
+(global-set-key (kbd "C-y") 'kill-line)
+
+;(global-set-key (kbd "C-0") 'move-beginning-of-line)
+;(global-set-key (kbd "C-$") 'move-end-of-line)
+
+;(global-set-key (kbd "C-f") 'isearch-repeat-forward)
+;(global-set-key [(shift f3)] 'isearch-repeat-backward)
+
 ;(global-set-key "\C-w" 'kill-buffer-and-delete-window)
 ;(global-set-key (kbd "C-t") 'beginning-of-buffer) ; top of the file
 ;(global-set-key (kbd "C-S-t") 'end-of-buffer) ; bottom of the file
-;(global-set-key (kbd "C-f") 'isearch-forward) ; change C-f to search
 ;(global-set-key (kbd "C-b") 'isearch-backward) ; change C-f to search
 (global-set-key (kbd "<C-next>") 'next-buffer)
 (global-set-key (kbd "<C-prior>") 'previous-buffer)
@@ -43,21 +65,32 @@
   (add-hook 'term-setup-hook 'remove-escape-from-local-function-key-map))
 
 ;(global-set-key (kbd "C-[") 'previous-line) ; error ;http://superuser.com/questions/173851/linux-remap-ctrl-key
-(global-set-key (kbd "C-'") 'forward-char)
-(global-set-key (kbd "C-/") 'next-line)
-(global-set-key (kbd "C-;") 'backward-char)
+;(global-set-key (kbd "C-'") 'forward-char)
+;(global-set-key (kbd "C-/") 'next-line)/
+;(global-set-key (kbd "C-;") 'backward-char)
 
 (global-set-key (kbd "M-1") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
-(global-set-key (kbd "C-2") 'yy) ; copy one line and paste
+(global-set-key (kbd "C-2") 'yyp) ; copy one line and paste
 (global-set-key (kbd "M-3") 'my-isearch-word-at-point); like vim's *
 (global-set-key (kbd "M-4") 'select-inside-quotes) ;
+
+; TODO
+(add-hook 'isearch-mode-hook
+ (lambda ()
+ (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
+ (define-key isearch-mode-map (kbd "C-F") 'isearch-repeat-forward)
+))
+
 ;; macro
-(fset 'yy
-   [?\C-a ?\C-@ ?\C-e ?\M-w return ?\C-y ?\C-a])
-(fset 'yyc
-   [?\C-a ?\C-@ ?\C-e ?\M-w return ?\C-y up ?\C-a ?/ ?/])
-(fset 'cc
-   "\C-a//")
+(fset 'yyp
+   [?\C-a ?\C-@ ?\C-e ?\C-j return ?\C-k ?\C-a])
+
+;(fset 'yy
+;   [?\C-a ?\C-@ ?\C-e ?\M-w return ?\C-y ?\C-a])
+;(fset 'yy
+;   [?\C-a ?\C-@ ?\C-e ?\M-w return ?\C-y up ?\C-a ?/ ?/])
+;(fset 'cc
+;   "\C-a//")
 (fset 'delblank
    "\260\C-k")
 
@@ -67,13 +100,13 @@
   (delete-window))
 
 ;; like vim's yy, p
-;(defadvice kill-ring-save (before slick-copy activate compile)
+;(defadvice yyp (before slick-copy activate compile)
 ;  "When called interactively with no active region, copy a single line instead."
 ;  (interactive
 ;   (if mark-active (list (region-beginning) (region-end))
 ;     (message "Copied line")
-;         (list (line-beginning-position)
-;               (line-beginning-position 2)))))
+;     (list (line-beginning-position)
+;           (line-beginning-position 2)))))
 
 ;; via: http://www.emacswiki.org/emacs/SlickCopy
 (defadvice kill-region (before slick-cut activate compile)
