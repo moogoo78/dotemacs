@@ -1,6 +1,5 @@
 ; key-binding
-; key-binding
-; key-binding
+
 ;(global-set-key [f1] 'dired-single-magic-buffer)
 (global-set-key [f1] 'delete-other-windows)
 ;(global-set-key [f2] 'bookmark-bmenu-list)
@@ -37,7 +36,7 @@
 (global-set-key (kbd "C-j") 'kill-ring-save) ;copy
 (global-set-key (kbd "C-k") 'yank)
 
-(global-set-key (kbd "C-y") 'kill-line)
+(global-set-key (kbd "C-b") 'kill-line)
 
 ;(global-set-key (kbd "C-0") 'move-beginning-of-line)
 ;(global-set-key (kbd "C-$") 'move-end-of-line)
@@ -51,7 +50,6 @@
 ;(global-set-key (kbd "C-b") 'isearch-backward) ; change C-f to search
 (global-set-key (kbd "<C-next>") 'next-buffer)
 (global-set-key (kbd "<C-prior>") 'previous-buffer)
-
 
 (define-key key-translation-map [?\C-\[] [(control left_bracket)])
 (define-key key-translation-map [escape] [?\e])
@@ -71,6 +69,7 @@
 
 (global-set-key (kbd "M-1") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
 (global-set-key (kbd "C-2") 'yyp) ; copy one line and paste
+(global-set-key (kbd "C-y") 'yy) ; copy one line
 (global-set-key (kbd "M-3") 'my-isearch-word-at-point); like vim's *
 (global-set-key (kbd "M-4") 'select-inside-quotes) ;
 
@@ -83,12 +82,10 @@
 
 ;; macro
 (fset 'yyp
-   [?\C-a ?\C-@ ?\C-e ?\C-j return ?\C-k ?\C-a])
+      [?\C-a ?\C-@ ?\C-e ?\C-j return ?\C-k ?\C-a])
 
-;(fset 'yy
-;   [?\C-a ?\C-@ ?\C-e ?\M-w return ?\C-y ?\C-a])
-;(fset 'yy
-;   [?\C-a ?\C-@ ?\C-e ?\M-w return ?\C-y up ?\C-a ?/ ?/])
+(fset 'yy
+      [?\C-a ?\C-@ ?\C-e ?\C-j])
 ;(fset 'cc
 ;   "\C-a//")
 (fset 'delblank
@@ -99,8 +96,8 @@
   (kill-buffer)
   (delete-window))
 
-;; like vim's yy, p
-;(defadvice yyp (before slick-copy activate compile)
+;; like vim's yy
+;(defadvice yy (before slick-copy activate compile)
 ;  "When called interactively with no active region, copy a single line instead."
 ;  (interactive
 ;   (if mark-active (list (region-beginning) (region-end))
