@@ -38,6 +38,7 @@
 
 (global-set-key (kbd "C-b") 'kill-line)
 
+
 ;(global-set-key (kbd "C-0") 'move-beginning-of-line)
 ;(global-set-key (kbd "C-$") 'move-end-of-line)
 
@@ -72,6 +73,7 @@
 (global-set-key (kbd "C-y") 'yy) ; copy one line
 (global-set-key (kbd "M-3") 'my-isearch-word-at-point); like vim's *
 (global-set-key (kbd "M-4") 'select-inside-quotes) ;
+(global-set-key (kbd "C-n") 'ideview)
 
 ; TODO
 (add-hook 'isearch-mode-hook
@@ -83,9 +85,15 @@
 ;; macro
 (fset 'yyp
       [?\C-a ?\C-@ ?\C-e ?\C-j return ?\C-k ?\C-a])
-
 (fset 'yy
       [?\C-a ?\C-@ ?\C-e ?\C-j])
+
+(defun ideview nil
+  (interactive)
+  (split-window-vertically)
+  (split-window-horizontally)
+  )
+
 ;(fset 'cc
 ;   "\C-a//")
 (fset 'delblank
