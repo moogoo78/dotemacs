@@ -11,7 +11,20 @@
 (setq x-select-enable-clipboard t)
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 (setq default-major-mode 'text-mode)     ; default text-mode
-;(ido-mode              t) ; enable ido-mode
+
+(ido-mode t)
+(setq ido-enable-flex-matching t
+      ido-create-new-buffer 'always
+      ido-ignore-buffers
+      '("\\` " "^\\*ESS\\*" "^\\*Messages\\*" "^\\*Help\\*" "^\\*Buffer"
+              "^\\*.*Completions\\*$" "^\\*Ediff" "^\\*tramp" "^\\*cvs-"
+              "_region_" " output\\*$" "^TAGS$" "^\*Ido")
+      ido-ignore-directories
+      '("\\`auto/" "\\.prv/" "\\`CVS/" "\\`\\.\\./" "\\`\\./")
+      ido-ignore-files
+      '("\\`auto/" "\\.prv/" "_region_" "\\`CVS/" "\\`#" "\\`.#"
+        "\\`\\.\\./" "\\`\\./" "^.DS_Store$"))
+
 ;(cua-mode              t) ; 
 (windmove-default-keybindings)      ; shift + 4way key jump window
 ;(server-start)            ; start emacs server daemon
