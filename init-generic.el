@@ -41,7 +41,8 @@
 (global-linum-mode t) ; line number
 (column-number-mode t) ; show column-number
 (tool-bar-mode nil)
-(load-theme 'mg)
+(load-theme 'moogoo t)
+
 ; == scroll bar ==
 ;scroll-bar-mode        'right ;
 (setq scroll-margin 3) 

@@ -2,7 +2,8 @@
 
 ;(global-set-key [f1] 'dired-single-magic-buffer)
 (global-set-key [f1] 'delete-other-windows)
-;(global-set-key [f2] 'bookmark-bmenu-list)
+(global-set-key [f2] 'bookmark-bmenu-list)
+(global-set-key [f4] 'dired)
 ;(global-set-key [f2] 'isearch-forward)
 ;(global-set-key [f2] 'split-window)
 ;(global-set-key [f3] 'split-window-horizontally)
@@ -73,7 +74,7 @@
 (global-set-key (kbd "C-y") 'yy) ; copy one line
 (global-set-key (kbd "M-3") 'my-isearch-word-at-point); like vim's *
 (global-set-key (kbd "M-4") 'select-inside-quotes) ;
-(global-set-key (kbd "C-n") 'ideview)
+;(global-set-key (kbd "C-n") 'ideview)
 
 ; TODO
 (add-hook 'isearch-mode-hook

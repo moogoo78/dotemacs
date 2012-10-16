@@ -1,8 +1,8 @@
 ;; DX7 color like
-(deftheme mgtheme
+(deftheme moogoo
   "Created 2009-07-26.")
 
-(provide-theme 'mgtheme)
+(provide-theme 'moogoo)
 
 (set-foreground-color "gray85")
 (set-background-color "gray20")

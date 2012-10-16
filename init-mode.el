@@ -1,3 +1,14 @@
+;; erc - emacs irc client
+;; TODO
+;; http://emacser.com/erc.htm
+;; http://emacs-fu.blogspot.tw/2009/06/erc-emacs-irc-client.html
+(require 'erc)
+(erc-autojoin-mode t)
+(setq erc-autojoin-channels-alist
+  '((".*\\.freenode.net" "#python.tw" "#taipei-gtug" "#pocoo")))
+(setq erc-nick "moogoo78"
+      erc-user-full-name "MooGoo")
+
 
 ;; set js indent
 (setq js-indent-level 2)
