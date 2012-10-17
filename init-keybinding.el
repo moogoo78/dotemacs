@@ -40,6 +40,9 @@
 (global-set-key (kbd "C-b") 'kill-line)
 
 
+;; emacs 24 error
+(setq interprogram-paste-function 'x-selection-value)
+
 ;(global-set-key (kbd "C-0") 'move-beginning-of-line)
 ;(global-set-key (kbd "C-$") 'move-end-of-line)
 
@@ -70,24 +73,37 @@
 ;(global-set-key (kbd "C-;") 'backward-char)
 
 (global-set-key (kbd "M-1") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
-(global-set-key (kbd "C-2") 'yyp) ; copy one line and paste
-(global-set-key (kbd "C-y") 'yy) ; copy one line
 (global-set-key (kbd "M-3") 'my-isearch-word-at-point); like vim's *
 (global-set-key (kbd "M-4") 'select-inside-quotes) ;
 ;(global-set-key (kbd "C-n") 'ideview)
 
-; TODO
-(add-hook 'isearch-mode-hook
- (lambda ()
- (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
- (define-key isearch-mode-map (kbd "C-F") 'isearch-repeat-forward)
-))
+; http://stackoverflow.com/questions/88399/how-do-i-duplicate-a-whole-line-in-emacs
+(defun vimyyp()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank)
+)
 
-;; macro
-(fset 'yyp
-      [?\C-a ?\C-@ ?\C-e ?\C-j return ?\C-k ?\C-a])
-(fset 'yy
-      [?\C-a ?\C-@ ?\C-e ?\C-j])
+(defun vimyy()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+)
+
+(global-set-key (kbd "C-2") 'vimyyp)
+(global-set-key (kbd "M-2") 'vimyy)
+
+; TODO
+;(add-hook 'isearch-mode-hook
+;(lambda ()
+; (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
+; (define-key isearch-mode-map (kbd "C-F") 'isearch-repeat-forward)
+;))
 
 (defun ideview nil
   (interactive)
