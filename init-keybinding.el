@@ -99,11 +99,11 @@
 (global-set-key (kbd "M-2") 'vimyy)
 
 ; TODO
-;(add-hook 'isearch-mode-hook
-;(lambda ()
-; (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
-; (define-key isearch-mode-map (kbd "C-F") 'isearch-repeat-forward)
-;))
+(add-hook 'isearch-mode-hook
+(lambda ()
+ (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
+ (define-key isearch-mode-map (kbd "C-F") 'isearch-repeat-forward)
+))
 
 (defun ideview nil
   (interactive)
