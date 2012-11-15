@@ -12,7 +12,7 @@
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 (setq default-major-mode 'text-mode)     ; default text-mode
 
-(ido-mode t)
+;(ido-mode t)
 (setq ido-enable-flex-matching t
       ido-create-new-buffer 'always
       ido-ignore-buffers

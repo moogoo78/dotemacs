@@ -79,7 +79,7 @@
 
 )
 
-(setup-php-drupal)
+;(setup-php-drupal)
 ;; END <<<
 
 ;; graphviz
