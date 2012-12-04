@@ -108,7 +108,7 @@
   :prefix "lua-"
   :group 'languages)
 
-(defcustom lua-indent-level 3
+(defcustom lua-indent-level 4
   "Amount by which Lua subexpressions are indented."
   :type 'integer
   :group 'lua)
