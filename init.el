@@ -5,8 +5,9 @@
 (load "init-generic.el")
 (load "init-keybinding.el")
 (load "init-calendar.el")
-;(load "init-org.el")
+(load "init-org.el")
 (load "init-mode.el")
+(load "init-snippet.el")
 ;(load "init-misc.el")
 ;(load "tmp/mg-ecb.el")
 ; start org-agenda-list while startup
