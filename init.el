@@ -14,3 +14,19 @@
 ;(add-hook 'after-init-hook 'org-agenda-list)
 (if window-system
   (set-frame-size (selected-frame) 150 45))
+
+
+
+(defun piscine(root)
+  "hello"
+  (interactive "p")
+  ;(message "aoeu %s" root)
+  (list-buffers)
+  (insert-buffer "*Buffer List*")
+  (kill-buffer "*Buffer List*")
+  (delete-other-windows)
+  ; parse buffer
+;(other-buffer)
+;(switch-to-buffer (other-buffer))
+;(generate-new-buffer "bar")
+  )

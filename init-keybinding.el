@@ -21,7 +21,9 @@
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
 (global-set-key (kbd "C-s") 'save-buffer) 
 ;(global-set-key (kbd "C-=") 'scroll-down)  
-;(global-set-key (kbd "C--") 'scroll-up) 
+;(global-set-key (kbd "C-m") 'scroll-down) 
+(global-set-key (kbd "C-,") 'forward-word)
+(global-set-key (kbd "C-'") 'backward-word)
 
 ; inspired by ErgoEmacs
 ; http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
@@ -31,13 +33,13 @@
 (global-set-key (kbd "C-o") 'find-file)
 ;(global-set-key (kbd "C-a") 'mark-whole-buffer)
 ;dvorak zxcv
-(global-set-key (kbd "C-;") 'undo) 
-(global-set-key (kbd "C-:") 'redo)
-(global-set-key (kbd "C-q") 'kill-region)
-(global-set-key (kbd "C-j") 'kill-ring-save) ;copy
-(global-set-key (kbd "C-k") 'yank)
+;(global-set-key (kbd "C-;") 'undo) 
+;(global-set-key (kbd "C-:") 'redo)
+;(global-set-key (kbd "C-q") 'kill-region)
+;(global-set-key (kbd "C-j") 'kill-ring-save) ;copy
+;(global-set-key (kbd "C-k") 'yank)
 
-(global-set-key (kbd "C-b") 'kill-line)
+;(global-set-key (kbd "C-b") 'kill-line)
 
 ; C-x C-t互換 (fordv orak layout)
 (keyboard-translate ?\C-t ?\C-x)
@@ -78,7 +80,7 @@
 (global-set-key (kbd "M-1") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
 (global-set-key (kbd "M-3") 'my-isearch-word-at-point); like vim's *
 (global-set-key (kbd "M-4") 'select-inside-quotes) ;
-;(global-set-key (kbd "C-n") 'ideview)
+(global-set-key (kbd "C-4") 'ideview)
 
 ; http://stackoverflow.com/questions/88399/how-do-i-duplicate-a-whole-line-in-emacs
 (defun vimyyp()
@@ -110,9 +112,10 @@
 
 (defun ideview nil
   (interactive)
+  (delete-other-windows)
   (split-window-vertically)
   (split-window-horizontally)
-  )
+)
 
 ;(fset 'cc
 ;   "\C-a//")
