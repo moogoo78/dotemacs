@@ -10,6 +10,8 @@
 (setq visible-bell              t)   ; disable beep in linux (openSUSE)
 (setq x-select-enable-clipboard t)
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+
+(setq interprogram-paste-function 'copy-from-osx)
 (setq default-major-mode 'text-mode)     ; default text-mode
 
 ;(ido-mode t)

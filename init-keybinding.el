@@ -45,9 +45,6 @@
 (keyboard-translate ?\C-t ?\C-x)
 (keyboard-translate ?\C-x ?\C-t)
 
-;; emacs 24 error
-(setq interprogram-paste-function 'x-selection-value)
-
 ;(global-set-key (kbd "C-0") 'move-beginning-of-line)
 ;(global-set-key (kbd "C-$") 'move-end-of-line)
 
