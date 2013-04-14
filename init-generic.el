@@ -9,7 +9,12 @@
 (setq kill-ring-max             200) ;
 (setq visible-bell              t)   ; disable beep in linux (openSUSE)
 (setq x-select-enable-clipboard t)
-(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+
+(if (>= emacs-major-version 24)
+    (setq interprogram-paste-function 'x-selection-value)
+  (setq interprogram-paste-function 'x-cut-buffer-or-selection-value))
+
+
 (setq default-major-mode 'text-mode)     ; default text-mode
 
 ;(ido-mode t)
@@ -45,7 +50,7 @@
 (tool-bar-mode nil)
 (if (>= emacs-major-version 24)
     (load-theme 'moogoo t)
-    (load-theme 'moogoo))
+  (load-theme 'moogoo))
 
 ; == scroll bar ==
 ;scroll-bar-mode        'right ;
