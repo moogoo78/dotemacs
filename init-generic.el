@@ -9,7 +9,7 @@
 (setq kill-ring-max             200) ;
 (setq visible-bell              t)   ; disable beep in linux (openSUSE)
 (setq x-select-enable-clipboard t)
-(fset 'yes-or-no-p 'y-or-n-p)
+;(fset 'yes-or-no-p 'y-or-n-p)
 
 (setq transient-mark-mode t)         ; highlight region?
 (show-paren-mode t)                  ; matching parens
