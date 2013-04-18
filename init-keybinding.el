@@ -13,9 +13,21 @@
 ;(global-set-key [f4] 'html-mode)
 (global-set-key [f5] 'compile)                ; make
 ;(global-set-key [f6] 'switch-to-buffer)
-(global-set-key [f8] 'deft)
+;(global-set-key [f8] 'deft)
 (global-set-key [f11] 'org-agenda)
 (global-set-key [f12] 'calendar)
+
+;; window sizing
+(global-set-key (kbd "C-M-n") 'enlarge-window-horizontally)
+(global-set-key (kbd "C-M-d") 'shrink-window-horizontally)
+(global-set-key (kbd "C-M-h") 'enlarge-window)
+(global-set-key (kbd "C-M-t") 'shrink-window)
+
+;; Indenting and alignment - try
+(global-set-key [(f8)]         'indent-region)
+(global-set-key [(control f8)] 'align)
+(global-set-key [(shift f8)]   'align-current)
+(global-set-key [(meta f8)]    'align-regexp)
 
 ;(global-set-key '[(control c) (d)] 'delblank)
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
@@ -23,7 +35,9 @@
 ;(global-set-key (kbd "C-=") 'scroll-down)  
 ;(global-set-key (kbd "C-m") 'scroll-down) 
 (global-set-key (kbd "C-,") 'forward-word)
-(global-set-key (kbd "C-'") 'backward-word)
+(global-set-key (kbd "C-m") 'forward-char)
+
+;;;; can use future C-v
 
 ; inspired by ErgoEmacs
 ; http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
@@ -32,12 +46,13 @@
 (global-set-key (kbd "C-F") 'isearch-forward)
 (global-set-key (kbd "C-o") 'find-file)
 ;(global-set-key (kbd "C-a") 'mark-whole-buffer)
+
 ;dvorak zxcv
 ;(global-set-key (kbd "C-;") 'undo) 
 ;(global-set-key (kbd "C-:") 'redo)
-;(global-set-key (kbd "C-q") 'kill-region)
-;(global-set-key (kbd "C-j") 'kill-ring-save) ;copy
-;(global-set-key (kbd "C-k") 'yank)
+(global-set-key (kbd "C-q") 'kill-region)
+(global-set-key (kbd "C-j") 'kill-ring-save) ;copy
+(global-set-key (kbd "C-k") 'yank)
 
 ;(global-set-key (kbd "C-b") 'kill-line)
 
@@ -70,13 +85,11 @@
   (add-hook 'term-setup-hook 'remove-escape-from-local-function-key-map))
 
 ;(global-set-key (kbd "C-[") 'previous-line) ; error ;http://superuser.com/questions/173851/linux-remap-ctrl-key
-;(global-set-key (kbd "C-'") 'forward-char)
 ;(global-set-key (kbd "C-/") 'next-line)/
-;(global-set-key (kbd "C-;") 'backward-char)
 
 (global-set-key (kbd "M-1") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
+(global-set-key (kbd "M-2") 'select-inside-quotes) ;
 (global-set-key (kbd "M-3") 'my-isearch-word-at-point); like vim's *
-(global-set-key (kbd "M-4") 'select-inside-quotes) ;
 (global-set-key (kbd "C-4") 'ideview)
 
 ; http://stackoverflow.com/questions/88399/how-do-i-duplicate-a-whole-line-in-emacs

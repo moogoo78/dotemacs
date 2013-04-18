@@ -9,11 +9,18 @@
 (setq kill-ring-max             200) ;
 (setq visible-bell              t)   ; disable beep in linux (openSUSE)
 (setq x-select-enable-clipboard t)
+(fset 'yes-or-no-p 'y-or-n-p)
 
+(setq transient-mark-mode t)         ; highlight region?
+(show-paren-mode t)                  ; matching parens
+(setq truncate-lines t)
+
+;; platform independence
 (if (>= emacs-major-version 24)
     (setq interprogram-paste-function 'x-selection-value)
   (setq interprogram-paste-function 'x-cut-buffer-or-selection-value))
 
+(setq ns-command-modifier (quote meta)) ; mac command key as meta key
 
 (setq default-major-mode 'text-mode)     ; default text-mode
 
