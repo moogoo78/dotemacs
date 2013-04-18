@@ -17,6 +17,7 @@
 (global-set-key [f11] 'org-agenda)
 (global-set-key [f12] 'calendar)
 
+
 ;; window sizing
 (global-set-key (kbd "C-M-n") 'enlarge-window-horizontally)
 (global-set-key (kbd "C-M-d") 'shrink-window-horizontally)
@@ -36,8 +37,7 @@
 ;(global-set-key (kbd "C-m") 'scroll-down) 
 (global-set-key (kbd "C-,") 'forward-word)
 (global-set-key (kbd "C-m") 'forward-char)
-
-;;;; can use future C-v
+(global-set-key (kbd "<return>") 'newline) ; C-m is bind to Enter, need bind direct
 
 ; inspired by ErgoEmacs
 ; http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
@@ -54,14 +54,11 @@
 (global-set-key (kbd "C-j") 'kill-ring-save) ;copy
 (global-set-key (kbd "C-k") 'yank)
 
-;(global-set-key (kbd "C-b") 'kill-line)
+(global-set-key (kbd "C-;") 'kill-line)
 
 ; C-x C-t互換 (fordv orak layout)
 (keyboard-translate ?\C-t ?\C-x)
 (keyboard-translate ?\C-x ?\C-t)
-
-;(global-set-key (kbd "C-0") 'move-beginning-of-line)
-;(global-set-key (kbd "C-$") 'move-end-of-line)
 
 ;(global-set-key (kbd "C-f") 'isearch-repeat-forward)
 ;(global-set-key [(shift f3)] 'isearch-repeat-backward)
