@@ -16,6 +16,17 @@
   (set-frame-size (selected-frame) 150 45))
 
 
+;; elscreen
+(add-to-list 'load-path (concat my-path "goodies/APEL"))
+(load "elscreen" "ElScreen" )
+(setq elscreen-display-tab t)
+
+(global-set-key (kbd "C-x t") 'elscreen-create)
+(global-set-key (kbd "C-x w") 'elscreen-kill)  
+(global-set-key (kbd "M-t") 'elscreen-previous) ;;transpose-words
+(global-set-key (kbd "M-n") 'elscreen-next)  
+
+
 
 (defun piscine(root)
   "hello"
