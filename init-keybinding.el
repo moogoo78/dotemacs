@@ -36,9 +36,9 @@
 ;(global-set-key (kbd "C-=") 'scroll-down)  
 ;(global-set-key (kbd "C-m") 'scroll-down) 
 (global-set-key (kbd "C-,") 'forward-word)
-(global-set-key (kbd "C-v") 'forward-char)
-;(global-set-key (kbd "C-m") 'forward-char)
-;(global-set-key (kbd "<return>") 'newline) ; C-m is bind to Enter, need bind direct
+(global-set-key (kbd "C-'") 'backward-word)
+(global-set-key (kbd "C-m") 'forward-char)
+(global-set-key (kbd "<return>") 'newline) ; C-m is bind to Enter, need bind direct
 
 ; inspired by ErgoEmacs
 ; http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
@@ -54,8 +54,9 @@
 (global-set-key (kbd "C-q") 'kill-region)
 (global-set-key (kbd "C-j") 'kill-ring-save) ;copy
 (global-set-key (kbd "C-k") 'yank)
+(global-set-key (kbd "C-;") 'undo)
 
-(global-set-key (kbd "C-;") 'kill-line)
+(global-set-key (kbd "C-y") 'kill-line)
 
 ; C-x C-t互換 (fordv orak layout)
 (keyboard-translate ?\C-t ?\C-x)
@@ -70,6 +71,10 @@
 ;(global-set-key (kbd "C-b") 'isearch-backward) ; change C-f to search
 (global-set-key (kbd "<C-next>") 'next-buffer)
 (global-set-key (kbd "<C-prior>") 'previous-buffer)
+
+
+;; custom
+(global-set-key (kbd "C-c .") 'insert-current-date)
 
 (define-key key-translation-map [?\C-\[] [(control left_bracket)])
 (define-key key-translation-map [escape] [?\e])
