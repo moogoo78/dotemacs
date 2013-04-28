@@ -17,6 +17,7 @@
 (global-set-key [f11] 'org-agenda)
 (global-set-key [f12] 'calendar)
 
+(global-set-key (kbd "C-a") 'smart-beginning-of-line)
 
 ;; window sizing
 (global-set-key (kbd "C-M-n") 'enlarge-window-horizontally)
@@ -219,7 +220,7 @@ on each side of cursor."
 
 
 
-;; source: http://steve.yegge.googlepages.com/my-dot-emacs-file
+;; via: http://steve.yegge.googlepages.com/my-dot-emacs-file
 ;(defun rename-file-and-buffer (new-name)
 (defun rename-this-file (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
@@ -235,3 +236,15 @@ on each side of cursor."
           (rename-buffer new-name)
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil))))))
+
+;; via http://stackoverflow.com/questions/145291/smart-home-in-emacs
+(defun smart-beginning-of-line ()
+  "Move point to first non-whitespace character or beginning-of-line.
+
+Move point to the first non-whitespace character on this line.
+If point was already at that position, move point to beginning of line."
+  (interactive) ; Use (interactive "^") in Emacs 23 to make shift-select work
+  (let ((oldpos (point)))
+    (back-to-indentation)
+    (and (= oldpos (point))
+         (beginning-of-line))))
