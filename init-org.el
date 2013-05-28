@@ -8,8 +8,7 @@
 ;(set org-agenda files (file-expand-wildcards "~/org/*.org"))
 ; windows and linux's Dropbox folder must be same
 (setq org-agenda-files '(
-    "~/Dropbox/org/project.org" 
-    "~/Dropbox/org/priv-schedule.org"
+    "~/Dropbox/org/agenda.org" 
     ))
 
 ; http://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.php

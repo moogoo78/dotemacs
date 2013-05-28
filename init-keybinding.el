@@ -1,21 +1,17 @@
 ; key-binding
 
-;(global-set-key [f1] 'dired-single-magic-buffer)
-(global-set-key [f1] 'delete-other-windows)
+;; useful function
+; 'delete-other-windows
+
+;(global-set-key [f1] )
+(global-set-key [f1] 'org-agenda)
 (global-set-key [f2] 'bookmark-bmenu-list)
 (global-set-key [f4] 'dired)
-;(global-set-key [f2] 'isearch-forward)
-;(global-set-key [f2] 'split-window)
-;(global-set-key [f3] 'split-window-horizontally)
-;(global-set-key [f3] 'isearch-repeat-forward)
-;(global-set-key [(shift f3)] 'isearch-repeat-backward)
 ;(global-set-key [f4] 'org-pub-ics)
 ;(global-set-key [f4] 'html-mode)
-(global-set-key [f5] 'compile)                ; make
+;(global-set-key [f5] 'compile)                ; make
 ;(global-set-key [f6] 'switch-to-buffer)
 ;(global-set-key [f8] 'deft)
-(global-set-key [f11] 'org-agenda)
-(global-set-key [f12] 'calendar)
 
 (global-set-key (kbd "C-a") 'smart-beginning-of-line)
 
@@ -54,14 +50,17 @@
 ;(global-set-key (kbd "C-:") 'redo)
 (global-set-key (kbd "C-q") 'kill-region)
 (global-set-key (kbd "C-j") 'kill-ring-save) ;copy
-(global-set-key (kbd "C-k") 'yank)
+;(global-set-key (kbd "C-k") 'yank)
 (global-set-key (kbd "C-;") 'undo)
 
-(global-set-key (kbd "C-y") 'kill-line)
+;(global-set-key (kbd "C-y") 'kill-line)
 
 ; C-x C-t互換 (fordv orak layout)
 (keyboard-translate ?\C-t ?\C-x)
 (keyboard-translate ?\C-x ?\C-t)
+(keyboard-translate ?\C-k ?\C-y)
+(keyboard-translate ?\C-y ?\C-k)
+
 
 ;(global-set-key (kbd "C-f") 'isearch-repeat-forward)
 ;(global-set-key [(shift f3)] 'isearch-repeat-backward)
