@@ -35,7 +35,7 @@
 ;(global-set-key (kbd "C-m") 'scroll-down) 
 (global-set-key (kbd "C-,") 'forward-word)
 (global-set-key (kbd "C-'") 'backward-word)
-(global-set-key (kbd "C-i") 'forward-char)
+(global-set-key (kbd "C-d") 'forward-char)
 ;(global-set-key (kbd "<return>") 'newline) ; C-m is bind to Enter, need bind direct
 
 ; inspired by ErgoEmacs
