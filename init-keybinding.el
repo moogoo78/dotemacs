@@ -35,14 +35,14 @@
 ;(global-set-key (kbd "C-m") 'scroll-down) 
 (global-set-key (kbd "C-,") 'forward-word)
 (global-set-key (kbd "C-'") 'backward-word)
-;(global-set-key (kbd "C-m") 'forward-char)
+(global-set-key (kbd "C-i") 'forward-char)
 ;(global-set-key (kbd "<return>") 'newline) ; C-m is bind to Enter, need bind direct
 
 ; inspired by ErgoEmacs
 ; http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
 (global-set-key (kbd "C-w") 'kill-buffer)
 (global-set-key (kbd "C-f") 'isearch-forward)
-(global-set-key (kbd "C-F") 'isearch-forward)
+;(global-set-key (kbd "C-p") 'isearch-forward)
 (global-set-key (kbd "C-o") 'find-file)
 ;(global-set-key (kbd "C-a") 'mark-whole-buffer)
 
@@ -121,7 +121,6 @@
 (add-hook 'isearch-mode-hook
 (lambda ()
  (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
- (define-key isearch-mode-map (kbd "C-F") 'isearch-repeat-forward)
 ))
 
 (defun ideview nil
