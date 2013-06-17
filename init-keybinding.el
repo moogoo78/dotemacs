@@ -12,6 +12,7 @@
 ;(global-set-key [f5] 'compile)                ; make
 ;(global-set-key [f6] 'switch-to-buffer)
 ;(global-set-key [f8] 'deft)
+(global-set-key "\C-x\C-\\" 'goto-last-change)
 
 (global-set-key (kbd "C-a") 'smart-beginning-of-line)
 
