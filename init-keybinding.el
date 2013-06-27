@@ -3,10 +3,16 @@
 ;; useful function
 ; 'delete-other-windows
 
-;(global-set-key [f1] )
-(global-set-key [f1] 'org-agenda)
-(global-set-key [f2] 'bookmark-bmenu-list)
-(global-set-key [f4] 'dired)
+(global-set-key [f6] 'dired)
+(global-set-key [f7] 'org-agenda)
+(global-set-key [f8] 'bookmark-bmenu-list)
+
+;; regsiter
+(global-set-key [f1] 'point-to-register)
+(global-set-key [f2] 'copy-to-register)
+(global-set-key [f3] 'insert-register)
+(global-set-key [f4] 'jump-to-register)
+
 ;(global-set-key [f4] 'org-pub-ics)
 ;(global-set-key [f4] 'html-mode)
 ;(global-set-key [f5] 'compile)                ; make
@@ -23,18 +29,18 @@
 (global-set-key (kbd "C-M-t") 'shrink-window)
 
 ;; Indenting and alignment - try
-(global-set-key [(f8)]         'indent-region)
-(global-set-key [(control f8)] 'align)
-(global-set-key [(shift f8)]   'align-current)
-(global-set-key [(meta f8)]    'align-regexp)
+;(global-set-key [(f8)]         'indent-region)
+;(global-set-key [(control f8)] 'align)
+;(global-set-key [(shift f8)]   'align-current)
+;(global-set-key [(meta f8)]    'align-regexp)
 
 ;(global-set-key '[(control c) (d)] 'delblank)
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
 (global-set-key (kbd "C-s") 'save-buffer) 
 ;(global-set-key (kbd "C-=") 'scroll-down)  
 ;(global-set-key (kbd "C-m") 'scroll-down) 
-(global-set-key (kbd "C-,") 'forward-word)
-(global-set-key (kbd "C-'") 'backward-word)
+;(global-set-key (kbd "C-,") 'forward-word)
+;(global-set-key (kbd "C-'") 'backward-word)
 (global-set-key (kbd "C-d") 'forward-char)
 ;(global-set-key (kbd "<return>") 'newline) ; C-m is bind to Enter, need bind direct
 
@@ -49,18 +55,25 @@
 ;dvorak zxcv
 ;(global-set-key (kbd "C-;") 'undo) 
 ;(global-set-key (kbd "C-:") 'redo)
-(global-set-key (kbd "C-q") 'kill-region)
-(global-set-key (kbd "C-j") 'kill-ring-save) ;copy
+;(global-set-key (kbd "C-q") 'kill-region)
+;(global-set-key (kbd "C-j") 'kill-ring-save) ;copy
 ;(global-set-key (kbd "C-k") 'yank)
 (global-set-key (kbd "C-;") 'undo)
 
 ;(global-set-key (kbd "C-y") 'kill-line)
 
-; C-x C-t互換 (fordv orak layout)
+; 互換key (for dvorak layout)
 (keyboard-translate ?\C-t ?\C-x)
 (keyboard-translate ?\C-x ?\C-t)
 (keyboard-translate ?\C-k ?\C-y)
 (keyboard-translate ?\C-y ?\C-k)
+; C-q quoted-insert, 
+(define-key key-translation-map (kbd "C-q") (kbd "C-'"))
+(define-key key-translation-map (kbd "C-'") (kbd "C-q"))
+(define-key key-translation-map (kbd "C-j") (kbd "C-,"))
+(define-key key-translation-map (kbd "C-,") (kbd "C-j"))
+(global-set-key (kbd "C-'") 'kill-region)
+(global-set-key (kbd "C-,") 'kill-ring-save)
 
 
 ;(global-set-key (kbd "C-f") 'isearch-repeat-forward)
