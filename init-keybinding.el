@@ -47,7 +47,7 @@
 ; inspired by ErgoEmacs
 ; http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
 (global-set-key (kbd "C-w") 'kill-buffer)
-(global-set-key (kbd "C-f") 'isearch-forward)
+(global-set-key (kbd "M-f") 'isearch-forward)
 ;(global-set-key (kbd "C-p") 'isearch-forward)
 (global-set-key (kbd "C-o") 'find-file)
 ;(global-set-key (kbd "C-a") 'mark-whole-buffer)
@@ -76,8 +76,8 @@
 (global-set-key (kbd "C-,") 'kill-ring-save)
 
 
-;(global-set-key (kbd "C-f") 'isearch-repeat-forward)
-;(global-set-key [(shift f3)] 'isearch-repeat-backward)
+(global-set-key (kbd "M-g") 'isearch-repeat-forward)
+(global-set-key (kbd "M-G") 'isearch-repeat-backward)
 
 ;(global-set-key "\C-w" 'kill-buffer-and-delete-window)
 ;(global-set-key (kbd "C-t") 'beginning-of-buffer) ; top of the file
@@ -131,10 +131,10 @@
 (global-set-key (kbd "M-2") 'vimyy)
 
 ; TODO
-(add-hook 'isearch-mode-hook
-(lambda ()
- (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
-))
+;(add-hook 'isearch-mode-hook
+;(lambda ()
+; (define-key isearch-mode-map (kbd "M-f") 'isearch-repeat-forward)
+;))
 
 (defun ideview nil
   (interactive)
