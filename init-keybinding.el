@@ -1,22 +1,26 @@
 ; key-binding
 
-;(global-set-key [f1] 'dired-single-magic-buffer)
-(global-set-key [f1] 'delete-other-windows)
-(global-set-key [f2] 'bookmark-bmenu-list)
-(global-set-key [f4] 'dired)
-;(global-set-key [f2] 'isearch-forward)
-;(global-set-key [f2] 'split-window)
-;(global-set-key [f3] 'split-window-horizontally)
-;(global-set-key [f3] 'isearch-repeat-forward)
-;(global-set-key [(shift f3)] 'isearch-repeat-backward)
+;; useful function
+; 'delete-other-windows
+
+(global-set-key [f6] 'dired)
+(global-set-key [f7] 'org-agenda)
+(global-set-key [f8] 'bookmark-bmenu-list)
+
+;; regsiter
+(global-set-key [f1] 'point-to-register)
+(global-set-key [f2] 'copy-to-register)
+(global-set-key [f3] 'insert-register)
+(global-set-key [f4] 'jump-to-register)
+
 ;(global-set-key [f4] 'org-pub-ics)
 ;(global-set-key [f4] 'html-mode)
-(global-set-key [f5] 'compile)                ; make
+;(global-set-key [f5] 'compile)                ; make
 ;(global-set-key [f6] 'switch-to-buffer)
 ;(global-set-key [f8] 'deft)
-(global-set-key [f11] 'org-agenda)
-(global-set-key [f12] 'calendar)
+(global-set-key "\C-x\C-\\" 'goto-last-change)
 
+(global-set-key (kbd "C-a") 'smart-beginning-of-line)
 
 ;; window sizing
 (global-set-key (kbd "C-M-n") 'enlarge-window-horizontally)
@@ -25,44 +29,55 @@
 (global-set-key (kbd "C-M-t") 'shrink-window)
 
 ;; Indenting and alignment - try
-(global-set-key [(f8)]         'indent-region)
-(global-set-key [(control f8)] 'align)
-(global-set-key [(shift f8)]   'align-current)
-(global-set-key [(meta f8)]    'align-regexp)
+;(global-set-key [(f8)]         'indent-region)
+;(global-set-key [(control f8)] 'align)
+;(global-set-key [(shift f8)]   'align-current)
+;(global-set-key [(meta f8)]    'align-regexp)
 
 ;(global-set-key '[(control c) (d)] 'delblank)
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
 (global-set-key (kbd "C-s") 'save-buffer) 
 ;(global-set-key (kbd "C-=") 'scroll-down)  
 ;(global-set-key (kbd "C-m") 'scroll-down) 
-(global-set-key (kbd "C-,") 'forward-word)
-(global-set-key (kbd "C-v") 'forward-char)
-;(global-set-key (kbd "C-m") 'forward-char)
+;(global-set-key (kbd "C-,") 'forward-word)
+;(global-set-key (kbd "C-'") 'backward-word)
+(global-set-key (kbd "C-d") 'forward-char)
 ;(global-set-key (kbd "<return>") 'newline) ; C-m is bind to Enter, need bind direct
 
 ; inspired by ErgoEmacs
 ; http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
 (global-set-key (kbd "C-w") 'kill-buffer)
-(global-set-key (kbd "C-f") 'isearch-forward)
-(global-set-key (kbd "C-F") 'isearch-forward)
+(global-set-key (kbd "M-f") 'isearch-forward)
+;(global-set-key (kbd "C-p") 'isearch-forward)
 (global-set-key (kbd "C-o") 'find-file)
 ;(global-set-key (kbd "C-a") 'mark-whole-buffer)
 
 ;dvorak zxcv
 ;(global-set-key (kbd "C-;") 'undo) 
 ;(global-set-key (kbd "C-:") 'redo)
-(global-set-key (kbd "C-q") 'kill-region)
-(global-set-key (kbd "C-j") 'kill-ring-save) ;copy
-(global-set-key (kbd "C-k") 'yank)
+;(global-set-key (kbd "C-q") 'kill-region)
+;(global-set-key (kbd "C-j") 'kill-ring-save) ;copy
+;(global-set-key (kbd "C-k") 'yank)
+(global-set-key (kbd "C-;") 'undo)
 
-(global-set-key (kbd "C-;") 'kill-line)
+;(global-set-key (kbd "C-y") 'kill-line)
 
-; C-x C-t互換 (fordv orak layout)
+; 互換key (for dvorak layout)
 (keyboard-translate ?\C-t ?\C-x)
 (keyboard-translate ?\C-x ?\C-t)
+(keyboard-translate ?\C-k ?\C-y)
+(keyboard-translate ?\C-y ?\C-k)
+; C-q quoted-insert, 
+(define-key key-translation-map (kbd "C-q") (kbd "C-'"))
+(define-key key-translation-map (kbd "C-'") (kbd "C-q"))
+(define-key key-translation-map (kbd "C-j") (kbd "C-,"))
+(define-key key-translation-map (kbd "C-,") (kbd "C-j"))
+(global-set-key (kbd "C-'") 'kill-region)
+(global-set-key (kbd "C-,") 'kill-ring-save)
 
-;(global-set-key (kbd "C-f") 'isearch-repeat-forward)
-;(global-set-key [(shift f3)] 'isearch-repeat-backward)
+
+(global-set-key (kbd "M-g") 'isearch-repeat-forward)
+(global-set-key (kbd "M-G") 'isearch-repeat-backward)
 
 ;(global-set-key "\C-w" 'kill-buffer-and-delete-window)
 ;(global-set-key (kbd "C-t") 'beginning-of-buffer) ; top of the file
@@ -70,6 +85,10 @@
 ;(global-set-key (kbd "C-b") 'isearch-backward) ; change C-f to search
 (global-set-key (kbd "<C-next>") 'next-buffer)
 (global-set-key (kbd "<C-prior>") 'previous-buffer)
+
+
+;; custom
+(global-set-key (kbd "C-c .") 'insert-current-date)
 
 (define-key key-translation-map [?\C-\[] [(control left_bracket)])
 (define-key key-translation-map [escape] [?\e])
@@ -112,11 +131,10 @@
 (global-set-key (kbd "M-2") 'vimyy)
 
 ; TODO
-(add-hook 'isearch-mode-hook
-(lambda ()
- (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
- (define-key isearch-mode-map (kbd "C-F") 'isearch-repeat-forward)
-))
+;(add-hook 'isearch-mode-hook
+;(lambda ()
+; (define-key isearch-mode-map (kbd "M-f") 'isearch-repeat-forward)
+;))
 
 (defun ideview nil
   (interactive)
@@ -214,7 +232,7 @@ on each side of cursor."
 
 
 
-;; source: http://steve.yegge.googlepages.com/my-dot-emacs-file
+;; via: http://steve.yegge.googlepages.com/my-dot-emacs-file
 ;(defun rename-file-and-buffer (new-name)
 (defun rename-this-file (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
@@ -230,3 +248,15 @@ on each side of cursor."
           (rename-buffer new-name)
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil))))))
+
+;; via http://stackoverflow.com/questions/145291/smart-home-in-emacs
+(defun smart-beginning-of-line ()
+  "Move point to first non-whitespace character or beginning-of-line.
+
+Move point to the first non-whitespace character on this line.
+If point was already at that position, move point to beginning of line."
+  (interactive) ; Use (interactive "^") in Emacs 23 to make shift-select work
+  (let ((oldpos (point)))
+    (back-to-indentation)
+    (and (= oldpos (point))
+         (beginning-of-line))))

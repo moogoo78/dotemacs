@@ -39,7 +39,7 @@
 
 ;(cua-mode              t) ; 
 (windmove-default-keybindings)      ; shift + 4way key jump window
-;(server-start)            ; start emacs server daemon
+(server-start)            ; start emacs server daemon
 ; == coding ==
 (prefer-coding-system       'utf-8)
 (setq locale-coding-system 'utf-8)

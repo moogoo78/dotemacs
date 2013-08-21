@@ -9,3 +9,9 @@
 (defun init-bash()
   (interactive)
   (insert "#!/bin/bash\n"))
+
+
+(defun insert-current-date ()
+  "Insert current date"
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d %H:%M")))

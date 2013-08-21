@@ -1,3 +1,6 @@
+
+(require 'goto-last-change)
+
 ;; erc - emacs irc client
 ;; TODO
 ;; http://emacser.com/erc.htm

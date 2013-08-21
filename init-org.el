@@ -1,15 +1,14 @@
 ; org-mode
 (setq org-todo-keywords '("TODO" "STARTED" "WAITING" "CANCELLED" "DONE"))
 (setq org-agenda-include-all-todo t)
-(setq org-agenda-include-diary t)
+;(setq org-agenda-include-diary t)
 ;(require 'org-babel-init)  
 
 ;(setq org-directory mg-org-file)
 ;(set org-agenda files (file-expand-wildcards "~/org/*.org"))
 ; windows and linux's Dropbox folder must be same
 (setq org-agenda-files '(
-    "~/Dropbox/org/project.org" 
-    "~/Dropbox/org/priv-schedule.org"
+    "~/Dropbox/org/agenda.org" 
     ))
 
 ; http://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.php
