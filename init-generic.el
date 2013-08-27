@@ -100,3 +100,4 @@
 
 ; ssh tramp
 (setq tramp-default-method "ssh")
+(setq tramp-chunksize 500)
