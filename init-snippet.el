@@ -17,7 +17,7 @@
   (insert (format-time-string "%Y-%m-%d %H:%M")))
 
 
-(define-skeleton insert-pelican-template
+(define-skeleton init-pelican
   "Insert templete for pelican static blog system"
   "" (skeleton-read "Title: ")?\n
   "#############################" ?\n
@@ -27,3 +27,8 @@
   ":slug: " (skeleton-read "slug: ") ?\n
 )
 
+
+;; tmp
+(defun js-insert-alert-at-here () 
+  (interactive) 
+  (insert (concat "alert(\"" (buffer-name) ": " (number-to-string (line-number-at-pos)) "\");")))
