@@ -1,3 +1,24 @@
+;;;; ibuffer mode ;;;;
+; ref:
+; * https://github.com/sirech/emacs/blob/master/ibuffer-config.el
+; * https://github.com/kanru/.emacs.d/blob/master/rc/rc-ibuffer.el
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(autoload 'ibuffer "ibuffer" "List buffers." t)
+
+(setq ibuffer-saved-filter-groups
+      '(("default"
+         ("qll" (filename . "/qll/"))
+         ("space2001" (filename . "/guanyucart")))))
+
+(add-hook 'ibuffer-mode-hook
+              (lambda ()
+                (ibuffer-switch-to-saved-filter-groups "default")))
+
+;; hide emacs default buffer
+(require 'ibuf-ext)
+(add-to-list 'ibuffer-never-show-predicates "^\\*")
+
+
 
 (require 'goto-last-change)
 
