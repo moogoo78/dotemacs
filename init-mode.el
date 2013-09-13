@@ -1,3 +1,11 @@
+;;;; markdown ;;;;
+(add-to-list 'load-path "~/.emacs.d/goodies")
+(autoload 'markdown-mode "markdown-mode.el"
+    "Major mode for editing Markdown files" t)
+(setq auto-mode-alist
+    (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
+
 ;;;; ibuffer mode ;;;;
 ; ref:
 ; * https://github.com/sirech/emacs/blob/master/ibuffer-config.el
