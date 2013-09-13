@@ -4,12 +4,24 @@
 
 (provide-theme 'moogoo)
 
+;;base
 (set-foreground-color "gray85")
 (set-background-color "gray20")
 (set-cursor-color "yellow1")
+(set-face-background 'mouse "black")
+
+;; donnot know?
+(set-face-foreground 'font-lock-warning-face "yellow")
+(set-face-foreground 'font-lock-doc-face "yellow")
+(set-face-foreground 'font-lock-preprocessor-face "yellow")
+;(set-face-foreground 'font-lock-doc-string-face "yellow"); err
+;(set-face-foreground 'font-lock-reference-face "yellow") err
+
 ;; comment
 ; (set-face-foreground 'font-lock-comment-face "forest green")
 (set-face-foreground 'font-lock-comment-face "gray45")
+(set-face-foreground 'font-lock-comment-delimiter-face "black")
+
 ;; constant
 (set-face-foreground 'font-lock-constant-face "gray50")
 ;; string
@@ -43,8 +55,7 @@
 
 ;;; 余分のスペースやタブのハイライト
 (set-face-background 'trailing-whitespace "plum")
-;;; マウスカーソルの色
-(set-face-background 'mouse "black")
+
 
 ;;;; 2. ハイライト関係
 ;;; 2-1. global font lockを用いるか
