@@ -20,7 +20,7 @@
 ;; comment
 ; (set-face-foreground 'font-lock-comment-face "forest green")
 (set-face-foreground 'font-lock-comment-face "gray45")
-(set-face-foreground 'font-lock-comment-delimiter-face "black")
+;(set-face-foreground 'font-lock-comment-delimiter-face "gray35")
 
 ;; constant
 (set-face-foreground 'font-lock-constant-face "gray50")
