@@ -17,7 +17,16 @@
   (insert (format-time-string "%Y-%m-%d %H:%M")))
 
 
-(define-skeleton init-pelican
+(define-skeleton init-pelican-md
+  "Insert templete for pelican static blog system"
+  "Title:" (skeleton-read "Title: ")?\n
+  "Date: " (insert-current-date) ?\n
+  "Category: " (skeleton-read "category: ") ?\n
+  "Tags: " (skeleton-read "tags: ") ?\n
+  "Slug: " (skeleton-read "slug: ") ?\n
+)
+
+(define-skeleton init-pelican-rst
   "Insert templete for pelican static blog system"
   "" (skeleton-read "Title: ")?\n
   "#############################" ?\n
