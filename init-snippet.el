@@ -18,8 +18,8 @@
 
 
 (define-skeleton init-pelican-md
-  "Insert templete for pelican static blog system"
-  "Title:" (skeleton-read "Title: ")?\n
+  "Insert template for pelican static blog system"
+  "" "Title: " (skeleton-read "Title: ") ?\n
   "Date: " (insert-current-date) ?\n
   "Category: " (skeleton-read "category: ") ?\n
   "Tags: " (skeleton-read "tags: ") ?\n
