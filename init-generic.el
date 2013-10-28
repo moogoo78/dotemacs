@@ -76,11 +76,6 @@
 (setq default-tab-width 4) ;
 (setq-default indent-tabs-mode nil) ;; indent to space
 ;(setq tab-stop-list ())
-; == fonts ==
-(if (eq system-type 'gnu/linux)
-    (set-default-font "-unknown-Droid Sans Mono-normal-normal-normal-*-13-*-*-*-*-0-iso10646-1"))
-;(set-default-font " -unknown-Droid Sans Mono-normal-normal-normal-*-13-*-*-*-*-0-iso10646-1")
-;(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*    -m-0-iso10646-1")
 
 ; === set default file ===
 (setq diary-file (concat my-path "diary"))
