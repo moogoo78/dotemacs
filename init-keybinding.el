@@ -148,6 +148,24 @@
 (fset 'delblank
    "\260\C-k")
 
+;; todo auto escape
+(defun myquote ()
+  "Insert quote"
+  (interactive)
+  (smart-beginning-of-line)
+  (insert "\"")
+  (end-of-line)
+  (insert "\""))
+
+(defun mywrap (q)
+  "Insert wrapper"
+  (interactive "sEnter wrapper: ")
+  ;(message "aaaa %s" q))
+  (smart-beginning-of-line)
+  (insert q)
+  (end-of-line)
+  (insert q))
+
 (defun kill-buffer-and-delete-window nil
   (interactive)
   (kill-buffer)
