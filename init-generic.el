@@ -96,3 +96,6 @@
 ; ssh tramp
 (setq tramp-default-method "ssh")
 (setq tramp-chunksize 500)
+
+; shell env (for 中文顯示亂碼)
+(setenv "LANG" "zh_TW.UTF-8")

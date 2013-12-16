@@ -86,6 +86,7 @@
 (global-set-key (kbd "<C-next>") 'next-buffer)
 (global-set-key (kbd "<C-prior>") 'previous-buffer)
 
+(global-set-key (kbd "C-c z") 'shell)
 
 ;; custom
 (global-set-key (kbd "C-c .") 'insert-current-date)
