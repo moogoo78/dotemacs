@@ -44,6 +44,12 @@
 ;(global-set-key (kbd "C-d") 'forward-char)
 ;(global-set-key (kbd "<return>") 'newline) ; C-m is bind to Enter, need bind direct
 
+;; WASD
+(global-set-key (kbd "M-,") 'previous-line)
+(global-set-key (kbd "M-o") 'next-line)
+(global-set-key (kbd "M-a") 'backward-char)
+(global-set-key (kbd "M-e") 'forward-char)
+
 ; inspired by ErgoEmacs
 ; http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
 (global-set-key (kbd "C-w") 'kill-buffer)
