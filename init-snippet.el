@@ -1,3 +1,15 @@
+(defun run-calc (d hh mm ss)
+  "running calculator"
+  (interactive "nDistance (km): \nnHours: \nnMinutes: \nnSeconds: ")
+   (let ((km (* d 1000))
+        (tm (+ (* hh 3600) (* mm 60) ss)))
+    (setq hkm (/ tm d 60.0))
+    (setq hkm-m (/ tm d 60))
+    (setq hkm-s (% (/ tm d) 60))
+    (setq mpr (/ tm d 2.5))) ;;沒有進位
+  (message "%dkm, %02d:%02d:%02d => %.2f m/km (%dm%ds), %.2f s/round" d hh mm ss hkm hkm-m hkm-s mpr)
+)
+
 (defun init-py ()
   (interactive)
   (insert "#!/usr/bin/env python\n# -.- coding: utf-8 -.-\n"))
