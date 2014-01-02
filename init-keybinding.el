@@ -45,10 +45,16 @@
 ;(global-set-key (kbd "<return>") 'newline) ; C-m is bind to Enter, need bind direct
 
 ;; WASD
-(global-set-key (kbd "M-,") 'previous-line)
-(global-set-key (kbd "M-o") 'next-line)
-(global-set-key (kbd "M-a") 'backward-char)
-(global-set-key (kbd "M-e") 'forward-char)
+;(global-set-key (kbd "M-,") 'previous-line)
+;(global-set-key (kbd "M-o") 'next-line)
+;(global-set-key (kbd "M-a") 'backward-char)
+;(global-set-key (kbd "M-e") 'forward-char)
+;; VIM 上下左右
+(global-set-key (kbd "M-t") 'previous-line)
+(global-set-key (kbd "M-d") 'backward-char)
+(global-set-key (kbd "M-h") 'next-line)
+(global-set-key (kbd "M-n") 'forward-char)
+
 
 ; inspired by ErgoEmacs
 ; http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
@@ -57,6 +63,7 @@
 ;(global-set-key (kbd "C-p") 'isearch-forward)
 (global-set-key (kbd "C-o") 'find-file)
 ;(global-set-key (kbd "C-a") 'mark-whole-buffer)
+(global-set-key (kbd "M-o") 'find-file-other-window)
 
 ;dvorak zxcv
 ;(global-set-key (kbd "C-;") 'undo) 
@@ -285,3 +292,10 @@ If point was already at that position, move point to beginning of line."
     (back-to-indentation)
     (and (= oldpos (point))
          (beginning-of-line))))
+
+(defun find-file-other-window (fname)
+  "open file in other window"
+  (split-window-below)
+  ; following copy from (find-file) source
+  (interactive "FFind file: ")
+  (switch-to-buffer (find-file-noselect fname)))
