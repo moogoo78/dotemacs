@@ -299,3 +299,21 @@ If point was already at that position, move point to beginning of line."
   ; following copy from (find-file) source
   (interactive "FFind file: ")
   (switch-to-buffer (find-file-noselect fname)))
+
+
+;; from Xah Lee http://ergoemacs.org/emacs/elisp_count-region.html
+(defun my-count-words-region (posBegin posEnd)
+  "Print number of words and chars in region."
+  (interactive "r")
+  (message "Counting …")
+  (save-excursion
+    (let (wordCount charCount)
+      (setq wordCount 0)
+      (setq charCount (- posEnd posBegin))
+      (goto-char posBegin)
+      (while (and (< (point) posEnd)
+                  (re-search-forward "\\w+\\W*" posEnd t))
+        (setq wordCount (1+ wordCount)))
+
+      (message "Words: %d. Chars: %d." wordCount charCount)
+      )))
