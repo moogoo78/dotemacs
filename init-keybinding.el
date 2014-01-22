@@ -8,9 +8,9 @@
 (global-set-key [f8] 'bookmark-bmenu-list)
 
 ;; regsiter
-(global-set-key [f1] 'point-to-register)
+(global-set-key [f1] 'insert-register)
 (global-set-key [f2] 'copy-to-register)
-(global-set-key [f3] 'insert-register)
+(global-set-key [f3] 'point-to-register)
 (global-set-key [f4] 'jump-to-register)
 
 ;(global-set-key [f4] 'org-pub-ics)
