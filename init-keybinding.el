@@ -81,11 +81,11 @@
 (keyboard-translate ?\C-k ?\C-y)
 (keyboard-translate ?\C-y ?\C-k)
 ; C-q quoted-insert,
-;; simulate vim cursor key 
-;(define-key key-translation-map (kbd "C-q") (kbd "C-'"))
-;(define-key key-translation-map (kbd "C-'") (kbd "C-q"))
-;(define-key key-translation-map (kbd "C-j") (kbd "C-,"))
-;(define-key key-translation-map (kbd "C-,") (kbd "C-j"))
+;; simulate vim cursor key
+(define-key key-translation-map (kbd "C-q") (kbd "C-'"))
+(define-key key-translation-map (kbd "C-'") (kbd "C-q"))
+(define-key key-translation-map (kbd "C-j") (kbd "C-,"))
+(define-key key-translation-map (kbd "C-,") (kbd "C-j"))
 (global-set-key (kbd "C-'") 'kill-region)
 (global-set-key (kbd "C-,") 'kill-ring-save)
 
