@@ -1,3 +1,23 @@
+
+(defun mg-outer-wrapper (q)
+  "add char from here to end"
+  (interactive "sEnter wrapper: ")
+  (insert q)
+  (end-of-line)
+  (if (string-equal q "\(") 
+      (insert "\)")
+    (insert q)))
+
+(defun mg-inner-wrapper (q)
+  "add char from here to end, backward 1 char"
+  (interactive "sEnter wrapper: ")
+  (insert q)
+  (end-of-line)
+  (backward-char)
+  (if (string-equal q "\(") 
+      (insert "\)")
+    (insert q)))
+
 (defun mg-run-calc (d hh mm ss)
   "running calculator"
   (interactive "nDistance (km): \nnHours: \nnMinutes: \nnSeconds: ")
@@ -8,6 +28,7 @@
     (setq hkm-s (% (/ tm d) 60))
     (setq mpr (/ tm d 2.5))) ;;沒有進位
     (setq mpr-s (mod mpr 60))
+    (message "%d" tm)
     (message "%dkm, %02d:%02d:%02d => %.2f m/km (%dm%ds), %.2f s/round (%dm%ds)" d hh mm ss hkm hkm-m hkm-s mpr (/ mpr 60) mpr-s)
     
 )

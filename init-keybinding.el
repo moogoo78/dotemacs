@@ -104,6 +104,8 @@
 
 ;; custom
 (global-set-key (kbd "C-c .") 'insert-current-date)
+(global-set-key (kbd "C-c a") 'mg-inner-wrapper)
+(global-set-key (kbd "C-c o") 'mg-outer-wrapper)
 
 (define-key key-translation-map [?\C-\[] [(control left_bracket)])
 (define-key key-translation-map [escape] [?\e])
@@ -172,14 +174,6 @@
   (end-of-line)
   (insert "\""))
 
-(defun mywrap (q)
-  "Insert wrapper"
-  (interactive "sEnter wrapper: ")
-  ;(message "aaaa %s" q))
-  (smart-beginning-of-line)
-  (insert q)
-  (end-of-line)
-  (insert q))
 
 (defun kill-buffer-and-delete-window nil
   (interactive)
@@ -300,6 +294,12 @@ If point was already at that position, move point to beginning of line."
   ; following copy from (find-file) source
   (interactive "FFind file: ")
   (switch-to-buffer (find-file-noselect fname)))
+
+
+(defun mg-org-pub nil
+	"publish "
+	(interactive)
+	(org-publish-all))
 
 
 ;; from Xah Lee http://ergoemacs.org/emacs/elisp_count-region.html
