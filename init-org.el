@@ -20,7 +20,7 @@
 ) ; TODO
 
 ;; org-remember
-(org-remember-insinuate)
+;; (org-remember-insinuate) ;; Emacs 24.3 err
 ;(setq org-default-notes-file /notes.org"))
 (define-key global-map "\C-cr" 'org-remember)
 (setq org-remember-templates

@@ -49,8 +49,8 @@
 (set-face-background 'region "MediumPurple4")
 
 ;; modeline
-(set-face-foreground 'modeline "light gray")
-(set-face-background 'modeline "darkorange")
+(set-face-foreground 'mode-line "light gray") ;; emacs 24.3 change modeline to mode-line
+(set-face-background 'mode-line "darkorange")
 ;; search
 (set-face-foreground 'isearch "white")
 (set-face-background 'isearch "blue")
