@@ -27,14 +27,15 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 
-(setq ibuffer-saved-filter-groups
-      '(("default"
-         ("qll" (filename . "/qll/"))
-         ("space2001" (filename . "/guanyucart")))))
+;; 分類ibuffer mode
+;(setq ibuffer-saved-filter-groups
+;      '(("default"
+;         ("qll" (filename . "/qll/"))
+;         ("space2001" (filename . "/guanyucart")))))
 
-(add-hook 'ibuffer-mode-hook
-              (lambda ()
-                (ibuffer-switch-to-saved-filter-groups "default")))
+;(add-hook 'ibuffer-mode-hook
+;              (lambda ()
+;                (ibuffer-switch-to-saved-filter-groups "default")))
 
 ;; hide emacs default buffer
 (require 'ibuf-ext)
@@ -78,9 +79,10 @@
 
 ;; deft
 (require 'deft)
-(setq deft-extension "rst")
-(setq deft-directory "~/Dropbox/pub")
-(setq deft-text-mode 'rst-mode)
+(setq deft-extension "md.txt")
+(setq deft-directory "~/Dropbox/deft")
+(setq deft-text-mode 'markdown-mode)
+(setq deft-use-filename-as-title t)
 
 ;; php
 (autoload 'php-mode "php-mode" "Major mode for editing php code." t)
