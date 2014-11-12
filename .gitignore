@@ -2,3 +2,4 @@ auto-save-list/*
 tmp/*
 custom.el
 tramp
+.DS_Store

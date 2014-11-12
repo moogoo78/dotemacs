@@ -1,11 +1,11 @@
 ﻿; === MooGoo's .emacs ===
-(defvar my-path "~/.emacs.d/")
+(defvar my-path "~/.emacs.d/lisp")
 (add-to-list 'load-path my-path)
 (add-to-list 'load-path (concat my-path "goodies"))
 (load "init-generic.el")
 (load "init-keybinding.el")
 (load "init-calendar.el")
-(load "init-org.el")
+;(load "init-org.el")
 (load "init-mode.el")
 (load "init-snippet.el")
 ;(load "init-misc.el")

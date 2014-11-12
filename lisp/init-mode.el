@@ -1,5 +1,8 @@
+
+(defvar my-path "~/.emacs.d/lisp")
+(add-to-list 'load-path (concat my-path "/goodies"))
+(add-to-list 'load-path (concat my-path "/goodies/APEL")) ; for elscreen
 ;; elscreen
-(add-to-list 'load-path (concat my-path "goodies/APEL"))
 (load "elscreen" "ElScreen" )
 (setq elscreen-display-tab t)
 
@@ -8,8 +11,9 @@
 (global-set-key (kbd "C-x p") 'elscreen-previous)
 (global-set-key (kbd "C-x n") 'elscreen-next)  
 
+
 ;;;; markdown ;;;;
-(add-to-list 'load-path "~/.emacs.d/goodies")
+
 (autoload 'markdown-mode "markdown-mode.el"
     "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
@@ -85,16 +89,16 @@
 ; indent tab -> offset 4
 ; http://stackoverflow.com/questions/168621/php-mode-for-emacs
 (add-hook 'php-mode-hook 
-		  (function (lambda ()
-					  (setq c-default-style "bsd" 
-							c-basic-offset 4))))
+      (function (lambda ()
+            (setq c-default-style "bsd" 
+              c-basic-offset 4))))
 
 ;; smarty-mode
 ;(autoload 'smarty-mode "smarty-mode" "Smarty Mode" t)
 ;(setq auto-mode-alist
 ;      (append
 ;       '(("\\.tpl$" . smarty-mode))
-;	 auto-mode-alist))
+;  auto-mode-alist))
 
 
 ;; BEGIN >>> for drupal
@@ -132,9 +136,9 @@
 (autoload 'actionscript-mode "actionscript-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.as\\'" . actionscript-mode))
 (add-hook 'actionscript-mode-hook 
-		  (function (lambda ()
-					  (setq c-default-style "bsd" 
-							c-basic-offset 4))))
+      (function (lambda ()
+            (setq c-default-style "bsd" 
+              c-basic-offset 4))))
 ;; w3m
 ;; add this for emacs 23, http://www.emacswiki.org/emacs/emacs-w3m#toc13
 ;(require 'w3m-e21)
