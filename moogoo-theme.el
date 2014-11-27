@@ -8,7 +8,7 @@
 ;;;; Droid Sans Mono, Consolas
 (set-face-attribute 'default nil :font "Droid Sans Mono-12")
 ;;;; 中文, 蘋果儷黒(Apple LiGothic), 微軟正黑(Microsoft JhengHei)
-(set-fontset-font t 'han (font-spec :family "Microsoft JhengHei"))
+;(set-fontset-font t 'han (font-spec :family "Microsoft JhengHei"))
 
 
 ;;base
