@@ -46,10 +46,24 @@
   (insert "#!/bin/bash\n"))
 
 
-(defun insert-current-date ()
+(defun mg-insert-current-dtime ()
   "Insert current date"
   (interactive)
   (insert (format-time-string "%Y-%m-%d %H:%M")))
+
+(defun mg-insert-current-date-log ()
+  "Insert current date for log"
+  (interactive)
+  (setq week_zh (make-hash-table :test 'equal))
+  (puthash "1" "一" week_zh)
+  (puthash "2" "二" week_zh)
+  (puthash "3" "三" week_zh)
+  (puthash "4" "四" week_zh)
+  (puthash "5" "五" week_zh)
+  (puthash "6" "六" week_zh)
+  (puthash "7" "日" week_zh)
+  (setq val (gethash (format-time-string "%w") week_zh))
+  (insert (format-time-string "<%Y-%m-%d (") val ")>"))
 
 
 (define-skeleton init-pelican-md

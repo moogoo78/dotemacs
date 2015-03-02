@@ -103,7 +103,8 @@
 (global-set-key (kbd "C-c z") 'shell)
 
 ;; custom
-(global-set-key (kbd "C-c .") 'insert-current-date)
+(global-set-key (kbd "C-c .") 'mg-insert-current-dtime)
+(global-set-key (kbd "C-c ,") 'mg-insert-current-date-log)
 (global-set-key (kbd "C-c a") 'mg-inner-wrapper)
 (global-set-key (kbd "C-c o") 'mg-outer-wrapper)
 
