@@ -140,7 +140,23 @@
 (add-hook 'actionscript-mode-hook 
       (function (lambda ()
             (setq c-default-style "bsd" 
-              c-basic-offset 4))))
+                  c-basic-offset 4))))
+
+
+;; dired-x, installed with emacs v24.4
+(add-hook 'dired-load-hook
+          (lambda ()
+            (load "dired-x")
+            ;; Set dired-x global variables here.  For example:
+            ;; (setq dired-guess-shell-gnutar "gtar")
+            ;; (setq dired-x-hands-off-my-keys nil)
+            ))
+(add-hook 'dired-mode-hook
+          (lambda ()
+            ;; Set dired-x buffer-local variables here.  For example:
+            ;; (dired-omit-mode 1)
+            ))
+
 ;; w3m
 ;; add this for emacs 23, http://www.emacswiki.org/emacs/emacs-w3m#toc13
 ;(require 'w3m-e21)

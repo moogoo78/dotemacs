@@ -3,30 +3,32 @@
 ;; useful function
 ; 'delete-other-windows
 
-(global-set-key [f6] 'dired)
-(global-set-key [f7] 'org-agenda)
-(global-set-key [f8] 'bookmark-bmenu-list)
 
 ;; regsiter
-(global-set-key [f1] 'insert-register)
-(global-set-key [f2] 'copy-to-register)
-(global-set-key [f3] 'point-to-register)
-(global-set-key [f4] 'jump-to-register)
+(global-set-key [S-f1] 'mg-mark1)
+(global-set-key [S-f2] 'mg-mark2)
+(global-set-key [S-f3] 'mg-mark3)
+(global-set-key [S-f4] 'mg-mark4)
 
-;(global-set-key [f4] 'org-pub-ics)
-;(global-set-key [f4] 'html-mode)
-;(global-set-key [f5] 'compile)                ; make
-;(global-set-key [f6] 'switch-to-buffer)
-;(global-set-key [f8] 'deft)
+(global-set-key [f1] 'mg-goto1)
+(global-set-key [f2] 'mg-goto2)
+(global-set-key [f3] 'mg-goto3)
+(global-set-key [f4] 'mg-goto4)
+
+(global-set-key [f5] 'shrink-window-horizontally)
+(global-set-key [f8] 'enlarge-window-horizontally)
+(global-set-key [f7] 'enlarge-window)
+(global-set-key [f6] 'shrink-window)
+
 (global-set-key "\C-x\C-\\" 'goto-last-change)
 
 (global-set-key (kbd "C-a") 'smart-beginning-of-line)
 
 ;; window sizing
-(global-set-key (kbd "C-M-n") 'enlarge-window-horizontally)
-(global-set-key (kbd "C-M-d") 'shrink-window-horizontally)
-(global-set-key (kbd "C-M-h") 'enlarge-window)
-(global-set-key (kbd "C-M-t") 'shrink-window)
+;(global-set-key (kbd "M-<up>") ')
+;(global-set-key (kbd "M-<down>") ')
+;(global-set-key (kbd "C-M-d") ')
+;(global-set-key (kbd "S-M-t") 'shrink-window)
 
 ;; Indenting and alignment - try
 ;(global-set-key [(f8)]         'indent-region)
@@ -37,23 +39,12 @@
 ;(global-set-key '[(control c) (d)] 'delblank)
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
 (global-set-key (kbd "C-s") 'save-buffer) 
-;(global-set-key (kbd "C-=") 'scroll-down)  
-;(global-set-key (kbd "C-m") 'scroll-down) 
-;(global-set-key (kbd "C-,") 'forward-word)
-;(global-set-key (kbd "C-'") 'backward-word)
-;(global-set-key (kbd "C-d") 'forward-char)
-;(global-set-key (kbd "<return>") 'newline) ; C-m is bind to Enter, need bind direct
 
-;; WASD
-;(global-set-key (kbd "M-,") 'previous-line)
-;(global-set-key (kbd "M-o") 'next-line)
-;(global-set-key (kbd "M-a") 'backward-char)
-;(global-set-key (kbd "M-e") 'forward-char)
-;; VIM 上下左右
-(global-set-key (kbd "M-t") 'previous-line)
-(global-set-key (kbd "M-d") 'backward-char)
-(global-set-key (kbd "M-h") 'next-line)
-(global-set-key (kbd "M-n") 'forward-char)
+; vim-style
+;(global-set-key (kbd "M-t") 'previous-line)
+;(global-set-key (kbd "M-d") 'backward-char)
+;(global-set-key (kbd "M-h") 'next-line)
+;(global-set-key (kbd "M-n") 'forward-char)
 
 
 ; inspired by ErgoEmacs
@@ -97,10 +88,22 @@
 ;(global-set-key (kbd "C-t") 'beginning-of-buffer) ; top of the file
 ;(global-set-key (kbd "C-S-t") 'end-of-buffer) ; bottom of the file
 ;(global-set-key (kbd "C-b") 'isearch-backward) ; change C-f to search
-(global-set-key (kbd "<C-next>") 'next-buffer)
-(global-set-key (kbd "<C-prior>") 'previous-buffer)
+(global-set-key (kbd "<M-up>") 'next-buffer)
+(global-set-key (kbd "<M-down>") 'previous-buffer)
 
 (global-set-key (kbd "C-c z") 'shell)
+
+;; not use
+; <C-next>
+;<C-prior>
+;(global-set-key [f6] 'switch-to-buffer)
+;(global-set-key [f8] 'deft)
+;(global-set-key (kbd "C-=") 'scroll-down)  
+;(global-set-key (kbd "C-m") 'scroll-down) 
+;(global-set-key (kbd "C-,") 'forward-word)
+;(global-set-key (kbd "C-'") 'backward-word)
+;(global-set-key (kbd "C-d") 'forward-char)
+;(global-set-key (kbd "<return>") 'newline) ; C-m is bind to Enter, need bind direct
 
 ;; custom
 (global-set-key (kbd "C-c .") 'mg-insert-current-dtime)

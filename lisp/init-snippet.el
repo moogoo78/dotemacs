@@ -90,3 +90,51 @@
 (defun js-insert-alert-at-here () 
   (interactive) 
   (insert (concat "alert(\"" (buffer-name) ": " (number-to-string (line-number-at-pos)) "\");")))
+
+(defun mg-mark1 ()
+  (interactive)
+  "mark current position to register 1"
+  (message "mark to reg 1")
+  (point-to-register 1 ))
+
+(defun mg-mark2 ()
+  (interactive)
+  "mark current position to register 2"
+  (message "mark to reg 2")  
+  (point-to-register 2 ))
+
+(defun mg-mark3 ()
+  (interactive)
+  "mark current position to register 3"
+  (message "mark to reg 3")  
+  (point-to-register 3 ))
+
+(defun mg-mark4 ()
+  (interactive)
+  "mark current position to register 4"
+  (message "mark to reg 4")  
+  (point-to-register 4 ))
+
+(defun mg-goto1 ()
+  (interactive)
+  "Goto register 1"
+  (message "goto reg 1")  
+  (jump-to-register 1 ))
+
+(defun mg-goto2 ()
+  (interactive)
+  "Goto register 2"
+  (message "goto reg 2")    
+  (jump-to-register 2 ))
+
+(defun mg-goto3 ()
+  (interactive)
+  "Goto register 3"
+  (message "goto reg 3")    
+  (jump-to-register 3 ))
+
+(defun mg-goto4 ()
+  (interactive)
+  "Goto register 4"
+  (message "goto reg 4")    
+  (jump-to-register 4 ))
