@@ -13,12 +13,11 @@
 
 
 ;;;; markdown ;;;;
-
 (autoload 'markdown-mode "markdown-mode.el"
     "Major mode for editing Markdown files" t)
-(setq auto-mode-alist
-    (cons '("\\.md" . markdown-mode) auto-mode-alist))
-
+(add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))
+; Dropbox/org 裡的 txt 檔以 markdown-mode 讀
+(add-to-list 'auto-mode-alist '("Dropbox/org.*\\.txt" . markdown-mode))
 
 ;;;; ibuffer mode ;;;;
 ; ref:
@@ -79,8 +78,8 @@
 
 ;; deft
 (require 'deft)
-(setq deft-extension "md.txt")
-(setq deft-directory "~/Dropbox/deft")
+(setq deft-extension "txt")
+(setq deft-directory "~/Dropbox/org/notes")
 (setq deft-text-mode 'markdown-mode)
 (setq deft-use-filename-as-title t)
 

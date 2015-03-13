@@ -1,7 +1,5 @@
 ; key-binding
-
-;; useful function
-; 'delete-other-windows
+; ============
 
 
 ;; regsiter
@@ -15,26 +13,21 @@
 (global-set-key [f3] 'mg-goto3)
 (global-set-key [f4] 'mg-goto4)
 
-(global-set-key [f5] 'shrink-window-horizontally)
-(global-set-key [f8] 'enlarge-window-horizontally)
-(global-set-key [f7] 'enlarge-window)
-(global-set-key [f6] 'shrink-window)
+(global-set-key [S-f5] 'shrink-window-horizontally)
+(global-set-key [S-f8] 'enlarge-window-horizontally)
+(global-set-key [S-f7] 'enlarge-window)
+(global-set-key [S-f6] 'shrink-window)
+
+(global-set-key [f5] 'dired)
+(global-set-key [f6] 'deft)
+(global-set-key [f8] 'bookmark-bmenu-list)
+
+(global-set-key [C-M-f8] 'kill-buffer-and-delete-window)
+
 
 (global-set-key "\C-x\C-\\" 'goto-last-change)
 
 (global-set-key (kbd "C-a") 'smart-beginning-of-line)
-
-;; window sizing
-;(global-set-key (kbd "M-<up>") ')
-;(global-set-key (kbd "M-<down>") ')
-;(global-set-key (kbd "C-M-d") ')
-;(global-set-key (kbd "S-M-t") 'shrink-window)
-
-;; Indenting and alignment - try
-;(global-set-key [(f8)]         'indent-region)
-;(global-set-key [(control f8)] 'align)
-;(global-set-key [(shift f8)]   'align-current)
-;(global-set-key [(meta f8)]    'align-regexp)
 
 ;(global-set-key '[(control c) (d)] 'delblank)
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
@@ -49,7 +42,7 @@
 
 ; inspired by ErgoEmacs
 ; http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
-(global-set-key (kbd "C-w") 'kill-buffer)
+ (global-set-key (kbd "C-w") 'kill-buffer)
 (global-set-key (kbd "M-f") 'isearch-forward)
 ;(global-set-key (kbd "C-p") 'isearch-forward)
 (global-set-key (kbd "C-o") 'find-file)
@@ -84,26 +77,30 @@
 (global-set-key (kbd "M-g") 'isearch-repeat-forward)
 (global-set-key (kbd "M-G") 'isearch-repeat-backward)
 
-;(global-set-key "\C-w" 'kill-buffer-and-delete-window)
-;(global-set-key (kbd "C-t") 'beginning-of-buffer) ; top of the file
-;(global-set-key (kbd "C-S-t") 'end-of-buffer) ; bottom of the file
-;(global-set-key (kbd "C-b") 'isearch-backward) ; change C-f to search
 (global-set-key (kbd "<M-up>") 'next-buffer)
 (global-set-key (kbd "<M-down>") 'previous-buffer)
+
 
 (global-set-key (kbd "C-c z") 'shell)
 
 ;; not use
-; <C-next>
-;<C-prior>
 ;(global-set-key [f6] 'switch-to-buffer)
-;(global-set-key [f8] 'deft)
 ;(global-set-key (kbd "C-=") 'scroll-down)  
 ;(global-set-key (kbd "C-m") 'scroll-down) 
 ;(global-set-key (kbd "C-,") 'forward-word)
 ;(global-set-key (kbd "C-'") 'backward-word)
 ;(global-set-key (kbd "C-d") 'forward-char)
 ;(global-set-key (kbd "<return>") 'newline) ; C-m is bind to Enter, need bind direct
+;(global-set-key (kbd "C-t") 'beginning-of-buffer) ; top of the file
+;(global-set-key (kbd "C-S-t") 'end-of-buffer) ; bottom of the file
+                                        ;(global-set-key (kbd "C-b") 'isearch-backward) ; change C-f to search
+;; Indenting and alignment - try
+;(global-set-key [(f8)]         'indent-region)
+;(global-set-key [(control f8)] 'align)
+;(global-set-key [(shift f8)]   'align-current)
+;(global-set-key [(meta f8)]    'align-regexp)
+
+
 
 ;; custom
 (global-set-key (kbd "C-c .") 'mg-insert-current-dtime)
