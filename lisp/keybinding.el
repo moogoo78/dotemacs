@@ -18,9 +18,9 @@
 (global-set-key [S-f7] 'enlarge-window)
 (global-set-key [S-f6] 'shrink-window)
 
-(global-set-key [f5] 'dired)
 (global-set-key [f5] 'ibuffer)
-(global-set-key [f6] 'deft)
+(global-set-key [f6] 'dired)
+(global-set-key [f7] 'deft)
 (global-set-key [f8] 'bookmark-bmenu-list)
 
 (global-set-key [C-M-f8] 'kill-buffer-and-delete-window)
