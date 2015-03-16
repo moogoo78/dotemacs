@@ -3,15 +3,15 @@
 
 
 ;; regsiter
-(global-set-key [S-f1] 'mg-mark1)
-(global-set-key [S-f2] 'mg-mark2)
-(global-set-key [S-f3] 'mg-mark3)
-(global-set-key [S-f4] 'mg-mark4)
+(global-set-key [M-f1] 'mg-mark1)
+(global-set-key [M-f2] 'mg-mark2)
+(global-set-key [S-f1] 'mg-goto1)
+(global-set-key [S-f2] 'mg-goto2)
 
-(global-set-key [f1] 'mg-goto1)
-(global-set-key [f2] 'mg-goto2)
-(global-set-key [f3] 'mg-goto3)
-(global-set-key [f4] 'mg-goto4)
+(global-set-key [f1] 'delete-other-windows)
+(global-set-key [f1] 'ibuffer)
+(global-set-key [f3] 'elscreen-previous)
+(global-set-key [f4] 'elscreen-next)
 
 (global-set-key [S-f5] 'shrink-window-horizontally)
 (global-set-key [S-f8] 'enlarge-window-horizontally)
@@ -19,6 +19,7 @@
 (global-set-key [S-f6] 'shrink-window)
 
 (global-set-key [f5] 'dired)
+(global-set-key [f5] 'ibuffer)
 (global-set-key [f6] 'deft)
 (global-set-key [f8] 'bookmark-bmenu-list)
 
@@ -74,6 +75,7 @@
 (global-set-key (kbd "C-,") 'kill-ring-save)
 
 
+; like modern browser
 (global-set-key (kbd "M-g") 'isearch-repeat-forward)
 (global-set-key (kbd "M-G") 'isearch-repeat-backward)
 
@@ -82,6 +84,12 @@
 
 
 (global-set-key (kbd "C-c z") 'shell)
+
+;; tab (elscreen)
+(global-set-key (kbd "C-x t") 'elscreen-create)
+(global-set-key (kbd "C-x w") 'elscreen-kill)  
+(global-set-key (kbd "C-x p") 'elscreen-previous)
+(global-set-key (kbd "C-x n") 'elscreen-next)
 
 ;; not use
 ;(global-set-key [f6] 'switch-to-buffer)

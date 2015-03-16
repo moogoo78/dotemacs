@@ -50,8 +50,11 @@
 
 
 ; === Style ===
-(setq frame-title-format "%b - %f")   ; detail, http://www.emacswiki.orgemacs/FrameTitle
+(setq frame-title-format "%f [ %m ]")   ; detail, http://www.emacswiki.org/emacs/FrameTitle
 (setq icon-title-format "Emacs - %b")
+(setq-default mode-line-format
+  '("> " mode-line-buffer-identification
+    "%l:%c [%*] < %f (%I)")) 
 (global-linum-mode t) ; line number
 (column-number-mode t) ; show column-number
 (tool-bar-mode nil)

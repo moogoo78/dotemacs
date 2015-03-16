@@ -69,7 +69,7 @@
 	(if (equal opt "2")
 		(setq dir "~/Dropbox/org/"))
 	(if (equal opt "3")
-		(setq dir "~/public_html/dev/skin/ohhmystyle/customer/"))
+		(setq dir "~/repo"))
 	(setq default-directory dir)))
 
 (set-default-directory)

@@ -6,12 +6,6 @@
 (load "elscreen" "ElScreen" )
 (setq elscreen-display-tab t)
 
-(global-set-key (kbd "C-x t") 'elscreen-create)
-(global-set-key (kbd "C-x w") 'elscreen-kill)  
-(global-set-key (kbd "C-x p") 'elscreen-previous)
-(global-set-key (kbd "C-x n") 'elscreen-next)  
-
-
 ;;;; markdown ;;;;
 (autoload 'markdown-mode "markdown-mode.el"
     "Major mode for editing Markdown files" t)
