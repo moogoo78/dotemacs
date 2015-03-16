@@ -77,8 +77,8 @@
 (global-set-key (kbd "M-g") 'isearch-repeat-forward)
 (global-set-key (kbd "M-G") 'isearch-repeat-backward)
 
-(global-set-key (kbd "<M-up>") 'next-buffer)
-(global-set-key (kbd "<M-down>") 'previous-buffer)
+(global-set-key (kbd "<C-next>") 'next-buffer)
+(global-set-key (kbd "<C-prior>") 'previous-buffer) ;
 
 
 (global-set-key (kbd "C-c z") 'shell)
