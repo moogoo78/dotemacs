@@ -8,7 +8,7 @@
 (global-set-key [f4] 'elscreen-next)
 
 (global-set-key [f5] 'dired)
-(global-set-key [f6] 'deft)
+(global-set-key [f6] 'mg-quick-note)
 (global-set-key [f7] 'bookmark-jump)
 (global-set-key [f8] 'bookmark-bmenu-list)
 
@@ -151,6 +151,12 @@
   (kill-line)
   (yank)
 )
+
+(defun mg-quick-note()
+  (interactive)
+  "open quick note frame"
+  (elscreen-create)
+  (deft))
 
 (global-set-key (kbd "C-2") 'vimyyp)
 (global-set-key (kbd "M-2") 'vimyy)
