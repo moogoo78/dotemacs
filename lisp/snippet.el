@@ -103,18 +103,6 @@
   (message "mark to reg 2")  
   (point-to-register 2 ))
 
-(defun mg-mark3 ()
-  (interactive)
-  "mark current position to register 3"
-  (message "mark to reg 3")  
-  (point-to-register 3 ))
-
-(defun mg-mark4 ()
-  (interactive)
-  "mark current position to register 4"
-  (message "mark to reg 4")  
-  (point-to-register 4 ))
-
 (defun mg-goto1 ()
   (interactive)
   "Goto register 1"
@@ -127,14 +115,12 @@
   (message "goto reg 2")    
   (jump-to-register 2 ))
 
-(defun mg-goto3 ()
+(defun mg-forward16()
   (interactive)
-  "Goto register 3"
-  (message "goto reg 3")    
-  (jump-to-register 3 ))
+  "forward 16 chart"
+  (forward-char 16))
 
-(defun mg-goto4 ()
+(defun mg-backward16()
   (interactive)
-  "Goto register 4"
-  (message "goto reg 4")    
-  (jump-to-register 4 ))
+  "backward 16 char"
+  (backward-char 16))

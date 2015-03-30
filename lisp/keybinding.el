@@ -22,8 +22,6 @@
 (global-set-key [S-f7] 'enlarge-window)
 (global-set-key [S-f6] 'shrink-window)
 
-(global-set-key [C-M-f8] 'kill-buffer-and-delete-window)
-
 
 (global-set-key "\C-x\C-\\" 'goto-last-change)
 
@@ -32,6 +30,10 @@
 ;(global-set-key '[(control c) (d)] 'delblank)
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
 (global-set-key (kbd "C-s") 'save-buffer) 
+
+; big step forward and backward
+(global-set-key (kbd "C-j") 'mg-backward16)
+(global-set-key (kbd "C-.") 'mg-forward16)
 
 ; vim-style
 ;(global-set-key (kbd "M-t") 'previous-line)
@@ -42,7 +44,7 @@
 
 ; inspired by ErgoEmacs
 ; http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
- (global-set-key (kbd "C-w") 'kill-buffer)
+(global-set-key (kbd "C-w") 'kill-buffer-and-delete-window) ;'kill-buffer
 (global-set-key (kbd "M-f") 'isearch-forward)
 ;(global-set-key (kbd "C-p") 'isearch-forward)
 (global-set-key (kbd "C-o") 'find-file)
