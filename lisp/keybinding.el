@@ -2,7 +2,8 @@
 ; ============
 
 
-(global-set-key [f1] 'delete-other-windows)
+;(global-set-key [f1] 'delete-other-windows)
+(global-set-key [f1] 'mg-close-and-find)
 (global-set-key [f2] 'ibuffer)
 (global-set-key [f3] 'elscreen-previous)
 (global-set-key [f4] 'elscreen-next)
@@ -42,9 +43,12 @@
 ;(global-set-key (kbd "M-n") 'forward-char)
 
 
+
 ; inspired by ErgoEmacs
 ; http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
-(global-set-key (kbd "C-w") 'kill-buffer-and-delete-window) ;'kill-buffer
+(global-set-key (kbd "C-w") 'kill-buffer)
+(global-set-key (kbd "C-c k") 'elscreen-kill-screen-and-buffers)
+(global-set-key (kbd "C-c c") 'kill-buffer-and-delete-window)
 (global-set-key (kbd "M-f") 'isearch-forward)
 ;(global-set-key (kbd "C-p") 'isearch-forward)
 (global-set-key (kbd "C-o") 'find-file)
@@ -317,6 +321,12 @@ If point was already at that position, move point to beginning of line."
 	(interactive)
 	(org-publish-all))
 
+(defun mg-kill-all ()
+  "kill and window"
+  (interactive)
+  (kill-buffer-and-delete-window)
+  (elscreen-kill)
+  )
 
 ;; from Xah Lee http://ergoemacs.org/emacs/elisp_count-region.html
 (defun my-count-words-region (posBegin posEnd)

@@ -124,3 +124,10 @@
   (interactive)
   "backward 16 char"
   (backward-char 16))
+
+
+(defun mg-close-and-find(fname)
+  "close current and find new buffer"
+  (kill-buffer (buffer-name)) ; kill previous buffer
+  (interactive "Ffind-file: ")
+  (switch-to-buffer (find-file-noselect fname)))

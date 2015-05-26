@@ -73,7 +73,7 @@
 ;; deft
 (require 'deft)
 (setq deft-extension "txt")
-(setq deft-directory "~/Dropbox/org/notes")
+(setq deft-directory "~/Dropbox/n")
 (setq deft-text-mode 'markdown-mode)
 (setq deft-use-filename-as-title t)
 
