@@ -5,11 +5,21 @@
 (provide-theme 'moogoo)
 
 ;; font ; (print (font-family-list))
-;;;; Droid Sans Mono, Consolas
-(set-face-attribute 'default nil :font "Droid Sans Mono-12")
-;;;; 中文, 蘋果儷黒(Apple LiGothic), 微軟正黑(Microsoft JhengHei)
-;(set-fontset-font t 'han (font-spec :family "Microsoft JhengHei"))
+;; M-x describe-fontset
 
+(when (eq system-type 'darwin)
+  ;; default Latin font 
+  (set-face-attribute 'default nil :family "Bitstream Vera Sans Mono")
+  ;default font size (point * 10)
+  ;;
+  (set-face-attribute 'default nil :height 120)
+  
+
+  ;;Bitstream Vera Sans Mono
+  
+  ;; use specific font
+  (set-fontset-font t 'han (font-spec :name "Bitstream Vera Sans Mono"))
+  )
 
 ;;base
 (set-foreground-color "gray85")

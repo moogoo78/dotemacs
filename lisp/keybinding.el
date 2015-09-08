@@ -91,10 +91,10 @@
 (global-set-key (kbd "C-c z") 'shell)
 
 ;; tab (elscreen)
-(global-set-key (kbd "C-x t") 'elscreen-create)
-(global-set-key (kbd "C-x w") 'elscreen-kill)  
-(global-set-key (kbd "C-x p") 'elscreen-previous)
-(global-set-key (kbd "C-x n") 'elscreen-next)
+;(global-set-key (kbd "C-x t") 'elscreen-create)
+;(global-set-key (kbd "C-x w") 'elscreen-kill)  
+;(global-set-key (kbd "C-x p") 'elscreen-previous)
+;(global-set-key (kbd "C-x n") 'elscreen-next)
 
 ;; not use
 ;(global-set-key [f6] 'switch-to-buffer)
@@ -112,7 +112,6 @@
 ;(global-set-key [(control f8)] 'align)
 ;(global-set-key [(shift f8)]   'align-current)
 ;(global-set-key [(meta f8)]    'align-regexp)
-
 
 
 ;; custom
