@@ -7,7 +7,8 @@
 (setq case-fold-search          t)  ; search ignore case
 (setq iswitchb-mode             1)   ; better than switch-to-buffer (C-x b)
 (setq kill-ring-max             200) ;
-(setq visible-bell              t)   ; disable beep in linux (openSUSE)
+(setq visible-bell              nil)   ; disable beep in linux (openSUSE)
+(setq ring-bell-function 'ignore)    ; OS X El Capitan Work-Around, 2015-10-07
 (setq x-select-enable-clipboard t)
 ;(fset 'yes-or-no-p 'y-or-n-p)
 
