@@ -10,16 +10,18 @@
 (when (eq system-type 'darwin)
   ;; default Latin font 
   (set-face-attribute 'default nil :family "Bitstream Vera Sans Mono")
-  ;default font size (point * 10)
-  ;;
+;  (set-face-attribute 'default nil :font "Droid Sans Mono-12")  
+                                        ;default font size (point * 10)
+   ;;
   (set-face-attribute 'default nil :height 120)
   
 
   ;;Bitstream Vera Sans Mono
   
   ;; use specific font
-  (set-fontset-font t 'han (font-spec :name "Bitstream Vera Sans Mono"))
-  )
+  ;(set-fontset-font "fontset-default" 'han '("STHeiti"))
+  (set-fontset-font "fontset-default" 'han '("PingFang TC"))
+)
 
 ;;base
 (set-foreground-color "gray85")
