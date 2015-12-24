@@ -12,8 +12,8 @@
 ;(load "tmp/mg-ecb.el")
 ; start org-agenda-list while startup
 ;(add-hook 'after-init-hook 'org-agenda-list)
-(if window-system
-  (set-frame-size (selected-frame) 150 45))
+;(if window-system
+;  (set-frame-size (selected-frame) 150 45))
 
 
 (defun piscine(root)
