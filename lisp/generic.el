@@ -58,7 +58,7 @@
     "%l:%c [%*] < %f (%I)")) 
 (global-linum-mode t) ; line number
 (column-number-mode t) ; show column-number
-(tool-bar-mode nil)
+(tool-bar-mode -1)
 (if (>= emacs-major-version 24)
     (load-theme 'moogoo t)
   (load-theme 'moogoo))
