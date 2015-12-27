@@ -2,6 +2,7 @@
 (defvar my-path "~/.emacs.d/lisp")
 (add-to-list 'load-path (concat my-path "/goodies"))
 (add-to-list 'load-path (concat my-path "/goodies/APEL")) ; for elscreen
+
 ;; elscreen
 (load "elscreen" "ElScreen" )
 (setq elscreen-display-tab t)
