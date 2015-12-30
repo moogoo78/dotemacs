@@ -36,6 +36,11 @@
 (global-set-key (kbd "C-j") 'mg-backward16)
 (global-set-key (kbd "C-.") 'mg-forward16)
 
+(global-set-key (kbd "C-<left>") 'beginning-of-buffer) ; top of the file
+(global-set-key (kbd "C-<right>") 'end-of-buffer) ; bottom of the file
+(global-set-key (kbd "C-<Down>") 'scroll-down)  
+(global-set-key (kbd "C-<Up>") 'scroll-up)  
+
 ; vim-style
 ;(global-set-key (kbd "M-t") 'previous-line)
 ;(global-set-key (kbd "M-d") 'backward-char)
@@ -98,14 +103,11 @@
 
 ;; not use
 ;(global-set-key [f6] 'switch-to-buffer)
-;(global-set-key (kbd "C-=") 'scroll-down)  
 ;(global-set-key (kbd "C-m") 'scroll-down) 
 ;(global-set-key (kbd "C-,") 'forward-word)
 ;(global-set-key (kbd "C-'") 'backward-word)
 ;(global-set-key (kbd "C-d") 'forward-char)
 ;(global-set-key (kbd "<return>") 'newline) ; C-m is bind to Enter, need bind direct
-;(global-set-key (kbd "C-t") 'beginning-of-buffer) ; top of the file
-;(global-set-key (kbd "C-S-t") 'end-of-buffer) ; bottom of the file
                                         ;(global-set-key (kbd "C-b") 'isearch-backward) ; change C-f to search
 ;; Indenting and alignment - try
 ;(global-set-key [(f8)]         'indent-region)
