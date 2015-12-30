@@ -38,8 +38,8 @@
 
 (global-set-key [(control left)] 'beginning-of-buffer)    
 (global-set-key [(control right)] 'end-of-buffer)    
-(global-set-key [(control up)] 'scroll-up)    
-(global-set-key [(control down)] 'scroll-down)    
+(global-set-key [(control up)] 'scroll-down)    
+(global-set-key [(control down)] 'scroll-up)    
 
 ; vim-style
 ;(global-set-key (kbd "M-t") 'previous-line)
