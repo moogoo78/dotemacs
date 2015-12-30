@@ -3,3 +3,4 @@ tmp/*
 custom.el
 tramp
 .DS_Store
+elpa
