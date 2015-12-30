@@ -23,6 +23,12 @@
   (set-fontset-font "fontset-default" 'han '("PingFang TC"))
 )
 
+(when (eq system-type 'gnu/linux)
+  (set-face-attribute 'default nil :font "Droid Sans Mono-10")  
+  ;(set-face-attribute 'default nil :height 100)
+)
+
+
 ;;base
 (set-foreground-color "gray85")
 (set-background-color "gray20")
