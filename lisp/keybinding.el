@@ -36,10 +36,10 @@
 (global-set-key (kbd "C-j") 'mg-backward16)
 (global-set-key (kbd "C-.") 'mg-forward16)
 
-(global-set-key (kbd "C-<left>") 'beginning-of-buffer) ; top of the file
-(global-set-key (kbd "C-<right>") 'end-of-buffer) ; bottom of the file
-(global-set-key (kbd "C-<Down>") 'scroll-down)  
-(global-set-key (kbd "C-<Up>") 'scroll-up)  
+(global-set-key [(control left)] 'beginning-of-buffer)    
+(global-set-key [(control right)] 'end-of-buffer)    
+(global-set-key [(control up)] 'scroll-up)    
+(global-set-key [(control down)] 'scroll-down)    
 
 ; vim-style
 ;(global-set-key (kbd "M-t") 'previous-line)
