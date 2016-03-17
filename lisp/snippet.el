@@ -69,7 +69,7 @@
 (define-skeleton init-pelican-md
   "Insert template for pelican static blog system"
   "" "Title: " (skeleton-read "Title: ") ?\n
-  "Date: " (insert-current-date) ?\n
+  "Date: " (mg-insert-current-dtime) ?\n
   "Category: " (skeleton-read "category: ") ?\n
   "Tags: " (skeleton-read "tags: ") ?\n
   "Slug: " (skeleton-read "slug: ") ?\n
@@ -79,7 +79,7 @@
   "Insert templete for pelican static blog system"
   "" (skeleton-read "Title: ")?\n
   "#############################" ?\n
-  ":date: " (insert-current-date) ?\n
+  ":date: " (mg-insert-current-dtime) ?\n
   ":category: " (skeleton-read "category: ") ?\n
   ":tags: " (skeleton-read "tags: ") ?\n
   ":slug: " (skeleton-read "slug: ") ?\n
