@@ -85,6 +85,44 @@
   ":slug: " (skeleton-read "slug: ") ?\n
 )
 
+(define-skeleton mg-html
+  "Insert HTML tag"
+  ""
+  > "<" (setq t1 (skeleton-read "tag name: ")) " "
+  > ("attr: " str "=\"" ("value: " str "\" "))
+  > "></" t1 ">"
+  )  
+
+(define-skeleton jj-base
+  "Insert Jinja2 template base syntax"
+  ""
+  > "{% extends \"base.html\" %}" \n \n \n
+  > "{% block main %}" \n
+  > "{% endblock %}")
+
+(define-skeleton jj-block
+  "Insert Jinja2 template block syntax"
+  ""
+  > "{% block " (skeleton-read "block name: ") " %}" \n
+  > "{% endblock %}")
+
+(define-skeleton jj-loop
+  "Insert Jinja2 template loop syntax"
+  ""
+  ;(setq is_list (skeleton-read "list?: "))
+  ;> (if (string= is_list "ul") "<ul>") \n  
+  > "{% for i in " (skeleton-read "name of the rows: ") " %}" \n
+  > "{{ i }}" \n
+  > "{% endfor %}")
+
+(define-skeleton jj-loop-ul
+  "Insert Jinja2 template loop syntax"
+  ""
+  > "<ul>" \n
+  > "{% for i in " (skeleton-read "name of the rows: ") " %}" \n
+  > "<li>{{ i }}</li>" \n
+  > "{% endfor %}" \n
+  > "</ul>")
 
 ;; tmp
 (defun js-insert-alert-at-here () 
