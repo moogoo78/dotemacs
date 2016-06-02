@@ -26,11 +26,12 @@
     (setq hkm (/ tm d 60.0))
     (setq hkm-m (/ tm d 60))
     (setq hkm-s (% (/ tm d) 60))
-    (setq mpr (/ tm d 2.5))) ;;沒有進位
+    ;(message "%d" tm)    
+    (setq mpr (/ tm d 2.5)) ;;沒有進位
     (setq mpr-s (mod mpr 60))
     (message "%d" tm)
     (message "%dkm, %02d:%02d:%02d => %.2f m/km (%dm%ds), %.2f s/round (%dm%ds)" d hh mm ss hkm hkm-m hkm-s mpr (/ mpr 60) mpr-s)
-    
+    )
 )
 
 (defun init-py ()
