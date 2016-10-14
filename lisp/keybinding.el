@@ -1,45 +1,91 @@
 ; key-binding
 ; ============
 
+(global-set-key [f2] 'bookmark-bmenu-list)
+
+(global-set-key (kbd "C-o") 'find-file)
+
+
+;; buffer
+(global-set-key (kbd "C-s") 'save-buffer)
+(global-set-key (kbd "<C-next>") 'next-buffer)
+(global-set-key (kbd "<C-prior>") 'previous-buffer) ;
+
+;; move
+(global-set-key (kbd "C-l") 'goto-line)            ; go to line num
+(global-set-key (kbd "M-p") 'scroll-down)
+(global-set-key (kbd "M-n") 'scroll-up)
+
+;; act like modern browser
+(global-set-key (kbd "M-f") 'isearch-forward)
+(global-set-key (kbd "M-g") 'isearch-repeat-forward)
+(global-set-key (kbd "M-G") 'isearch-repeat-backward)
+(global-set-key (kbd "C-w") 'kill-buffer)
+
+;; qwerty qjk
+(global-set-key (kbd "C-q") 'kill-region) ;  cut
+(global-set-key (kbd "C-j") 'kill-ring-save) ;  copy
+(global-set-key (kbd "C-k") 'yank) ; paste
+(global-set-key (kbd "C-y") 'kill-line) ; change ctrl-y to kill line
+
+;inspired:
+; - http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
+(keyboard-translate ?\C-t ?\C-x)
+(keyboard-translate ?\C-x ?\C-t)
+
+
+;; register
+(global-set-key (kbd "C-'") 'set-mark-command)
+(global-set-key (kbd "C-,") 'vimyy)
+(global-set-key (kbd "C-.") 'vimyyp)
+
+(global-set-key (kbd "M-1") 'point-to-register)
+(global-set-key (kbd "M-2") 'jump-to-register)
+(global-set-key (kbd "C-1") 'copy-to-register)
+(global-set-key (kbd "C-2") 'insert-register)
+
+
+;;;;
+
 
 ;(global-set-key [f1] 'delete-other-windows)
-(global-set-key [f1] 'mg-close-and-find)
-(global-set-key [f2] 'ibuffer)
-(global-set-key [f3] 'elscreen-previous)
-(global-set-key [f4] 'elscreen-next)
+;(global-set-key [f1] 'mg-close-and-find)
+;(global-set-key [f2] 'ibuffer)
+;(global-set-key [f3] 'elscreen-previous)
+;(global-set-key [f4] 'elscreen-next)
 
-(global-set-key [f5] 'dired)
-(global-set-key [f6] 'mg-quick-note)
-(global-set-key [f7] 'bookmark-jump)
-(global-set-key [f8] 'bookmark-bmenu-list)
+;(global-set-key [f5] 'dired)
+;(global-set-key [f6] 'mg-quick-note)
+;(global-set-key [f7] 'bookmark-jump)
+;(global-set-key [f8] 'bookmark-bmenu-list)
 
-(global-set-key [M-f1] 'mg-mark1)
-(global-set-key [M-f2] 'mg-mark2)
-(global-set-key [S-f1] 'mg-goto1)
-(global-set-key [S-f2] 'mg-goto2)
+;(global-set-key [M-f1] 'mg-mark1)
+;(global-set-key [M-f2] 'mg-mark2)
+;(global-set-key [S-f1] 'mg-goto1)
+;(global-set-key [S-f2] 'mg-goto2)
 
-(global-set-key [S-f5] 'shrink-window-horizontally)
-(global-set-key [S-f8] 'enlarge-window-horizontally)
-(global-set-key [S-f7] 'enlarge-window)
-(global-set-key [S-f6] 'shrink-window)
+;(global-set-key [S-f5] 'shrink-window-horizontally)
+;(global-set-key [S-f8] 'enlarge-window-horizontally)
+;(global-set-key [S-f7] 'enlarge-window)
+;(global-set-key [S-f6] 'shrink-window)
 
 
-(global-set-key "\C-x\C-\\" 'goto-last-change)
+;(global-set-key "\C-x\C-\\" 'goto-last-change)
 
-(global-set-key (kbd "C-a") 'smart-beginning-of-line)
+;(global-set-key (kbd "C-a") 'smart-beginning-of-line)
 
 ;(global-set-key '[(control c) (d)] 'delblank)
-(global-set-key (kbd "C-l") 'goto-line)            ; go to line num
-(global-set-key (kbd "C-s") 'save-buffer) 
+
+
 
 ; big step forward and backward
-(global-set-key (kbd "C-j") 'mg-backward16)
-(global-set-key (kbd "C-.") 'mg-forward16)
+;(global-set-key (kbd "C-j") 'mg-backward16)
+;(global-set-key (kbd "C-.") 'mg-forward16)
 
-(global-set-key [(control left)] 'beginning-of-buffer)    
-(global-set-key [(control right)] 'end-of-buffer)    
-(global-set-key [(control up)] 'scroll-down)    
-(global-set-key [(control down)] 'scroll-up)    
+;(global-set-key [(control left)] 'beginning-of-buffer)    
+;(global-set-key [(control right)] 'end-of-buffer)    
+;(global-set-key [(control up)] 'scroll-down)    
+;(global-set-key [(control down)] 'scroll-up)    
 
 ; vim-style
 ;(global-set-key (kbd "M-t") 'previous-line)
@@ -51,14 +97,14 @@
 
 ; inspired by ErgoEmacs
 ; http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
-(global-set-key (kbd "C-w") 'kill-buffer)
-(global-set-key (kbd "C-c k") 'elscreen-kill-screen-and-buffers)
-(global-set-key (kbd "C-c c") 'kill-buffer-and-delete-window)
-(global-set-key (kbd "M-f") 'isearch-forward)
+;(global-set-key (kbd "C-w") 'kill-buffer)
+;(global-set-key (kbd "C-c k") 'elscreen-kill-screen-and-buffers)
+;(global-set-key (kbd "C-c c") 'kill-buffer-and-delete-window)
+
 ;(global-set-key (kbd "C-p") 'isearch-forward)
-(global-set-key (kbd "C-o") 'find-file)
+
 ;(global-set-key (kbd "C-a") 'mark-whole-buffer)
-(global-set-key (kbd "M-o") 'find-file-other-window)
+;(global-set-key (kbd "M-o") 'find-file-other-window)
 
 ;dvorak zxcv
 ;(global-set-key (kbd "C-;") 'undo) 
@@ -66,34 +112,28 @@
 ;(global-set-key (kbd "C-q") 'kill-region)
 ;(global-set-key (kbd "C-j") 'kill-ring-save) ;copy
 ;(global-set-key (kbd "C-k") 'yank)
-(global-set-key (kbd "C-;") 'undo)
+;(global-set-key (kbd "C-;") 'undo)
 
 ;(global-set-key (kbd "C-y") 'kill-line)
 
 ; 互換key (for dvorak layout)
-(keyboard-translate ?\C-t ?\C-x)
-(keyboard-translate ?\C-x ?\C-t)
-(keyboard-translate ?\C-k ?\C-y)
-(keyboard-translate ?\C-y ?\C-k)
+;(keyboard-translate ?\C-k ?\C-y)
+;(keyboard-translate ?\C-y ?\C-k)
 ; C-q quoted-insert,
 ;; simulate vim cursor key
-(define-key key-translation-map (kbd "C-q") (kbd "C-'"))
-(define-key key-translation-map (kbd "C-'") (kbd "C-q"))
-(define-key key-translation-map (kbd "C-j") (kbd "C-,"))
-(define-key key-translation-map (kbd "C-,") (kbd "C-j"))
-(global-set-key (kbd "C-'") 'kill-region)
-(global-set-key (kbd "C-,") 'kill-ring-save)
+
+;(define-key key-translation-map (kbd "C-q") (kbd "C-'"))
+;(define-key key-translation-map (kbd "C-'") (kbd "C-q"))
+;(define-key key-translation-map (kbd "C-j") (kbd "C-,"))
+;(define-key key-translation-map (kbd "C-,") (kbd "C-j"))
+;(global-set-key (kbd "C-'") 'kill-region)
+;(global-set-key (kbd "C-,") 'kill-ring-save)
 
 
-; like modern browser
-(global-set-key (kbd "M-g") 'isearch-repeat-forward)
-(global-set-key (kbd "M-G") 'isearch-repeat-backward)
-
-(global-set-key (kbd "<C-next>") 'next-buffer)
-(global-set-key (kbd "<C-prior>") 'previous-buffer) ;
 
 
-(global-set-key (kbd "C-c z") 'shell)
+
+;(global-set-key (kbd "C-c z") 'shell)
 
 ;; tab (elscreen)
 ;(global-set-key (kbd "C-x t") 'elscreen-create)
@@ -116,14 +156,15 @@
 ;(global-set-key [(meta f8)]    'align-regexp)
 
 
+
 ;; custom
 (global-set-key (kbd "C-c .") 'mg-insert-current-dtime)
 (global-set-key (kbd "C-c ,") 'mg-insert-current-date-log)
 (global-set-key (kbd "C-c a") 'mg-inner-wrapper)
 (global-set-key (kbd "C-c o") 'mg-outer-wrapper)
 
-(define-key key-translation-map [?\C-\[] [(control left_bracket)])
-(define-key key-translation-map [escape] [?\e])
+;(define-key key-translation-map [?\C-\[] [(control left_bracket)])
+;(define-key key-translation-map [escape] [?\e])
 (define-key function-key-map [escape] nil)
 (define-key function-key-map [?\e] nil)
 (when (boundp 'local-function-key-map)
@@ -136,10 +177,10 @@
 ;(global-set-key (kbd "C-[") 'previous-line) ; error ;http://superuser.com/questions/173851/linux-remap-ctrl-key
 ;(global-set-key (kbd "C-/") 'next-line)/
 
-(global-set-key (kbd "M-1") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
-(global-set-key (kbd "M-2") 'select-inside-quotes) ;
+;(global-set-key (kbd "M-1") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
+;(global-set-key (kbd "M-2") 'select-inside-quotes) ;
 (global-set-key (kbd "M-3") 'my-isearch-word-at-point); like vim's *
-(global-set-key (kbd "C-4") 'ideview)
+;(global-set-key (kbd "C-4") 'ideview)
 
 ; http://stackoverflow.com/questions/88399/how-do-i-duplicate-a-whole-line-in-emacs
 (defun vimyyp()
@@ -165,8 +206,6 @@
   (elscreen-create)
   (deft))
 
-(global-set-key (kbd "C-2") 'vimyyp)
-(global-set-key (kbd "M-2") 'vimyy)
 
 ; TODO
 ;(add-hook 'isearch-mode-hook

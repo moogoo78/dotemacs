@@ -104,6 +104,14 @@
 ; shell env (for 中文顯示亂碼)
 (setenv "LANG" "zh_TW.UTF-8")
 
+
+;; initial window
+(setq initial-frame-alist
+      '(
+        (width . 170) ; character
+        (height . 50) ; lines
+        ))
+
 ;; Emacs Package
 (require 'package)
 (add-to-list 'package-archives
@@ -112,3 +120,4 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
+
