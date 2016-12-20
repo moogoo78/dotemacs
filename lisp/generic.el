@@ -65,7 +65,7 @@
 
 ; == scroll bar ==
 ;scroll-bar-mode        'right ;
-(setq scroll-margin 3) 
+(setq scroll-margin 1) 
 (setq scroll-conservatively 10000)  ; margin 3 line when up or down
 ; == cursor ==
 (blink-cursor-mode               -1)   ; disable cursor blink
@@ -108,9 +108,12 @@
 ;; initial window
 (setq initial-frame-alist
       '(
-        (width . 170) ; character
-        (height . 50) ; lines
+        (width . 128) ; character
+        (height . 38) ; lines
         ))
+
+(put 'scroll-left 'disabled nil)
+(put 'set-goal-column 'disabled nil)
 
 ;; Emacs Package
 (require 'package)
@@ -120,4 +123,3 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
-

@@ -29,5 +29,3 @@
 ;(switch-to-buffer (other-buffer))
 ;(generate-new-buffer "bar")
   )
-(put 'scroll-left 'disabled nil)
-(put 'set-goal-column 'disabled nil)

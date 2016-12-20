@@ -1,6 +1,5 @@
 ; key-binding
 ; ============
-
 (global-set-key [f2] 'bookmark-bmenu-list)
 
 (global-set-key (kbd "C-o") 'find-file)
@@ -8,8 +7,8 @@
 
 ;; buffer
 (global-set-key (kbd "C-s") 'save-buffer)
-(global-set-key (kbd "<C-next>") 'next-buffer)
-(global-set-key (kbd "<C-prior>") 'previous-buffer) ;
+(global-set-key (kbd "C-c n") 'next-buffer)
+(global-set-key (kbd "C-c p") 'previous-buffer) ;
 
 ;; move
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
@@ -44,6 +43,13 @@
 (global-set-key (kbd "C-1") 'copy-to-register)
 (global-set-key (kbd "C-2") 'insert-register)
 
+(global-set-key (kbd "C-c q") 'select-inside-quotes)
+
+;; elscreen
+(global-set-key (kbd "C-c c") 'elscreen-create)
+(global-set-key (kbd "C-c w") 'elscreen-kill)  
+(global-set-key (kbd "<C-prior>") 'elscreen-previous)
+(global-set-key (kbd "<C-next>") 'elscreen-next)
 
 ;;;;
 
@@ -178,7 +184,6 @@
 ;(global-set-key (kbd "C-/") 'next-line)/
 
 ;(global-set-key (kbd "M-1") 'set-mark-command) ; from: http://jidanni.org/comp/configuration/.emacs
-;(global-set-key (kbd "M-2") 'select-inside-quotes) ;
 (global-set-key (kbd "M-3") 'my-isearch-word-at-point); like vim's *
 ;(global-set-key (kbd "C-4") 'ideview)
 
@@ -191,6 +196,7 @@
   (open-line 1)
   (next-line 1)
   (yank)
+  (move-beginning-of-line 1)
 )
 
 (defun vimyy()
@@ -198,6 +204,7 @@
   (move-beginning-of-line 1)
   (kill-line)
   (yank)
+  (move-beginning-of-line 1)
 )
 
 (defun mg-quick-note()
@@ -225,14 +232,33 @@
 (fset 'delblank
    "\260\C-k")
 
-;; todo auto escape
-(defun myquote ()
+;; TODO, unfinished
+(defun mg-quote ()
   "Insert quote"
+  (interactive
+   (if mark-active (list (region-beginning) (region-end))
+     (message "Copied line")
+     )
+   )
+  )
+
+
+; via http://xahlee.org/emacs/elisp_idioms.html
+(defun select-inside-quotes ()
+  "Select text between double straight quotes
+on each side of cursor."
   (interactive)
-  (smart-beginning-of-line)
-  (insert "\"")
-  (end-of-line)
-  (insert "\""))
+  (let (p1 p2)
+    (skip-chars-backward "^\"")
+    (setq p1 (point))
+    (skip-chars-forward "^\"")
+    (setq p2 (point))
+
+    (goto-char p1)
+    (push-mark p2)
+    (setq mark-active t)
+  )
+)
 
 
 (defun kill-buffer-and-delete-window nil
@@ -281,22 +307,6 @@
       (isearch-search-and-update)))) 
 (add-hook 'isearch-mode-hook 'my-isearch-yank-word-hook) 
 
-; via http://xahlee.org/emacs/elisp_idioms.html
-(defun select-inside-quotes ()
-  "Select text between double straight quotes
-on each side of cursor."
-  (interactive)
-  (let (p1 p2)
-    (skip-chars-backward "^\"")
-    (setq p1 (point))
-    (skip-chars-forward "^\"")
-    (setq p2 (point))
-
-    (goto-char p1)
-    (push-mark p2)
-    (setq mark-active t)
-  )
-)
 
 ;(defun org-pub-ics ()
 ;  (interactive)
