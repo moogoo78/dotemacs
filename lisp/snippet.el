@@ -125,6 +125,11 @@
   > "{% endfor %}" \n
   > "</ul>")
 
+(define-skeleton jj-if
+  "Insert Jinja2 template if syntax"
+  ""
+  > "{% if x == "" %}{% endif %}")
+
 ;; tmp
 (defun js-insert-alert-at-here () 
   (interactive) 

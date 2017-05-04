@@ -14,6 +14,8 @@
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
 (global-set-key (kbd "M-p") 'scroll-down)
 (global-set-key (kbd "M-n") 'scroll-up)
+(global-set-key (kbd "C-c b") 'beginning-of-buffer)
+(global-set-key (kbd "C-c e") 'end-of-buffer)
 
 ;; act like modern browser
 (global-set-key (kbd "M-f") 'isearch-forward)
