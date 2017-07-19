@@ -27,7 +27,10 @@
   (set-face-attribute 'default nil :font "Droid Sans Mono-10")  
   ;(set-face-attribute 'default nil :height 100)
 )
-
+(when (eq system-type 'darwin)
+  (set-face-attribute 'default nil :font "Andale Mono-12")
+  ;(set-face-attribute 'default nil :height 100)
+)
 
 ;;base
 (set-foreground-color "gray85")
