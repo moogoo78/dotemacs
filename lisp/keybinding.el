@@ -14,8 +14,14 @@
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
 (global-set-key (kbd "M-p") 'scroll-down)
 (global-set-key (kbd "M-n") 'scroll-up)
-(global-set-key (kbd "C-c b") 'beginning-of-buffer)
-(global-set-key (kbd "C-c e") 'end-of-buffer)
+;(global-set-key (kbd "C-c b") 'beginning-of-buffer)
+;(global-set-key (kbd "C-c e") 'end-of-buffer)
+
+; big step forward and backward
+(global-set-key [(control left)] 'mg-backward16)
+(global-set-key [(control right)] 'mg-forward16)
+(global-set-key [(control up)] 'beginning-of-buffer)    
+(global-set-key [(control down)] 'end-of-buffer)    
 
 ;; act like modern browser
 (global-set-key (kbd "M-f") 'isearch-forward)
@@ -83,12 +89,6 @@
 ;(global-set-key (kbd "C-a") 'smart-beginning-of-line)
 
 ;(global-set-key '[(control c) (d)] 'delblank)
-
-
-
-; big step forward and backward
-;(global-set-key (kbd "C-j") 'mg-backward16)
-;(global-set-key (kbd "C-.") 'mg-forward16)
 
 ;(global-set-key [(control left)] 'beginning-of-buffer)    
 ;(global-set-key [(control right)] 'end-of-buffer)    
