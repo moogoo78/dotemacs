@@ -7,8 +7,8 @@
 
 ;; buffer
 (global-set-key (kbd "C-s") 'save-buffer)
-(global-set-key (kbd "C-c n") 'next-buffer)
-(global-set-key (kbd "C-c p") 'previous-buffer) ;
+(global-set-key (kbd "C-c j") 'next-buffer)
+(global-set-key (kbd "C-c k") 'previous-buffer) ;
 
 ;; move
 (global-set-key (kbd "C-l") 'goto-line)            ; go to line num
@@ -56,8 +56,8 @@
 ;; elscreen
 (global-set-key (kbd "C-c c") 'elscreen-create)
 (global-set-key (kbd "C-c w") 'elscreen-kill)  
-(global-set-key (kbd "<C-prior>") 'elscreen-previous)
-(global-set-key (kbd "<C-next>") 'elscreen-next)
+(global-set-key (kbd "C-c p") 'elscreen-previous)
+(global-set-key (kbd "C-c n") 'elscreen-next)
 
 ;;;;
 
