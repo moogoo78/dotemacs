@@ -2,38 +2,91 @@
 ; ============
 (global-set-key [f2] 'bookmark-bmenu-list)
 
-(global-set-key (kbd "C-o") 'find-file)
+;; Dvorak
+;; ['][,][.][p][y][f][g][c][r][l][/][=][\]
+;; [a][o][e][u][i][d][h][t][n][s][-]
+;; [;][q][j][k][x][b][m][w][v][z]
+
+;; QWERTY
+;; (q)(w)(e)(r)(t)(y)(u)(i)(o)(p)([)(])(\)
+;; (a)(s)(d)(f)(g)(h)(j)(k)(l)(;)(')
+;; (z)(x)(c)(v)(b)(n)(m)(,)(.)(/)
+
+;; TAGS :file:register:buffer:cursor:window:
 
 
-;; buffer
-(global-set-key (kbd "C-s") 'save-buffer)
-(global-set-key (kbd "C-c j") 'next-buffer)
-(global-set-key (kbd "C-c k") 'previous-buffer) ;
+;; ========================
+;; Ctrl-[KEY]
+;; ========================
+(global-set-key (kbd "C-'") 'set-mark-command)     ; (q) :register:
+(global-set-key (kbd "C-,") 'vimyy)                ; (w) :register:
+(global-set-key (kbd "C-.") 'vimyyp)               ; (e) :register:
+;; C-p                                             ; (r)
+(global-set-key (kbd "C-y") 'scroll-down)          ; (t) :cursor:
+;; C-f                                             ; (y)
+;; C-g                                             ; (u)
+;; C-c                                             ; (i)
+;; C-r                                             ; (o) TODO
+;; C-/ undo                                        ; ([) (undo)
+;; C-=                                             ; (]) TODO
+(global-set-key (kbd "C-\\") 'kill-line)           ; (\) :register: (input method)
+;; ---
+;; C-a                                             ; (a)
+(global-set-key (kbd "C-o") 'find-file)            ; (s) :file:
+;; C-e                                             ; (d)
+;; C-u                                             ; (f)
+(global-set-key (kbd "C-i") 'scroll-up)            ; (g) :cursor:
+;; C-d                                             ; (h)
+;; C-h                                             ; (j)
+;; C-t                                             ; (k)
+;; C-n                                             ; (l)
+(global-set-key (kbd "C-s") 'save-buffer)          ; (;) :buffer:
+;; C-- become C-C --?                              ; (')
+;; ---
+;; u-;                                             ; (z) TODO
+(global-set-key (kbd "C-q") 'kill-region)          ; (x) cut :register:
+(global-set-key (kbd "C-j") 'kill-ring-save)       ; (c) copy :register:
+(global-set-key (kbd "C-k") 'yank)                 ; (v) paste :register:
+;; C-x                                             ; (b) 
+;; C-b                                             ; (n)
+;; C-m  return                                     ; (m) TODO
+; C-w (global-set-key (kbd "C-w") 'kill-buffer)    ; (,) TODO
+;; C-v                                             ; (.) TODO
+;; C-z undo                                        ; (/) 
 
-;; move
-(global-set-key (kbd "C-l") 'goto-line)            ; go to line num
-(global-set-key (kbd "M-p") 'scroll-down)
-(global-set-key (kbd "M-n") 'scroll-up)
-;(global-set-key (kbd "C-c b") 'beginning-of-buffer)
-;(global-set-key (kbd "C-c e") 'end-of-buffer)
+;; C-_ undo
 
-; big step forward and backward
-(global-set-key [(control left)] 'mg-backward16)
-(global-set-key [(control right)] 'mg-forward16)
-(global-set-key [(control up)] 'beginning-of-buffer)    
-(global-set-key [(control down)] 'end-of-buffer)    
 
+;; ========================
+;; M [KEY]
+;; ========================
 ;; act like modern browser
 (global-set-key (kbd "M-f") 'isearch-forward)
 (global-set-key (kbd "M-g") 'isearch-repeat-forward)
 (global-set-key (kbd "M-G") 'isearch-repeat-backward)
-(global-set-key (kbd "C-w") 'kill-buffer)
+;; M-p, M-m
+; like macOS tab switch
+[](global-set-key (kbd "M-{") 'elscreen-previous)
+(global-set-key (kbd "M-}") 'elscreen-next)
+(global-set-key (kbd "M-w") 'mg-backward16)
+(global-set-key (kbd "M-v") 'mg-forward16)
+;; ========================
+;; Ctrl-c [KEY]
+;; ========================
+(global-set-key (kbd "C-c n") 'next-buffer)
+(global-set-key (kbd "C-c p") 'previous-buffer) ;
+(global-set-key (kbd "C-c a") 'beginning-of-buffer)    
+(global-set-key (kbd "C-c e") 'end-of-buffer)
+(global-set-key (kbd "C-c .") 'mg-insert-current-dtime)
+;(global-set-key (kbd "C-c ,") 'mg-insert-current-date-log)
+;; elscreen
+(global-set-key (kbd "C-c c") 'elscreen-create); :window:
+(global-set-key (kbd "C-c q") 'elscreen-kill);   :window:
+(global-set-key (kbd "C-c k") 'kill-buffer);     :buffer:
+;(global-set-key (kbd "C-c a") 'mg-inner-wrapper)
+(global-set-key (kbd "C-c o") 'mg-outer-wrapper)
+;(global-set-key (kbd "C-c q") 'select-inside-quotes)
 
-;; qwerty qjk
-(global-set-key (kbd "C-q") 'kill-region) ;  cut
-(global-set-key (kbd "C-j") 'kill-ring-save) ;  copy
-(global-set-key (kbd "C-k") 'yank) ; paste
-(global-set-key (kbd "C-y") 'kill-line) ; change ctrl-y to kill line
 
 ;inspired:
 ; - http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
@@ -41,23 +94,20 @@
 (keyboard-translate ?\C-x ?\C-t)
 
 
-;; register
-(global-set-key (kbd "C-'") 'set-mark-command)
-(global-set-key (kbd "C-,") 'vimyy)
-(global-set-key (kbd "C-.") 'vimyyp)
+;(global-set-key (kbd "M-1") 'point-to-register)
+;(global-set-key (kbd "M-2") 'jump-to-register)
+;(global-set-key (kbd "C-c 1") 'copy-to-register)
+;(global-set-key (kbd "C-c 2") 'insert-register)
 
-(global-set-key (kbd "M-1") 'point-to-register)
-(global-set-key (kbd "M-2") 'jump-to-register)
-(global-set-key (kbd "C-1") 'copy-to-register)
-(global-set-key (kbd "C-2") 'insert-register)
 
-(global-set-key (kbd "C-c q") 'select-inside-quotes)
+;; custom
 
-;; elscreen
-(global-set-key (kbd "C-c c") 'elscreen-create)
-(global-set-key (kbd "C-c w") 'elscreen-kill)  
-(global-set-key (kbd "C-c p") 'elscreen-previous)
-(global-set-key (kbd "C-c n") 'elscreen-next)
+
+(global-set-key (kbd "C-1") 'mg-mark1)
+(global-set-key (kbd "C-2") 'mg-mark2)
+(global-set-key (kbd "C-3") 'mg-goto1)
+(global-set-key (kbd "C-4") 'mg-goto2)
+
 
 ;;;;
 
@@ -73,10 +123,7 @@
 ;(global-set-key [f7] 'bookmark-jump)
 ;(global-set-key [f8] 'bookmark-bmenu-list)
 
-;(global-set-key [M-f1] 'mg-mark1)
-;(global-set-key [M-f2] 'mg-mark2)
-;(global-set-key [S-f1] 'mg-goto1)
-;(global-set-key [S-f2] 'mg-goto2)
+
 
 ;(global-set-key [S-f5] 'shrink-window-horizontally)
 ;(global-set-key [S-f8] 'enlarge-window-horizontally)
@@ -90,10 +137,6 @@
 
 ;(global-set-key '[(control c) (d)] 'delblank)
 
-;(global-set-key [(control left)] 'beginning-of-buffer)    
-;(global-set-key [(control right)] 'end-of-buffer)    
-;(global-set-key [(control up)] 'scroll-down)    
-;(global-set-key [(control down)] 'scroll-up)    
 
 ; vim-style
 ;(global-set-key (kbd "M-t") 'previous-line)
@@ -117,7 +160,7 @@
 ;dvorak zxcv
 ;(global-set-key (kbd "C-;") 'undo) 
 ;(global-set-key (kbd "C-:") 'redo)
-;(global-set-key (kbd "C-q") 'kill-region)
+
 ;(global-set-key (kbd "C-j") 'kill-ring-save) ;copy
 ;(global-set-key (kbd "C-k") 'yank)
 ;(global-set-key (kbd "C-;") 'undo)
@@ -164,12 +207,6 @@
 ;(global-set-key [(meta f8)]    'align-regexp)
 
 
-
-;; custom
-(global-set-key (kbd "C-c .") 'mg-insert-current-dtime)
-(global-set-key (kbd "C-c ,") 'mg-insert-current-date-log)
-(global-set-key (kbd "C-c a") 'mg-inner-wrapper)
-(global-set-key (kbd "C-c o") 'mg-outer-wrapper)
 
 ;(define-key key-translation-map [?\C-\[] [(control left_bracket)])
 ;(define-key key-translation-map [escape] [?\e])
