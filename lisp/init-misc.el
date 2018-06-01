@@ -65,7 +65,7 @@
   "select default directory by "
   (interactive)
   (let ((opt (read-from-minibuffer "dir:1)~ 2)org 3)ohh "))
-		(dir "~/"))
+		(dir "~/devel"))
 	(if (equal opt "2")
 		(setq dir "~/Dropbox/org/"))
 	(if (equal opt "3")

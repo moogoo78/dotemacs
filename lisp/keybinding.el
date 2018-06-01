@@ -1,6 +1,5 @@
 ; key-binding
 ; ============
-(global-set-key [f2] 'bookmark-bmenu-list)
 
 ;; Dvorak
 ;; ['][,][.][p][y][f][g][c][r][l][/][=][\]
@@ -22,20 +21,21 @@
 (global-set-key (kbd "C-,") 'vimyy)                ; (w) :register:
 (global-set-key (kbd "C-.") 'vimyyp)               ; (e) :register:
 ;; C-p                                             ; (r)
-(global-set-key (kbd "C-y") 'scroll-down)          ; (t) :cursor:
+(global-set-key (kbd "C-y") 'kill-line)            ; (t) :register:
 ;; C-f                                             ; (y)
 ;; C-g                                             ; (u)
 ;; C-c                                             ; (i)
-;; C-r                                             ; (o) TODO
+;; C-r isearch-backward                            ; (o) TODO
+(global-set-key (kbd "C-l") 'goto-line)            ; (l) :cursor:
 ;; C-/ undo                                        ; ([) (undo)
-;; C-=                                             ; (]) TODO
-(global-set-key (kbd "C-\\") 'kill-line)           ; (\) :register: (input method)
+(global-set-key (kbd "C-=") 'ibuffer)              ; (]) :buffer:
+(global-set-key (kbd "C-\\") 'bookmark-bmenu-list) ; (\) :window: (input method)
 ;; ---
 ;; C-a                                             ; (a)
 (global-set-key (kbd "C-o") 'find-file)            ; (s) :file:
 ;; C-e                                             ; (d)
 ;; C-u                                             ; (f)
-(global-set-key (kbd "C-i") 'scroll-up)            ; (g) :cursor:
+;; C-i will cause <tab> change to scroll-up        ; (g)
 ;; C-d                                             ; (h)
 ;; C-h                                             ; (j)
 ;; C-t                                             ; (k)
@@ -50,8 +50,8 @@
 ;; C-x                                             ; (b) 
 ;; C-b                                             ; (n)
 ;; C-m  return                                     ; (m) TODO
-; C-w (global-set-key (kbd "C-w") 'kill-buffer)    ; (,) TODO
-;; C-v                                             ; (.) TODO
+(global-set-key (kbd "C-w") 'scroll-down)          ; (,) :cursor:
+;; C-v scroll-up                                   ; (.) 
 ;; C-z undo                                        ; (/) 
 
 ;; C-_ undo
@@ -68,8 +68,9 @@
 ; like macOS tab switch
 [](global-set-key (kbd "M-{") 'elscreen-previous)
 (global-set-key (kbd "M-}") 'elscreen-next)
-(global-set-key (kbd "M-w") 'mg-backward16)
-(global-set-key (kbd "M-v") 'mg-forward16)
+;(global-set-key (kbd "M-w") 'mg-backward16)
+;(global-set-key (kbd "M-v") 'mg-forward16)
+;; M-v 原 scroll-down TODO
 ;; ========================
 ;; Ctrl-c [KEY]
 ;; ========================
@@ -82,7 +83,7 @@
 ;; elscreen
 (global-set-key (kbd "C-c c") 'elscreen-create); :window:
 (global-set-key (kbd "C-c q") 'elscreen-kill);   :window:
-(global-set-key (kbd "C-c k") 'kill-buffer);     :buffer:
+(global-set-key (kbd "C-x k") 'kill-buffer);     :buffer:
 ;(global-set-key (kbd "C-c a") 'mg-inner-wrapper)
 (global-set-key (kbd "C-c o") 'mg-outer-wrapper)
 ;(global-set-key (kbd "C-c q") 'select-inside-quotes)

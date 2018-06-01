@@ -78,6 +78,8 @@
 (setq deft-text-mode 'markdown-mode)
 (setq deft-use-filename-as-title t)
 
+;; jsx
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . javascript-mode))
 ;; php
 (autoload 'php-mode "php-mode" "Major mode for editing php code." t)
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))

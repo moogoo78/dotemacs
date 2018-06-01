@@ -16,6 +16,20 @@
 ;  (set-frame-size (selected-frame) 150 45))
 
 
+(defun set-default-directory()
+  "select default directory by "
+  (interactive)
+  (let ((opt (read-from-minibuffer "dir:1)devel 2)repo 3)tools "))
+		(dir "~/devel/"))
+	(if (equal opt "2")
+		(setq dir "~/repo/"))
+	(if (equal opt "3")
+		(setq dir "~/tools/"))
+	(setq default-directory dir)))
+
+;(set-default-directory)
+(setq default-directory "~/devel/")
+
 (defun piscine(root)
   "hello"
   (interactive "p")
@@ -29,3 +43,5 @@
 ;(switch-to-buffer (other-buffer))
 ;(generate-new-buffer "bar")
   )
+
+(load "~/.emacs.d/extempore-mode.el")
