@@ -53,16 +53,16 @@
 ;; constant
 (set-face-foreground 'font-lock-constant-face "gray50")
 ;; string
-(set-face-foreground 'font-lock-string-face "yellow green")
+(set-face-foreground 'font-lock-string-face "color-100") ; coffee
 ;; keyword
-(set-face-foreground 'font-lock-keyword-face "SeaGreen3")
+(set-face-foreground 'font-lock-keyword-face "color-228") ;yellow
 (make-face-bold 'font-lock-keyword-face)
 ;; type
-(set-face-foreground 'font-lock-type-face "dark orange")
+(set-face-foreground 'font-lock-type-face "color-70")
 ;; variable
 (set-face-foreground 'font-lock-variable-name-face "light coral")
 ;; function
-(set-face-foreground 'font-lock-function-name-face "steel blue")
+(set-face-foreground 'font-lock-function-name-face "color-69") ; blue
 (make-face-bold 'font-lock-function-name-face)
 ;; highlight (current line)
 (set-face-background 'highlight "red4")
@@ -108,11 +108,11 @@
 (show-paren-mode t)
 (setq show-paren-style 'mixed)
 ;; マッチした場合の色
-(set-face-background 'show-paren-match-face "RoyalBlue1")
-(set-face-foreground 'show-paren-match-face "black")
+;(set-face-background 'show-paren-match-face "RoyalBlue1")
+;(set-face-foreground 'show-paren-match-face "black")
 ;; マッチしていない場合の色
-(set-face-background 'show-paren-mismatch-face "Red")
-(set-face-foreground 'show-paren-mismatch-face "black")
+;(set-face-background 'show-paren-mismatch-face "Red")
+;(set-face-foreground 'show-paren-mismatch-face "black")
 
 
 

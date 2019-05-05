@@ -12,6 +12,10 @@
 (setq x-select-enable-clipboard t)
 ;(fset 'yes-or-no-p 'y-or-n-p)
 
+(setq show-trailing-whitespace t)
+(custom-set-variables              ; Sets show-trailing-whitespace as expected
+ '(show-trailing-whitespace t))
+
 (setq transient-mark-mode t)         ; highlight region?
 (show-paren-mode t)                  ; matching parens
 (setq truncate-lines t)
@@ -38,9 +42,11 @@
       '("\\`auto/" "\\.prv/" "_region_" "\\`CVS/" "\\`#" "\\`.#"
         "\\`\\.\\./" "\\`\\./" "^.DS_Store$"))
 
-;(cua-mode              t) ; 
+;(cua-mode              t) ;
 (windmove-default-keybindings)      ; shift + 4way key jump window
 (server-start)            ; start emacs server daemon
+(setq server-socket-dir "~/.emacs.d/server")
+
 ; == coding ==
 (prefer-coding-system       'utf-8)
 (setq locale-coding-system 'utf-8)
@@ -60,8 +66,8 @@
 (column-number-mode t) ; show column-number
 (tool-bar-mode -1)
 (if (>= emacs-major-version 24)
-    (load-theme 'moogoo t)
-  (load-theme 'moogoo))
+    (load-theme 'moe-dark t)
+  (load-theme 'moe-dark))
 
 ; == scroll bar ==
 ;scroll-bar-mode        'right ;

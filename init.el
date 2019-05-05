@@ -3,7 +3,7 @@
 (add-to-list 'load-path my-path)
 (add-to-list 'load-path (concat my-path "goodies"))
 (load "generic.el")
-(load "keybinding.el")
+(load "key2.el")
 ;(load "init-calendar.el")
 ;(load "init-org.el")
 (load "mode.el")
@@ -44,4 +44,4 @@
 ;(generate-new-buffer "bar")
   )
 
-(load "~/.emacs.d/extempore-mode.el")
+;(load "~/.emacs.d/extempore-mode.el")

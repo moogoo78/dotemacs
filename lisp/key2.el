@@ -1,18 +1,22 @@
 ; key-binding
 ; ============
 
-;; Dvorak
-;; ['][,][.][p][y][f][g][c][r][l][/][=][\]
-;; [a][o][e][u][i][d][h][t][n][s][-]
-;; [;][q][j][k][x][b][m][w][v][z]
+(global-set-key (kbd "C-o") 'find-file)            ; (s) :file:
+(global-set-key (kbd "C-k") 'yank)                 ; (v) paste :register:
 
-;; QWERTY
-;; (q)(w)(e)(r)(t)(y)(u)(i)(o)(p)([)(])(\)
-;; (a)(s)(d)(f)(g)(h)(j)(k)(l)(;)(')
-;; (z)(x)(c)(v)(b)(n)(m)(,)(.)(/)
+(global-set-key (kbd "C-l") 'goto-line)            ; (l) :cursor:
+(global-set-key (kbd "C-y") 'kill-line)            ; (t) :register:
+(global-set-key (kbd "C-s") 'save-buffer)          ; (;) :buffer:
+
+(global-set-key (kbd "C-c u") 'windmove-up)
+(global-set-key (kbd "C-c d") 'windmove-down)
+
+(global-set-key (kbd "C-c m") 'set-mark-command)
+
+
+;; Dvorak
 
 ;; TAGS :file:register:buffer:cursor:window:
-
 
 ;; ========================
 ;; Ctrl-[KEY]
@@ -21,18 +25,18 @@
 (global-set-key (kbd "C-,") 'vimyy)                ; (w) :register:
 (global-set-key (kbd "C-.") 'vimyyp)               ; (e) :register:
 ;; C-p                                             ; (r)
-(global-set-key (kbd "C-y") 'kill-line)            ; (t) :register:
+
 ;; C-f                                             ; (y)
 ;; C-g                                             ; (u)
 ;; C-c                                             ; (i)
 ;; C-r isearch-backward                            ; (o) TODO
-(global-set-key (kbd "C-l") 'goto-line)            ; (l) :cursor:
+
 ;; C-/ undo                                        ; ([) (undo)
 (global-set-key (kbd "C-=") 'ibuffer)              ; (]) :buffer:
 (global-set-key (kbd "C-`") 'bookmark-bmenu-list) ; (\) :window: (input method)
 ;; ---
 ;; C-a                                             ; (a)
-(global-set-key (kbd "C-o") 'find-file)            ; (s) :file:
+
 ;; C-e                                             ; (d)
 ;; C-u                                             ; (f)
 ;; C-i will cause <tab> change to scroll-up        ; (g)
@@ -40,13 +44,13 @@
 ;; C-h                                             ; (j)
 ;; C-t                                             ; (k)
 ;; C-n                                             ; (l)
-(global-set-key (kbd "C-s") 'save-buffer)          ; (;) :buffer:
+
 ;; C-- become C-C --?                              ; (')
 ;; ---
 ;; u-;                                             ; (z) TODO
 (global-set-key (kbd "C-q") 'kill-region)          ; (x) cut :register:
 (global-set-key (kbd "C-j") 'kill-ring-save)       ; (c) copy :register:
-(global-set-key (kbd "C-k") 'yank)                 ; (v) paste :register:
+
 ;; C-x                                             ; (b) 
 ;; C-b                                             ; (n)
 ;; C-m  return                                     ; (m) TODO
@@ -61,9 +65,15 @@
 ;; M [KEY]
 ;; ========================
 ;; act like modern browser
-(global-set-key (kbd "M-f") 'isearch-forward)
-(global-set-key (kbd "M-g") 'isearch-repeat-forward)
-(global-set-key (kbd "M-G") 'isearch-repeat-backward)
+;(global-set-key (kbd "M-f") 'isearch-forward)
+;(global-set-key (kbd "M-g") 'isearch-repeat-forward)
+;(global-set-key (kbd "M-G") 'isearch-repeat-backward)
+
+(global-set-key (kbd "C-c f") 'isearch-forward)
+(global-set-key (kbd "C-c g") 'isearch-repeat-forward)
+(global-set-key (kbd "C-c G") 'isearch-repeat-backward)
+
+
 ;; M-p, M-m
 ; like macOS tab switch
 [](global-set-key (kbd "M-{") 'elscreen-previous)
@@ -240,7 +250,7 @@
 )
 
 (defun vimyy()
-  (interactive)
+  (intertactive)
   (move-beginning-of-line 1)
   (kill-line)
   (yank)

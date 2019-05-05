@@ -4,8 +4,8 @@
 (add-to-list 'load-path (concat my-path "/goodies/APEL")) ; for elscreen
 
 ;; elscreen
-(load "elscreen" "ElScreen" )
-(setq elscreen-display-tab t)
+;(load "elscreen" "ElScreen" )
+;(setq elscreen-display-tab t)
 
 ;;;; markdown ;;;;
 (autoload 'markdown-mode "markdown-mode.el"
