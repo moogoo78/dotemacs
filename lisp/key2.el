@@ -8,11 +8,15 @@
 (global-set-key (kbd "C-y") 'kill-line)            ; (t) :register:
 (global-set-key (kbd "C-s") 'save-buffer)          ; (;) :buffer:
 
-(global-set-key (kbd "C-c u") 'windmove-up)
+(global-set-key (kbd "C-b") 'set-mark-command)
+;(global-set-key (kbd "C-c d") 'windmove-down)
+
+
+(global-set-key (kbd "C-q") 'kill-region)          ; (x) cut :register:
+(global-set-key (kbd "C-j") 'kill-ring-save)       ; (c) copy :register:
+
+(global-set-key (kbd "C-c u") 'windmove-up)          ; (,) :ocursor:
 (global-set-key (kbd "C-c d") 'windmove-down)
-
-(global-set-key (kbd "C-c m") 'set-mark-command)
-
 
 ;; Dvorak
 
@@ -32,7 +36,7 @@
 ;; C-r isearch-backward                            ; (o) TODO
 
 ;; C-/ undo                                        ; ([) (undo)
-(global-set-key (kbd "C-=") 'ibuffer)              ; (]) :buffer:
+(global-set-key (kbd "C-=") 'ibuffer)              ; (]) :buffer: # no work
 (global-set-key (kbd "C-`") 'bookmark-bmenu-list) ; (\) :window: (input method)
 ;; ---
 ;; C-a                                             ; (a)
@@ -48,13 +52,12 @@
 ;; C-- become C-C --?                              ; (')
 ;; ---
 ;; u-;                                             ; (z) TODO
-(global-set-key (kbd "C-q") 'kill-region)          ; (x) cut :register:
-(global-set-key (kbd "C-j") 'kill-ring-save)       ; (c) copy :register:
+
 
 ;; C-x                                             ; (b) 
 ;; C-b                                             ; (n)
 ;; C-m  return                                     ; (m) TODO
-(global-set-key (kbd "C-w") 'scroll-down)          ; (,) :cursor:
+
 ;; C-v scroll-up                                   ; (.) 
 ;; C-z undo                                        ; (/) 
 
@@ -70,8 +73,8 @@
 ;(global-set-key (kbd "M-G") 'isearch-repeat-backward)
 
 (global-set-key (kbd "C-c f") 'isearch-forward)
-(global-set-key (kbd "C-c g") 'isearch-repeat-forward)
-(global-set-key (kbd "C-c G") 'isearch-repeat-backward)
+(global-set-key (kbd "C-v") 'isearch-repeat-forward)
+(global-set-key (kbd "C-w") 'isearch-repeat-backward)
 
 
 ;; M-p, M-m
