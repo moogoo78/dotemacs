@@ -69,12 +69,12 @@
 ;; ========================
 ;; act like modern browser
 ;(global-set-key (kbd "M-f") 'isearch-forward)
-;(global-set-key (kbd "M-g") 'isearch-repeat-forward)
-;(global-set-key (kbd "M-G") 'isearch-repeat-backward)
+(global-set-key (kbd "C-f") 'isearch-repeat-forward)
+(global-set-key (kbd "C-b") 'isearch-repeat-backward)
 
 (global-set-key (kbd "C-c f") 'isearch-forward)
-(global-set-key (kbd "C-v") 'isearch-repeat-forward)
-(global-set-key (kbd "C-w") 'isearch-repeat-backward)
+;(global-set-key (kbd "C-V") 'isearch-repeat-forward)
+;(global-set-key (kbd "C-W") 'isearch-repeat-backward)
 
 
 ;; M-p, M-m

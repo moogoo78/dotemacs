@@ -7,6 +7,37 @@
 ;(load "elscreen" "ElScreen" )
 ;(setq elscreen-display-tab t)
 
+;; https://web-mode.org
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.json?\\'" . web-mode))
+(setq web-mode-enable-current-element-highlight t)
+(setq web-mode-enable-current-column-highlight t)
+
+(setq-default
+  ;; js2-mode
+  js2-basic-offset 2
+
+  ;; json-mode
+  js-indent-level 2
+
+  ;; web-mode
+  css-indent-offset 2
+  web-mode-markup-indent-offset 2
+  web-mode-css-indent-offset 2
+  web-mode-code-indent-offset 2
+  web-mode-attr-indent-offset 2
+)
+
 ;;;; markdown ;;;;
 (autoload 'markdown-mode "markdown-mode.el"
     "Major mode for editing Markdown files" t)

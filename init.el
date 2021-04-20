@@ -28,7 +28,7 @@
 	(setq default-directory dir)))
 
 ;(set-default-directory)
-(setq default-directory "~/devel/")
+(setq default-directory "~/sand/")
 
 (defun piscine(root)
   "hello"
