@@ -64,12 +64,12 @@
 (defun set-default-directory()
   "select default directory by "
   (interactive)
-  (let ((opt (read-from-minibuffer "dir:1)~ 2)org 3)ohh "))
-		(dir "~/devel"))
+  (let ((opt (read-from-minibuffer "dir:1)sand 2)devel 3)workspace "))
+		(dir "~/sand"))
 	(if (equal opt "2")
-		(setq dir "~/Dropbox/org/"))
+		(setq dir "~/devel"))
 	(if (equal opt "3")
-		(setq dir "~/repo"))
+		(setq dir "/mnt/c/Users/mogoo/workspace"))
 	(setq default-directory dir)))
 
 (set-default-directory)

@@ -105,7 +105,7 @@
 ;; deft
 (require 'deft)
 (setq deft-extension "txt")
-(setq deft-directory "~/Dropbox/n")
+(setq deft-directory "~/sand")
 (setq deft-text-mode 'markdown-mode)
 (setq deft-use-filename-as-title t)
 
