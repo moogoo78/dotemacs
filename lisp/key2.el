@@ -89,18 +89,22 @@
 ;; ========================
 (global-set-key (kbd "C-c n") 'next-buffer)
 (global-set-key (kbd "C-c p") 'previous-buffer) ;
-(global-set-key (kbd "C-c a") 'beginning-of-buffer)    
+(global-set-key (kbd "C-c a") 'beginning-of-buffer)
 (global-set-key (kbd "C-c e") 'end-of-buffer)
 (global-set-key (kbd "C-c .") 'mg-insert-current-dtime)
 ;(global-set-key (kbd "C-c ,") 'mg-insert-current-date-log)
 ;; elscreen
 (global-set-key (kbd "C-c c") 'elscreen-create); :window:
-(global-set-key (kbd "C-c q") 'elscreen-kill);   :window:
+(global-set-key (kbd "C-c q") 'elsct2reen-kill);   :window:
 (global-set-key (kbd "C-x k") 'kill-buffer);     :buffer:
 ;(global-set-key (kbd "C-c a") 'mg-inner-wrapper)
 (global-set-key (kbd "C-c o") 'mg-outer-wrapper)
 ;(global-set-key (kbd "C-c q") 'select-inside-quotes)
 
+;; ========================
+;; Ctrl-x [KEY]
+;; ========================
+(global-set-key (kbd "C-x 4") 'mg-add-import)
 
 ;inspired:
 ; - http://xahlee.org/emacs/ergonomic_emacs_keybinding.html

@@ -1,3 +1,9 @@
+(defun mg-add-import()
+  "open other window to add import code"
+  (interactive)
+  (split-window-right)
+  (other-window 1)
+  (beginning-of-buffer))
 
 (defun mg-outer-wrapper (q)
   "add char from here to end"
