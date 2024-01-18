@@ -24,7 +24,7 @@
 )
 
 (when (eq system-type 'gnu/linux)
-  (set-face-attribute 'default nil :font "Droid Sans Mono-10")  
+  ;(set-face-attribute 'default nil :font "Sans Mono")  
   ;(set-face-attribute 'default nil :height 100)
 )
 (when (eq system-type 'darwin)

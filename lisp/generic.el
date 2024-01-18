@@ -65,10 +65,9 @@
 (global-linum-mode t) ; line number
 (column-number-mode t) ; show column-number
 (tool-bar-mode -1)
-;(if (>= emacs-major-version 24)
-;    (load-theme 'moe-dark t)
-;  (load-theme 'moe-dark))
-(load-theme 'moogoo t)
+;(load-theme 'moe-dark t)
+;(load-theme 'zenburn t)
+(load-theme 'kanagawa t)
 
 ; == scroll bar ==
 ;scroll-bar-mode        'right ;

@@ -2,6 +2,7 @@
 (defvar my-path "~/.emacs.d/lisp")
 (add-to-list 'load-path my-path)
 (add-to-list 'load-path (concat my-path "goodies"))
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load "generic.el")
 (load "key2.el")
 ;(load "init-calendar.el")
@@ -36,7 +37,7 @@
 	(setq default-directory dir)))
 
 ;(set-default-directory)
-(setq default-directory "~/sand/")
+(setq default-directory "~/d/")
 
 (defun piscine(root)
   "hello"
@@ -53,3 +54,4 @@
   )
 
 ;(load "~/.emacs.d/extempore-mode.el")
+
