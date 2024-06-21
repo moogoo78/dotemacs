@@ -67,8 +67,9 @@
 (tool-bar-mode -1)
 ;(load-theme 'moe-dark t)
 ;(load-theme 'zenburn t)
-(load-theme 'kanagawa t)
-
+;(load-theme 'kanagawa t)
+;(load-theme 'moogoo t)
+(load-theme 'ample t)
 ; == scroll bar ==
 ;scroll-bar-mode        'right ;
 (setq scroll-margin 1) 

@@ -9,6 +9,7 @@
 ;(load "init-org.el")
 (load "mode.el")
 (load "snippet.el")
+(load "rjsx-mode.el")
 ;(load "init-misc.el")
 ;(load "tmp/mg-ecb.el")
 ; start org-agenda-list while startup

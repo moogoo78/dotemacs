@@ -24,10 +24,17 @@
 (setq web-mode-enable-current-element-highlight t)
 (setq web-mode-enable-current-column-highlight t)
 
+;; react
+(add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
 (with-eval-after-load 'rjsx-mode
   (define-key rjsx-mode-map "<" nil)
   (define-key rjsx-mode-map (kbd "C-d") nil)
   (define-key rjsx-mode-map ">" nil))
+
+;; svelte
+;;(add-to-list 'auto-mode-alist '("\\.svelte\\'" . rjsx-mode))
+(add-to-list 'load-path "svelte-mode")
+(require 'svelte-mode)
 
 (setq-default
   ;; js2-mode
